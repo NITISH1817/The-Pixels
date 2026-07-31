@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Service 1: FastAPI Web App + Decision Support System
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: student_mlops_web_app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: always
+
+  # Service 2: MLflow Experiment Tracking Server
+  mlflow-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: student_mlops_mlflow
+    ports:
+      - "5000:5000"
+    command: mlflow ui --host 0.0.0.0 --port 5000
+    restart: always

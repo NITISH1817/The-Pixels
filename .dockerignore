@@ -1,0 +1,19 @@
+# Exclude virtual environments
+.venv/
+venv/
+env/
+
+# Exclude Git & IDE configs
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Exclude Python cache
+__pycache__/
+*.py[cod]
+
+# Exclude local test & DVC cache
+.pytest_cache/
+.dvc/cache/
+.dvc/tmp/
