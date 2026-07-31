@@ -1,0 +1,55 @@
+# Virtual environment — never commit this
+.venv/
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# MLflow experiment runs (local tracking server data — can be large)
+mlruns/
+
+# DVC internal cache and lock files — keep dvc.yaml but not the cache
+.dvc/cache/
+.dvc/tmp/
+
+# Model artifacts (large binary files — tracked by DVC instead)
+models/*.pkl
+models/*.joblib
+models/*.json
+
+# Evidently drift reports (auto-generated)
+monitoring/reports/
+
+# Environment variables (may contain secrets)
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pytest cache
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

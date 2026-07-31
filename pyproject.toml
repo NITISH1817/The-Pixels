@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+# Tell pytest where to find tests
+testpaths = ["tests"]
+# Show verbose output by default
+addopts = "-v"
+# Make sure src/ is importable in tests
+pythonpath = ["."]
