@@ -40,7 +40,7 @@ from src.data_preprocessing import (
     run_full_pipeline, FEATURE_COLS, CATEGORICAL_COLS, TARGET_COL,
 )
 
-DATA_PATH       = "data/raw/student-mat.csv"
+DATA_PATH       = "data/raw/Student Performance Prediction with MLOps - Sheet1.csv"
 MODEL_SAVE_PATH = "models/best_model.pkl"
 PREP_SAVE_PATH  = "models/preprocessor_info.pkl"
 

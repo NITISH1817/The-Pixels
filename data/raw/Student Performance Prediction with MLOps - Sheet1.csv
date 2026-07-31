@@ -1,0 +1,1016 @@
+Gender,Age,Study_Hours_per_Week,Attendance_Rate,Past_Exam_Scores,Assignment_Submission_Rate,Quiz_Average,Previous_Failures,Internet_Access,Parents_Support,Parental_Education,Family_Income,Sleep_Hours,Screen_Time,Stress_Level,Motivation_Level,Class_Participation,Extracurricular_Activities,School_Support,Travel_Time,Pass_Fail
+Female,20,15,95.0%,85,98.0%,88,0,Yes,High,Bachelor's,Medium,7,3,Medium,High,High,2,High,30,Pass
+Male,22,5,60.0%,55,50.0%,60,2,Yes,Low,High School,Low,5,6,High,Low,Low,0,Medium,60,Fail
+Female,19,25,99.0%,92,100.0%,95,0,Yes,High,Master's,High,8,2,Low,High,High,3,High,15,Pass
+Male,21,12,85.0%,75,80.0%,78,0,Yes,Medium,Bachelor's,Medium,6,4,Medium,Medium,Medium,1,Medium,45,Pass
+Female,23,8,70.0%,65,65.0%,68,1,No,Low,High School,Low,6,5,High,Low,Low,0,Low,90,Fail
+Male,20,18,92.0%,82,90.0%,85,0,Yes,High,Bachelor's,High,7,3,Medium,High,Medium,2,High,20,Pass
+Female,21,30,100.0%,96,100.0%,98,0,Yes,High,PhD,High,8,1,Low,High,High,4,High,10,Pass
+Male,19,6,65.0%,58,60.0%,62,1,Yes,Medium,High School,Medium,5,7,High,Low,Low,1,Medium,50,Fail
+Female,22,14,88.0%,78,85.0%,80,0,Yes,Medium,Bachelor's,Medium,7,4,Medium,Medium,Medium,2,Medium,35,Pass
+Male,24,10,75.0%,68,70.0%,72,1,Yes,Low,High School,Low,6,5,High,Medium,Low,0,Low,80,Fail
+Female,20,22,96.0%,89,95.0%,91,0,Yes,High,Master's,High,7,2,Low,High,High,3,High,25,Pass
+Male,21,16,90.0%,80,88.0%,83,0,Yes,Medium,Bachelor's,Medium,7,3,Medium,High,Medium,1,Medium,40,Pass
+Female,19,7,68.0%,60,62.0%,65,2,No,Low,High School,Low,5,6,High,Low,Low,0,Low,100,Fail
+Male,23,20,94.0%,86,92.0%,89,0,Yes,High,Bachelor's,High,8,3,Low,High,High,2,High,20,Pass
+Female,22,11,80.0%,72,75.0%,76,0,Yes,Medium,High School,Medium,6,4,Medium,Medium,Medium,1,Medium,55,Pass
+Female,22,8,95.00%,56,55.00%,58,3,No,Medium,Bachelor's,High,4,1,High,Medium,Medium,2,Medium,87,Fail
+Female,18,10,66.00%,79,69.00%,62,1,No,Medium,Bachelor's,High,9,3,High,High,Medium,4,Low,82,Fail
+Female,25,5,86.00%,77,82.00%,76,0,No,High,PhD,Medium,9,8,Low,Medium,High,1,Low,115,Pass
+Female,19,10,84.00%,99,72.00%,80,3,No,Medium,Bachelor's,Low,4,2,Medium,Low,High,4,High,61,Fail
+Female,19,6,87.00%,88,60.00%,74,3,Yes,High,High School,Medium,8,4,Low,Medium,Low,3,Medium,15,Pass
+Male,21,6,50.00%,96,75.00%,81,2,No,High,PhD,High,7,3,Low,Medium,High,4,High,44,Fail
+Male,21,12,75.00%,79,61.00%,65,0,Yes,Low,Bachelor's,Medium,8,4,High,Medium,Low,2,Medium,65,Pass
+Male,24,25,97.00%,55,74.00%,87,1,No,Low,High School,Medium,8,6,High,Low,Medium,4,Low,42,Fail
+Female,18,7,54.00%,54,61.00%,77,1,Yes,Medium,PhD,High,8,2,Low,High,Medium,0,Medium,106,Fail
+Female,24,28,52.00%,76,68.00%,97,1,Yes,High,High School,Low,8,4,Medium,Medium,Low,4,Medium,38,Pass
+Male,25,10,71.00%,69,91.00%,93,0,No,Medium,Bachelor's,Medium,9,5,Medium,Low,Low,1,Low,108,Pass
+Female,22,7,91.00%,60,60.00%,88,0,Yes,Low,Bachelor's,Low,9,5,Medium,High,Medium,4,Medium,48,Pass
+Female,18,13,85.00%,64,81.00%,90,2,No,High,High School,Low,6,4,Medium,Low,Low,1,Medium,16,Pass
+Female,25,8,69.00%,90,93.00%,62,0,Yes,Medium,Bachelor's,Low,8,4,Medium,Low,High,5,Medium,69,Fail
+Male,24,9,92.00%,58,68.00%,96,1,No,High,Master's,High,9,2,Low,Medium,Medium,2,Low,19,Fail
+Female,21,18,70.00%,95,57.00%,50,2,Yes,Medium,High School,Medium,6,4,Low,Medium,Low,3,Low,36,Fail
+Female,24,26,73.00%,63,89.00%,72,3,Yes,Low,Bachelor's,Low,8,1,Medium,High,Medium,1,High,42,Fail
+Male,25,15,63.00%,97,78.00%,84,3,Yes,Low,Bachelor's,Low,8,5,Medium,Low,Medium,3,Medium,60,Fail
+Female,20,12,72.00%,61,97.00%,73,1,Yes,High,Bachelor's,High,8,1,Medium,Medium,High,1,Medium,28,Pass
+Female,25,12,83.00%,99,97.00%,61,3,No,Low,Bachelor's,Medium,7,3,Medium,Medium,Medium,1,Medium,23,Pass
+Male,20,18,92.00%,93,82.00%,65,2,No,High,Master's,Medium,6,4,Low,Medium,Medium,2,High,10,Fail
+Male,22,23,77.00%,51,54.00%,94,0,No,High,Master's,High,6,3,High,Medium,Low,5,Low,115,Fail
+Female,20,14,96.00%,98,92.00%,99,2,Yes,Medium,PhD,Low,9,6,Medium,Medium,High,0,Medium,113,Fail
+Male,23,13,84.00%,97,92.00%,77,1,No,Medium,PhD,High,5,7,High,Medium,High,3,Low,78,Fail
+Male,19,6,93.00%,53,91.00%,57,2,Yes,Medium,PhD,High,8,8,High,Medium,High,4,Low,68,Pass
+Female,19,19,56.00%,93,54.00%,83,3,Yes,High,Master's,Medium,8,1,Low,Medium,Low,5,Low,48,Fail
+Female,21,26,69.00%,93,95.00%,64,0,No,High,Bachelor's,High,8,8,Medium,Medium,Low,3,Low,93,Pass
+Male,23,8,70.00%,95,60.00%,70,1,No,Medium,PhD,Medium,7,7,High,Low,High,5,Medium,87,Fail
+Female,23,15,95.00%,61,84.00%,62,2,No,Medium,Bachelor's,High,7,5,Low,Low,High,2,Low,67,Fail
+Female,22,17,94.00%,67,96.00%,69,3,No,High,Master's,Medium,6,1,Low,Low,High,0,High,41,Fail
+Female,20,7,63.00%,56,94.00%,97,0,No,High,PhD,Medium,9,5,Medium,Medium,Low,1,High,84,Pass
+Male,21,15,96.00%,86,69.00%,98,0,Yes,High,High School,Low,8,4,Low,Low,Low,4,High,100,Fail
+Male,21,22,54.00%,61,98.00%,58,3,Yes,Low,PhD,Low,7,4,High,Low,Medium,0,Medium,11,Pass
+Female,20,18,94.00%,59,83.00%,86,1,Yes,High,Bachelor's,High,5,1,Medium,High,Medium,1,Low,57,Pass
+Female,21,21,88.00%,92,98.00%,67,0,Yes,High,Bachelor's,Low,9,6,High,Low,High,1,Low,64,Fail
+Male,21,19,88.00%,77,50.00%,65,0,Yes,Low,High School,High,8,1,Medium,Medium,High,1,Medium,48,Pass
+Male,18,13,68.00%,77,97.00%,66,1,Yes,Low,High School,Low,5,7,Low,Low,Medium,1,High,69,Fail
+Female,19,12,58.00%,81,77.00%,58,1,No,Medium,Master's,Medium,5,7,Low,Medium,High,5,High,101,Fail
+Female,25,18,50.00%,54,78.00%,77,2,No,High,PhD,Medium,8,5,Medium,High,High,2,Medium,25,Fail
+Female,19,10,85.00%,92,65.00%,79,0,Yes,Low,Bachelor's,High,8,4,High,High,Medium,3,Low,15,Pass
+Female,20,29,86.00%,88,60.00%,76,3,Yes,Medium,PhD,Medium,5,2,Medium,Low,Medium,0,Low,85,Fail
+Female,24,17,96.00%,83,61.00%,81,2,Yes,Low,PhD,Low,4,5,Low,Low,High,0,Medium,71,Fail
+Female,22,8,79.00%,90,96.00%,75,3,Yes,Low,High School,High,4,3,High,Medium,Low,3,Medium,28,Pass
+Female,20,28,69.00%,90,80.00%,83,1,Yes,High,PhD,High,9,7,High,Low,Low,3,Low,20,Fail
+Female,19,10,69.00%,73,99.00%,50,0,Yes,Medium,PhD,High,9,4,Low,Medium,High,4,Low,118,Fail
+Female,20,30,100.00%,85,67.00%,84,3,No,Low,PhD,High,5,3,Medium,Low,Low,0,High,118,Pass
+Female,19,10,65.00%,75,60.00%,86,3,No,High,Bachelor's,High,4,6,Medium,High,Medium,4,Low,32,Fail
+Male,18,23,91.00%,84,53.00%,83,1,Yes,Medium,Bachelor's,Low,8,7,Medium,Low,Medium,1,High,105,Fail
+Female,22,14,94.00%,60,64.00%,58,1,Yes,Medium,PhD,Medium,9,6,Low,Medium,Medium,3,Low,83,Fail
+Female,24,9,100.00%,52,58.00%,70,1,No,High,Master's,Low,7,3,High,High,Low,0,High,60,Pass
+Male,18,14,90.00%,98,100.00%,53,1,No,Medium,Master's,Low,7,3,High,High,High,0,High,35,Pass
+Male,19,16,59.00%,70,86.00%,96,0,No,High,PhD,High,4,2,Medium,High,High,2,Low,76,Fail
+Male,24,15,55.00%,68,88.00%,54,2,No,Medium,PhD,High,4,7,Medium,High,Low,2,Low,99,Fail
+Male,23,16,89.00%,66,79.00%,87,2,Yes,Medium,Bachelor's,Medium,5,7,High,High,Low,2,Medium,15,Pass
+Female,22,20,77.00%,61,86.00%,60,2,Yes,High,High School,High,4,2,High,Medium,Medium,5,Medium,45,Fail
+Male,22,27,68.00%,84,82.00%,85,3,No,Medium,Master's,High,5,2,Low,High,Medium,4,Medium,96,Pass
+Female,20,9,87.00%,78,73.00%,100,0,Yes,Medium,PhD,Medium,6,6,High,Medium,High,4,Medium,67,Pass
+Female,21,28,83.00%,67,92.00%,98,2,No,Low,PhD,Low,5,1,High,High,Low,2,High,79,Fail
+Male,18,15,83.00%,89,50.00%,56,2,No,High,Bachelor's,Low,6,5,Low,Medium,Low,2,Medium,110,Pass
+Female,25,16,69.00%,93,82.00%,65,3,Yes,Medium,Bachelor's,High,5,7,Low,Medium,High,5,Low,119,Pass
+Male,25,14,55.00%,50,53.00%,51,1,Yes,Low,Master's,Medium,7,7,Low,Medium,Medium,1,High,79,Fail
+Female,21,12,91.00%,87,86.00%,96,2,Yes,Low,PhD,High,9,4,Low,Low,Medium,4,High,59,Fail
+Male,25,15,86.00%,66,56.00%,95,2,Yes,Low,High School,High,6,4,Low,High,High,0,High,11,Fail
+Female,20,22,64.00%,65,81.00%,71,2,No,Low,High School,High,6,6,Medium,High,High,4,High,113,Pass
+Male,22,17,67.00%,68,68.00%,60,0,Yes,High,PhD,High,5,4,Low,High,Low,0,High,93,Fail
+Male,19,18,50.00%,82,96.00%,72,2,No,Medium,Bachelor's,Low,4,7,High,Medium,Medium,1,Medium,118,Fail
+Male,18,19,95.00%,82,66.00%,63,0,No,Medium,PhD,Medium,6,6,Low,High,Low,3,Low,103,Fail
+Female,20,26,71.00%,80,85.00%,51,0,No,Medium,High School,Medium,9,4,Low,Medium,Medium,3,Medium,26,Fail
+Male,18,6,77.00%,88,68.00%,51,1,No,Medium,Master's,Medium,4,5,Low,Medium,High,1,Low,26,Fail
+Male,24,24,77.00%,57,83.00%,90,3,No,Medium,Bachelor's,Medium,6,7,Medium,Medium,High,1,High,95,Fail
+Male,25,16,84.00%,86,79.00%,93,0,No,Low,PhD,Low,6,7,Medium,Medium,Low,0,High,31,Pass
+Female,22,6,69.00%,96,55.00%,74,1,Yes,High,Bachelor's,Low,4,5,Medium,High,Medium,2,Medium,118,Fail
+Female,25,13,79.00%,57,55.00%,61,1,Yes,Low,Master's,High,7,6,High,Medium,High,4,Low,81,Fail
+Male,23,15,74.00%,63,59.00%,61,3,No,High,Master's,Low,5,3,High,Low,Low,2,Medium,90,Pass
+Male,22,19,64.00%,91,80.00%,68,2,No,Low,Bachelor's,Medium,8,5,Low,High,High,4,Low,66,Pass
+Female,21,14,51.00%,65,53.00%,70,3,No,Low,Master's,High,7,3,Low,High,Medium,5,Low,49,Fail
+Male,18,5,80.00%,94,90.00%,96,3,No,Low,Master's,High,9,1,Low,Low,Medium,3,Low,28,Pass
+Male,23,23,90.00%,53,81.00%,86,0,Yes,Low,Bachelor's,Medium,8,3,Medium,High,Medium,3,Low,53,Pass
+Female,22,18,64.00%,89,53.00%,53,0,Yes,High,High School,High,9,4,Low,Medium,Medium,2,Low,23,Pass
+Female,19,6,84.00%,83,93.00%,52,0,No,High,High School,Medium,9,7,Low,High,Medium,0,Medium,96,Fail
+Female,23,23,97.00%,58,93.00%,94,3,No,Low,High School,Low,8,4,Low,Low,Medium,0,Medium,81,Pass
+Female,21,9,73.00%,63,78.00%,69,1,No,Low,High School,Medium,6,3,Medium,Low,Low,4,Medium,53,Pass
+Male,19,11,82.00%,52,69.00%,90,0,Yes,Medium,PhD,High,9,3,High,Low,Medium,4,Low,16,Fail
+Female,22,8,51.00%,95,60.00%,88,0,Yes,Low,PhD,High,8,1,Medium,High,Medium,2,High,53,Pass
+Female,25,17,60.00%,92,66.00%,59,1,No,High,PhD,Medium,5,1,Low,Medium,Medium,5,High,10,Fail
+Male,23,11,93.00%,89,81.00%,69,2,Yes,Medium,Bachelor's,High,5,6,High,Low,Medium,3,Low,54,Pass
+Female,21,9,76.00%,54,96.00%,76,1,Yes,High,PhD,Low,7,6,High,Low,High,4,Low,39,Fail
+Male,24,13,59.00%,80,71.00%,80,1,No,High,PhD,Medium,4,3,Medium,High,Low,2,High,62,Pass
+Male,22,19,59.00%,95,78.00%,90,1,No,Medium,High School,Low,6,8,High,High,Low,0,High,99,Fail
+Male,22,16,80.00%,55,64.00%,98,0,Yes,Low,Bachelor's,Low,8,5,Low,Low,High,1,High,94,Pass
+Female,18,17,95.00%,88,97.00%,91,3,Yes,High,PhD,High,7,2,Medium,High,Low,2,High,40,Fail
+Female,22,19,93.00%,65,57.00%,99,3,Yes,Medium,Master's,Low,6,6,Low,Medium,Low,3,Medium,57,Fail
+Female,22,14,95.00%,74,71.00%,88,3,Yes,Low,Master's,Medium,5,6,Medium,High,Low,3,Medium,53,Fail
+Female,25,23,85.00%,89,94.00%,81,2,No,Low,Master's,Low,4,5,Medium,High,Medium,0,Low,27,Pass
+Male,19,15,56.00%,85,94.00%,83,1,No,Low,Bachelor's,High,7,5,Medium,Medium,High,1,Medium,61,Fail
+Male,24,18,91.00%,91,81.00%,90,1,Yes,High,Master's,Low,8,8,Medium,Low,Low,3,Medium,14,Pass
+Male,21,25,57.00%,51,79.00%,83,3,Yes,Medium,Bachelor's,High,6,1,Low,Medium,High,0,Medium,14,Pass
+Male,21,16,61.00%,78,59.00%,76,0,Yes,Low,PhD,High,4,3,Low,High,Medium,2,High,54,Pass
+Female,25,5,64.00%,77,95.00%,68,0,Yes,Low,PhD,Medium,4,5,Low,High,Low,4,Medium,108,Pass
+Male,21,20,89.00%,55,70.00%,50,2,Yes,Low,PhD,High,6,7,Medium,High,Medium,3,High,36,Pass
+Male,25,7,72.00%,77,60.00%,67,0,Yes,Low,High School,High,7,5,Medium,Low,High,3,Low,48,Fail
+Female,20,12,76.00%,65,76.00%,91,0,Yes,High,Master's,Low,4,6,Medium,High,High,3,Low,105,Pass
+Male,21,25,66.00%,85,57.00%,70,2,Yes,High,PhD,Low,8,2,High,High,Medium,1,Medium,25,Fail
+Male,22,28,50.00%,71,52.00%,65,3,Yes,Medium,Master's,Medium,4,1,High,Low,High,5,High,66,Fail
+Female,19,28,91.00%,92,60.00%,97,1,No,High,High School,High,8,2,High,Low,Low,3,High,36,Fail
+Female,21,8,69.00%,88,89.00%,92,3,No,Medium,PhD,Medium,5,6,Medium,Medium,Medium,4,High,106,Fail
+Male,18,15,50.00%,65,87.00%,56,1,No,Medium,Master's,Medium,5,7,Low,Medium,Low,2,Low,53,Pass
+Female,24,12,53.00%,94,69.00%,66,0,Yes,Low,Bachelor's,High,6,6,Low,Medium,Low,1,Low,95,Fail
+Male,22,24,90.00%,89,68.00%,76,3,No,High,Master's,High,4,8,Medium,High,Medium,3,High,68,Pass
+Male,24,10,76.00%,61,69.00%,57,0,No,Medium,Master's,Low,8,6,Medium,Medium,Low,1,High,87,Pass
+Male,21,25,88.00%,74,86.00%,51,1,Yes,High,PhD,Low,7,7,High,Low,Low,1,Medium,56,Fail
+Female,22,16,51.00%,74,100.00%,84,2,Yes,Low,Master's,Low,6,5,Medium,Medium,Low,2,High,41,Fail
+Female,22,15,61.00%,95,76.00%,90,3,No,Low,Bachelor's,Low,5,8,Low,Medium,High,2,Medium,48,Fail
+Female,21,19,68.00%,61,95.00%,83,1,No,Low,PhD,Medium,6,6,Low,Medium,High,1,Medium,103,Pass
+Male,22,30,53.00%,85,53.00%,51,3,No,High,PhD,Low,9,4,Low,High,Medium,3,Medium,13,Fail
+Male,19,20,52.00%,80,76.00%,73,0,No,Low,High School,Medium,4,2,Medium,Medium,High,1,High,115,Fail
+Male,23,28,62.00%,92,62.00%,94,0,Yes,Low,Bachelor's,Low,4,5,High,Low,Medium,1,Medium,14,Pass
+Female,22,8,74.00%,92,84.00%,74,0,No,Low,High School,Low,5,4,Low,High,Low,1,High,72,Fail
+Male,20,16,77.00%,72,50.00%,84,3,Yes,Low,Master's,High,8,8,Medium,High,Low,2,Medium,53,Fail
+Male,23,9,61.00%,63,77.00%,96,3,No,Medium,PhD,Medium,7,7,Low,Low,Low,3,Medium,44,Fail
+Female,24,7,63.00%,98,59.00%,68,3,No,Low,PhD,Medium,8,7,High,High,Medium,2,High,26,Pass
+Female,21,19,77.00%,57,59.00%,74,1,No,High,PhD,Low,7,5,High,High,High,2,Low,92,Fail
+Male,25,16,85.00%,54,58.00%,67,1,Yes,Medium,PhD,Medium,8,3,Medium,High,Low,0,Low,93,Pass
+Male,23,29,76.00%,69,67.00%,62,2,Yes,High,High School,High,6,7,High,Medium,Low,1,High,30,Pass
+Female,20,11,88.00%,81,90.00%,83,1,No,High,High School,Low,6,1,Medium,High,Low,0,High,95,Pass
+Male,20,13,89.00%,81,58.00%,71,0,No,Low,Master's,Medium,4,8,High,Medium,High,2,Low,70,Pass
+Male,25,22,68.00%,84,77.00%,57,1,Yes,Medium,Bachelor's,High,4,1,Low,High,High,0,Low,15,Pass
+Female,18,20,87.00%,77,94.00%,53,3,Yes,High,High School,Low,7,5,Medium,Medium,Low,1,High,19,Pass
+Male,21,21,73.00%,55,86.00%,57,2,No,Medium,Master's,Low,6,8,Medium,High,High,4,Low,42,Fail
+Female,19,13,96.00%,60,79.00%,85,3,Yes,Medium,High School,Low,6,5,Medium,High,Low,1,Low,72,Fail
+Male,21,12,51.00%,86,75.00%,91,1,No,Low,PhD,Low,9,3,Medium,High,Medium,3,Medium,29,Pass
+Male,22,21,87.00%,88,71.00%,94,2,Yes,Medium,High School,Low,4,3,Low,High,Medium,4,Medium,29,Pass
+Male,23,17,62.00%,73,62.00%,52,3,No,Medium,Master's,High,7,5,High,Medium,Low,1,Medium,83,Pass
+Female,24,10,88.00%,74,94.00%,64,2,No,Low,Bachelor's,Low,8,5,Medium,High,Medium,3,High,56,Fail
+Female,25,14,78.00%,54,51.00%,83,2,No,Low,PhD,Low,8,8,Medium,Medium,High,3,High,50,Fail
+Female,23,11,62.00%,82,67.00%,69,3,Yes,Low,PhD,Low,5,4,Low,Low,High,2,Medium,89,Fail
+Female,20,26,77.00%,90,88.00%,78,3,No,High,High School,High,5,3,High,Medium,Low,3,High,86,Pass
+Female,22,14,55.00%,92,74.00%,87,0,No,Low,Bachelor's,High,7,1,Low,Low,Low,0,Low,22,Pass
+Female,20,6,86.00%,78,91.00%,98,1,Yes,High,High School,Low,7,4,Low,High,Medium,2,High,109,Fail
+Male,19,11,78.00%,98,97.00%,67,3,Yes,Low,High School,Low,7,3,Medium,Low,Low,1,Medium,102,Fail
+Female,21,20,96.00%,97,94.00%,99,0,No,High,PhD,High,7,2,Medium,Low,High,0,Low,69,Pass
+Male,24,23,78.00%,76,61.00%,79,2,No,Medium,High School,High,7,4,Low,Medium,Medium,5,Low,16,Pass
+Male,22,25,50.00%,54,78.00%,69,0,No,High,Master's,Low,9,3,High,Medium,Medium,1,Low,88,Pass
+Male,18,14,98.00%,79,60.00%,75,3,Yes,Low,Master's,High,7,4,Medium,Medium,High,5,High,61,Fail
+Female,18,17,52.00%,56,51.00%,93,1,Yes,Medium,High School,Low,6,6,High,Medium,Low,1,High,63,Fail
+Male,18,25,60.00%,79,75.00%,60,1,No,Low,High School,High,5,2,Low,Medium,Medium,2,Low,87,Pass
+Female,19,22,79.00%,95,67.00%,55,2,Yes,High,PhD,Medium,9,8,Medium,Low,High,5,Low,89,Fail
+Female,20,10,50.00%,90,99.00%,53,2,No,High,Bachelor's,Low,8,4,High,Low,Low,5,Low,55,Fail
+Female,25,11,55.00%,77,56.00%,93,1,No,Medium,Bachelor's,Low,4,4,High,High,High,3,Medium,44,Fail
+Female,24,15,91.00%,61,89.00%,67,3,No,Low,High School,High,8,4,Medium,Low,High,5,Medium,60,Pass
+Female,24,21,65.00%,72,61.00%,93,2,Yes,Low,PhD,High,5,8,Low,High,Medium,2,Medium,75,Fail
+Female,21,8,86.00%,78,85.00%,87,0,No,High,Master's,Low,6,2,High,Medium,Low,0,Medium,72,Pass
+Female,19,17,93.00%,74,69.00%,94,0,Yes,Medium,Master's,Low,5,4,High,Low,Low,2,Low,19,Fail
+Female,19,5,87.00%,63,90.00%,78,2,No,High,PhD,High,9,6,Low,Low,Medium,1,High,12,Fail
+Female,21,29,88.00%,51,54.00%,94,0,No,Medium,Bachelor's,High,6,8,High,High,Low,5,High,73,Fail
+Male,18,29,59.00%,85,54.00%,87,1,Yes,Low,High School,High,6,1,High,Medium,Medium,2,Medium,36,Pass
+Female,19,24,54.00%,50,96.00%,93,0,Yes,Low,PhD,High,4,2,High,High,Medium,4,Low,106,Fail
+Male,21,14,52.00%,67,66.00%,87,3,No,High,PhD,Medium,4,4,Medium,Medium,Low,0,Low,75,Fail
+Male,20,14,100.00%,66,76.00%,93,0,Yes,Low,Bachelor's,High,6,3,High,Medium,Low,4,Medium,45,Fail
+Female,22,22,58.00%,66,74.00%,87,0,No,High,PhD,High,8,3,High,Low,Medium,5,Low,36,Fail
+Female,19,5,78.00%,86,90.00%,58,2,Yes,High,Master's,Low,6,4,High,High,High,0,Low,26,Pass
+Female,21,12,52.00%,81,64.00%,71,0,No,Low,Bachelor's,Low,7,1,High,Low,Low,3,Medium,119,Fail
+Male,25,21,77.00%,65,58.00%,66,1,No,Low,Master's,High,4,6,High,Medium,High,1,High,43,Fail
+Female,22,11,96.00%,63,90.00%,96,2,No,Medium,Bachelor's,Low,8,3,Medium,Medium,Medium,1,Medium,75,Fail
+Male,23,15,98.00%,88,97.00%,74,0,Yes,High,High School,Medium,9,7,Low,Medium,High,4,High,97,Fail
+Male,22,7,67.00%,64,72.00%,63,0,No,Medium,High School,Medium,6,1,Medium,High,Medium,3,High,79,Fail
+Male,24,12,77.00%,65,87.00%,66,0,No,Medium,PhD,High,5,8,Low,High,Medium,0,Medium,27,Fail
+Male,23,14,61.00%,77,92.00%,86,0,Yes,High,Master's,High,8,4,Low,High,High,2,High,29,Fail
+Female,25,26,92.00%,54,66.00%,53,2,No,High,High School,Low,6,7,High,Low,Low,4,Low,41,Fail
+Male,23,17,78.00%,95,83.00%,80,0,No,Low,Master's,High,4,6,Medium,Medium,Medium,3,Low,45,Pass
+Female,18,23,67.00%,68,87.00%,91,3,Yes,High,High School,Low,9,1,Medium,Medium,Medium,5,High,61,Fail
+Male,18,7,98.00%,91,87.00%,82,2,No,High,High School,Medium,4,3,Low,Low,Low,1,Medium,74,Fail
+Female,19,10,80.00%,84,61.00%,90,3,No,Low,High School,Low,8,3,Medium,Low,Medium,0,Medium,82,Pass
+Female,20,16,94.00%,75,80.00%,95,3,No,Low,High School,High,7,2,Medium,Medium,Medium,0,High,116,Pass
+Male,22,8,97.00%,55,87.00%,57,1,Yes,Low,PhD,Low,9,7,Medium,Medium,Medium,2,Low,119,Pass
+Male,21,17,58.00%,53,99.00%,63,3,Yes,Low,PhD,Medium,4,2,Low,Low,Low,4,Medium,105,Pass
+Female,19,15,94.00%,94,71.00%,94,0,No,Low,Master's,Medium,6,6,Medium,Low,Medium,4,High,109,Pass
+Male,25,19,83.00%,88,76.00%,82,1,No,High,Master's,Low,9,3,Medium,High,High,4,Medium,75,Fail
+Female,19,26,53.00%,79,50.00%,64,1,No,Medium,PhD,Medium,6,3,Medium,Low,Low,5,Medium,106,Pass
+Male,18,20,93.00%,98,96.00%,53,1,No,Low,High School,High,8,7,High,High,High,0,Low,30,Pass
+Male,21,6,53.00%,78,74.00%,64,3,Yes,High,High School,Medium,5,3,High,Low,Medium,5,Low,104,Pass
+Female,18,26,62.00%,61,56.00%,89,1,No,High,PhD,Low,9,3,High,Low,Medium,2,Medium,27,Pass
+Female,19,11,51.00%,65,91.00%,51,1,Yes,Low,Master's,Low,4,2,High,Medium,Medium,4,Medium,79,Fail
+Female,20,24,69.00%,88,69.00%,64,1,No,Low,PhD,Low,5,1,Medium,Low,High,1,Medium,77,Fail
+Female,21,23,66.00%,65,53.00%,95,0,Yes,Low,Bachelor's,High,6,4,Low,Medium,Medium,1,Medium,90,Fail
+Male,22,9,70.00%,54,65.00%,60,2,Yes,Low,PhD,Low,4,5,High,High,High,2,High,104,Pass
+Female,24,29,98.00%,91,76.00%,87,1,No,Medium,Bachelor's,Low,5,2,High,Low,High,1,Medium,74,Fail
+Female,24,28,56.00%,73,59.00%,59,1,No,Low,Master's,Low,5,1,High,Low,Medium,4,High,90,Pass
+Male,24,8,56.00%,79,85.00%,60,2,Yes,High,Bachelor's,Low,9,5,High,Low,Medium,5,Low,111,Pass
+Male,22,5,89.00%,86,68.00%,67,2,Yes,Medium,Bachelor's,Medium,7,1,Medium,High,Medium,3,High,104,Pass
+Female,18,20,63.00%,99,100.00%,55,1,Yes,Medium,Master's,High,4,8,Medium,Low,High,4,Medium,46,Fail
+Male,18,28,66.00%,51,62.00%,89,0,Yes,Medium,High School,High,8,1,Medium,Low,High,3,Low,25,Pass
+Female,19,21,97.00%,61,91.00%,97,2,Yes,Medium,Master's,Medium,4,5,High,High,High,4,Medium,78,Fail
+Male,24,10,58.00%,90,92.00%,95,3,Yes,Low,PhD,Medium,9,3,Low,Medium,Low,3,Medium,107,Pass
+Female,25,28,98.00%,52,56.00%,90,3,No,High,PhD,Medium,7,5,High,Medium,High,1,Medium,63,Pass
+Female,20,28,82.00%,88,89.00%,92,1,Yes,Low,Bachelor's,High,9,8,High,Low,High,4,Medium,51,Fail
+Female,21,27,87.00%,87,62.00%,63,1,No,Low,Bachelor's,High,6,7,Low,Medium,High,1,Low,102,Pass
+Female,20,15,59.00%,79,56.00%,51,3,Yes,Medium,PhD,Medium,8,5,High,High,Low,3,Low,15,Pass
+Male,18,8,62.00%,73,76.00%,69,3,Yes,Low,Master's,High,7,6,High,Low,High,5,Medium,118,Pass
+Male,23,24,70.00%,75,53.00%,63,2,No,High,High School,Low,8,5,Low,High,Medium,4,Low,11,Pass
+Female,25,24,57.00%,83,60.00%,50,3,No,High,PhD,Medium,4,6,Low,Medium,Medium,0,Low,90,Fail
+Male,19,23,89.00%,84,76.00%,55,3,Yes,Low,High School,Medium,4,4,Medium,Medium,Medium,4,Medium,119,Pass
+Male,20,8,82.00%,80,56.00%,92,0,Yes,Low,PhD,High,9,7,Medium,High,High,1,Low,92,Pass
+Male,19,30,94.00%,74,93.00%,80,3,Yes,High,High School,Low,4,2,High,Low,Low,0,Medium,80,Fail
+Male,21,25,82.00%,62,62.00%,76,2,No,High,PhD,Low,5,1,Medium,Medium,High,2,Low,113,Fail
+Female,20,6,61.00%,53,76.00%,97,0,No,High,PhD,High,4,2,Low,Medium,High,0,High,67,Pass
+Female,18,15,67.00%,78,70.00%,76,2,Yes,Medium,High School,High,8,3,Medium,Medium,Medium,0,Medium,27,Pass
+Female,22,7,87.00%,84,66.00%,62,1,Yes,Low,Bachelor's,High,8,3,High,Low,Medium,3,Medium,51,Fail
+Female,19,12,92.00%,60,88.00%,97,0,Yes,Low,PhD,High,5,6,High,High,High,4,Low,49,Pass
+Male,20,10,56.00%,92,85.00%,97,3,Yes,High,Bachelor's,Low,4,8,High,High,Medium,4,High,85,Pass
+Female,25,23,91.00%,91,98.00%,52,2,Yes,Low,Master's,Medium,9,4,High,Medium,High,5,Medium,81,Pass
+Female,18,24,79.00%,84,50.00%,82,1,Yes,High,PhD,Low,5,1,High,Medium,High,5,Medium,93,Pass
+Female,23,8,74.00%,54,60.00%,60,0,No,High,Bachelor's,Low,5,6,Medium,Low,Low,2,Low,38,Fail
+Male,21,30,67.00%,66,94.00%,51,0,Yes,Medium,High School,High,6,3,High,High,Medium,5,High,24,Pass
+Female,20,12,60.00%,78,91.00%,88,2,No,High,PhD,Low,6,3,Low,Medium,Medium,2,Medium,14,Pass
+Male,25,11,50.00%,91,75.00%,94,3,Yes,High,PhD,High,9,2,Low,High,Medium,1,Low,85,Fail
+Male,25,11,80.00%,91,56.00%,89,0,Yes,High,PhD,High,8,2,Medium,High,Low,0,Medium,105,Fail
+Male,19,22,100.00%,71,77.00%,82,0,Yes,Low,High School,High,7,6,High,Low,High,3,Medium,94,Pass
+Female,20,30,95.00%,81,72.00%,68,2,Yes,Medium,PhD,Medium,8,1,High,High,Medium,1,Medium,95,Fail
+Male,24,5,72.00%,100,68.00%,52,1,Yes,High,High School,Medium,9,5,Medium,High,Low,5,Low,69,Fail
+Male,22,9,100.00%,72,100.00%,79,3,Yes,Low,High School,Medium,7,7,Low,Medium,High,0,High,65,Fail
+Male,23,14,67.00%,50,58.00%,93,3,Yes,Low,High School,High,6,4,High,Medium,Low,4,High,52,Pass
+Male,23,10,50.00%,69,92.00%,76,3,No,Medium,PhD,Low,9,1,Medium,Low,Medium,2,High,100,Fail
+Male,22,23,96.00%,52,57.00%,96,2,Yes,High,PhD,Low,4,7,Low,Medium,Medium,2,High,60,Pass
+Female,21,21,82.00%,81,59.00%,70,0,Yes,High,High School,High,4,8,Low,Low,High,1,Medium,60,Fail
+Male,23,24,76.00%,72,76.00%,83,2,No,Low,PhD,Medium,9,8,Low,Medium,Medium,2,Medium,71,Fail
+Female,23,25,89.00%,60,91.00%,59,0,Yes,Medium,PhD,High,8,3,High,Medium,High,2,Low,57,Fail
+Female,21,8,60.00%,87,87.00%,83,1,No,Medium,Master's,High,9,4,Low,High,Low,0,Low,20,Pass
+Female,20,12,61.00%,78,85.00%,62,3,No,Medium,Bachelor's,High,5,5,Low,Medium,Medium,0,Low,111,Fail
+Female,18,25,82.00%,86,64.00%,93,2,No,High,Master's,Medium,6,2,Medium,Medium,Medium,4,High,49,Fail
+Female,21,18,86.00%,66,79.00%,68,0,No,High,PhD,High,5,3,Medium,Low,Medium,3,Low,119,Fail
+Female,20,20,94.00%,61,73.00%,73,3,Yes,Medium,High School,Medium,4,8,High,Medium,High,5,Low,40,Fail
+Male,23,30,95.00%,78,59.00%,79,1,Yes,Medium,PhD,Medium,9,8,High,Medium,High,5,Low,116,Fail
+Female,21,11,52.00%,55,74.00%,81,1,Yes,High,Bachelor's,Low,4,4,Medium,High,Low,4,Medium,51,Pass
+Male,22,18,57.00%,92,84.00%,56,1,Yes,High,Bachelor's,Medium,5,4,Low,Low,Medium,2,Medium,95,Pass
+Male,25,17,67.00%,88,51.00%,59,2,Yes,Medium,Master's,High,7,5,Low,High,High,5,Low,53,Fail
+Female,24,22,92.00%,60,53.00%,72,0,No,Low,PhD,Low,7,5,Low,Medium,High,1,Low,107,Fail
+Female,18,25,82.00%,58,97.00%,72,1,Yes,Medium,Bachelor's,Medium,4,6,High,High,Low,2,Low,11,Pass
+Female,18,16,87.00%,71,72.00%,100,2,Yes,High,Master's,Low,9,2,Low,Low,Medium,1,High,108,Fail
+Female,22,5,58.00%,99,91.00%,100,0,Yes,High,High School,Low,4,6,High,Low,Low,2,Medium,52,Fail
+Male,20,10,88.00%,57,62.00%,59,1,Yes,Low,Master's,Medium,9,4,Medium,Medium,Medium,0,Medium,71,Pass
+Male,21,11,83.00%,88,79.00%,82,1,Yes,High,PhD,Medium,8,3,Low,High,Low,0,Medium,70,Fail
+Male,22,11,96.00%,65,90.00%,81,1,Yes,High,Bachelor's,Medium,9,4,Medium,High,High,5,High,18,Pass
+Female,18,26,98.00%,63,80.00%,58,3,No,Low,Master's,Medium,8,8,Low,High,Medium,0,Medium,86,Pass
+Female,22,24,98.00%,62,64.00%,56,3,No,High,High School,Low,6,1,High,Low,Low,4,Low,105,Pass
+Female,19,6,59.00%,53,54.00%,52,3,Yes,Low,High School,Low,9,4,Low,Low,Low,0,Medium,69,Fail
+Female,18,9,83.00%,72,90.00%,98,2,No,High,Master's,Medium,7,2,Low,High,Medium,5,High,41,Pass
+Male,18,30,66.00%,97,56.00%,51,1,Yes,High,High School,Low,4,1,High,Medium,Medium,2,High,95,Fail
+Female,20,10,63.00%,89,87.00%,50,0,No,High,High School,Low,6,7,Low,Low,High,3,Low,39,Fail
+Female,20,9,94.00%,81,93.00%,84,3,No,High,High School,Medium,7,1,Low,Low,High,2,Medium,49,Fail
+Male,19,24,72.00%,95,58.00%,88,2,No,Low,Bachelor's,High,4,5,Medium,High,Low,4,Medium,20,Pass
+Male,24,30,91.00%,70,79.00%,66,0,No,Low,High School,Medium,9,1,Low,High,High,0,Low,32,Pass
+Male,23,9,56.00%,56,77.00%,61,1,Yes,Low,PhD,Low,4,7,Low,Low,Medium,3,High,15,Fail
+Male,20,11,62.00%,60,68.00%,61,2,No,High,Master's,Low,6,4,Medium,Medium,Medium,2,Low,113,Fail
+Female,22,23,55.00%,92,90.00%,90,0,Yes,High,Bachelor's,Low,6,1,Medium,Low,Low,0,Low,80,Pass
+Male,20,20,87.00%,62,97.00%,56,1,Yes,Low,PhD,Medium,7,7,Low,Low,High,1,Medium,82,Pass
+Male,19,19,93.00%,51,71.00%,83,0,No,Low,Bachelor's,Medium,6,7,Medium,Medium,High,0,Medium,105,Pass
+Male,21,17,83.00%,83,59.00%,63,2,Yes,Low,Bachelor's,Medium,6,6,Low,High,High,2,Medium,114,Fail
+Female,24,9,53.00%,84,65.00%,84,1,Yes,Medium,Bachelor's,High,8,1,Low,Medium,Medium,4,Low,58,Pass
+Female,22,21,73.00%,99,60.00%,94,2,Yes,Low,Master's,Medium,4,4,High,Low,Low,4,High,84,Fail
+Male,19,16,65.00%,57,85.00%,91,0,Yes,Low,Master's,Low,6,1,Low,High,High,0,Medium,114,Pass
+Female,23,11,66.00%,98,76.00%,87,2,No,High,Master's,Low,9,3,Medium,Low,Low,0,High,48,Fail
+Female,19,26,91.00%,64,85.00%,97,2,No,High,Bachelor's,Medium,8,6,Medium,Medium,High,3,Medium,93,Pass
+Male,24,18,87.00%,93,90.00%,53,1,No,Medium,Bachelor's,Low,7,7,High,High,Medium,1,Medium,63,Fail
+Male,23,17,60.00%,60,75.00%,79,3,No,High,PhD,Medium,7,2,Low,High,Medium,0,Low,14,Fail
+Male,23,28,56.00%,73,83.00%,66,3,No,High,Master's,Medium,9,2,Medium,High,Medium,1,Low,117,Fail
+Male,20,26,79.00%,66,95.00%,85,0,No,High,PhD,Low,4,3,Low,High,Medium,4,Low,56,Fail
+Female,19,8,50.00%,77,77.00%,62,3,No,High,Bachelor's,Medium,4,4,Medium,Medium,High,1,High,70,Fail
+Male,18,5,97.00%,68,84.00%,81,1,Yes,Medium,Master's,Medium,4,1,Medium,Low,Low,0,High,71,Pass
+Male,25,10,99.00%,71,56.00%,61,3,No,High,High School,Low,8,1,High,Medium,Low,5,Low,95,Pass
+Male,25,5,60.00%,82,56.00%,88,2,No,High,Bachelor's,Medium,7,3,Medium,High,Medium,0,Low,85,Pass
+Female,18,23,77.00%,94,95.00%,80,1,Yes,High,PhD,Medium,5,2,Medium,Medium,Medium,2,Low,26,Fail
+Male,21,6,65.00%,94,72.00%,90,3,Yes,High,PhD,Medium,9,2,Low,Medium,Low,4,Medium,52,Pass
+Male,22,7,97.00%,91,90.00%,52,1,Yes,Medium,Master's,High,7,8,Low,Medium,High,4,Low,62,Pass
+Female,24,30,91.00%,60,96.00%,90,3,No,High,PhD,Medium,8,3,Medium,Medium,High,4,Medium,101,Fail
+Male,22,17,93.00%,65,72.00%,54,2,Yes,Low,High School,Low,5,6,High,Medium,Low,0,High,119,Fail
+Female,23,12,80.00%,80,85.00%,95,3,No,High,High School,Low,7,1,High,High,Medium,3,Medium,29,Pass
+Female,22,25,89.00%,57,52.00%,97,1,No,High,Bachelor's,High,9,7,Medium,High,Low,5,High,105,Pass
+Female,23,12,86.00%,78,57.00%,63,2,No,Low,Master's,Low,6,2,Medium,High,Medium,1,High,18,Pass
+Female,22,15,100.00%,66,82.00%,52,0,Yes,Medium,PhD,High,6,3,Medium,High,Medium,3,High,107,Pass
+Female,24,26,55.00%,60,98.00%,56,2,Yes,High,High School,High,8,3,Low,Low,High,2,Low,49,Fail
+Male,21,22,66.00%,71,68.00%,70,3,Yes,Low,Bachelor's,High,7,1,Medium,High,High,4,Low,52,Pass
+Male,22,29,86.00%,50,82.00%,50,0,No,Medium,High School,High,6,4,High,Medium,High,5,Low,64,Pass
+Male,23,7,78.00%,79,75.00%,84,1,No,Low,High School,Medium,7,7,Low,High,Low,1,Low,120,Fail
+Female,22,16,93.00%,97,67.00%,69,0,No,Medium,High School,Low,4,5,Low,Low,Low,0,Medium,80,Pass
+Male,19,23,76.00%,70,65.00%,74,1,Yes,Medium,High School,Low,6,6,Medium,High,Low,5,Medium,50,Fail
+Female,20,19,50.00%,83,51.00%,86,2,No,High,Bachelor's,Low,4,1,Low,Low,Medium,3,Low,66,Fail
+Female,23,19,80.00%,53,56.00%,71,1,No,Low,Master's,Medium,6,4,High,Medium,Medium,2,High,115,Pass
+Male,23,22,76.00%,77,53.00%,71,2,No,Medium,High School,Medium,4,8,High,High,High,2,Medium,46,Fail
+Female,24,10,53.00%,51,60.00%,63,0,Yes,High,Master's,Low,9,5,High,High,High,5,Low,68,Pass
+Female,18,24,73.00%,67,94.00%,57,1,Yes,High,PhD,Medium,7,2,Low,Medium,Medium,2,Low,93,Pass
+Female,18,25,82.00%,89,57.00%,93,1,No,Medium,Master's,High,5,4,Medium,Low,Low,2,Medium,43,Pass
+Female,24,22,97.00%,73,55.00%,65,1,No,Medium,Master's,High,6,5,Medium,Medium,High,2,Low,86,Fail
+Female,23,27,67.00%,59,72.00%,80,2,No,Medium,Master's,High,5,8,Medium,High,High,5,Low,31,Fail
+Female,22,13,50.00%,81,99.00%,89,0,Yes,Medium,PhD,Low,8,7,Medium,High,High,3,Low,47,Pass
+Female,23,23,91.00%,75,95.00%,64,3,No,Medium,Bachelor's,Low,7,6,High,Low,Medium,0,Medium,60,Pass
+Male,24,23,57.00%,56,50.00%,98,1,No,Low,High School,High,9,7,High,Low,Medium,5,High,54,Fail
+Male,25,21,90.00%,85,85.00%,70,2,No,High,Bachelor's,Low,7,2,High,High,Medium,4,Low,18,Pass
+Male,19,30,64.00%,62,99.00%,85,1,No,Low,High School,Medium,6,5,High,Low,Low,2,Medium,12,Pass
+Female,25,8,94.00%,76,67.00%,67,0,No,Low,Master's,Low,5,6,High,High,High,5,Medium,97,Fail
+Female,22,28,89.00%,84,95.00%,64,1,No,High,Bachelor's,Medium,5,6,Low,Low,Low,1,Low,120,Pass
+Male,20,9,99.00%,66,71.00%,80,3,No,Medium,Bachelor's,High,4,2,Medium,Medium,Medium,4,Low,25,Fail
+Female,25,20,87.00%,58,69.00%,61,1,Yes,Medium,PhD,Medium,8,2,Medium,High,Low,1,High,30,Pass
+Male,22,21,59.00%,72,70.00%,50,0,Yes,High,Master's,Low,9,3,Low,Low,Medium,3,Low,62,Pass
+Male,18,11,67.00%,58,93.00%,52,3,Yes,Low,High School,High,4,1,Low,Medium,High,0,Medium,62,Fail
+Female,22,11,87.00%,64,88.00%,98,1,No,High,Master's,High,8,6,Low,Medium,Low,4,Low,106,Pass
+Female,20,11,63.00%,57,88.00%,94,1,No,Low,PhD,High,8,4,Medium,Medium,High,0,High,22,Pass
+Female,21,12,80.00%,75,82.00%,95,0,Yes,High,Master's,Low,4,5,High,High,Medium,0,Low,75,Pass
+Female,19,29,78.00%,55,82.00%,90,2,Yes,High,PhD,Medium,6,6,Medium,Medium,Medium,5,Low,71,Fail
+Female,21,25,92.00%,86,89.00%,89,0,Yes,High,PhD,Medium,5,6,High,Medium,Medium,1,Medium,101,Fail
+Female,25,21,90.00%,90,71.00%,68,0,Yes,Low,Master's,Medium,4,4,Medium,Low,High,2,High,20,Pass
+Male,25,11,50.00%,69,54.00%,78,1,No,Medium,High School,Medium,6,6,Low,High,Medium,4,High,56,Pass
+Female,20,10,87.00%,90,82.00%,81,1,Yes,Medium,High School,Medium,7,2,Low,Medium,High,1,High,114,Pass
+Male,18,24,81.00%,100,64.00%,50,2,Yes,Low,Bachelor's,High,4,1,High,Low,Medium,4,Low,117,Fail
+Male,22,13,64.00%,51,93.00%,57,1,Yes,High,High School,High,9,1,Low,High,Medium,2,High,29,Pass
+Male,18,19,91.00%,71,61.00%,90,2,Yes,Low,Master's,Low,8,7,Medium,Medium,Medium,0,Low,41,Pass
+Female,21,29,62.00%,78,53.00%,67,1,No,Low,Bachelor's,Medium,6,6,High,Low,Medium,3,Medium,107,Pass
+Female,19,16,60.00%,74,75.00%,93,1,Yes,Low,Master's,Medium,4,8,Medium,Medium,High,4,Low,51,Fail
+Female,22,18,74.00%,50,88.00%,68,2,Yes,Low,High School,Medium,9,8,High,Low,Medium,5,Low,110,Fail
+Female,21,13,75.00%,95,53.00%,93,0,Yes,Low,Master's,High,5,3,Low,Low,Medium,5,Low,83,Pass
+Male,18,22,77.00%,65,89.00%,99,0,No,Medium,Bachelor's,Low,5,8,High,High,High,3,High,99,Pass
+Female,25,27,57.00%,51,85.00%,67,3,No,High,PhD,Low,7,8,High,Medium,High,3,High,48,Pass
+Female,21,27,89.00%,93,98.00%,86,1,Yes,Medium,Master's,Medium,6,6,Low,Low,Low,2,Low,28,Pass
+Female,24,5,65.00%,81,79.00%,77,3,No,Low,Master's,Medium,8,8,Low,High,Medium,1,Medium,80,Pass
+Male,21,16,70.00%,99,53.00%,89,2,No,Medium,Bachelor's,Medium,8,7,Low,Medium,High,0,Low,20,Pass
+Male,18,19,78.00%,52,94.00%,81,1,Yes,Medium,Bachelor's,Low,4,8,Low,Low,Low,4,High,113,Pass
+Female,25,15,80.00%,58,90.00%,76,0,No,High,High School,High,4,3,Low,Medium,High,3,Medium,62,Fail
+Male,18,10,83.00%,92,83.00%,50,0,No,Medium,Master's,High,8,1,Medium,Low,High,1,High,55,Pass
+Female,25,8,97.00%,87,92.00%,67,0,No,Medium,Bachelor's,Medium,9,7,High,High,High,2,Medium,40,Fail
+Male,23,25,82.00%,60,93.00%,80,2,No,Low,PhD,Medium,6,4,High,Low,Medium,3,Low,95,Fail
+Female,24,26,53.00%,53,100.00%,94,1,Yes,Low,High School,Medium,7,1,Low,High,Low,0,Low,42,Fail
+Female,21,10,54.00%,95,73.00%,86,2,Yes,Medium,Bachelor's,Low,7,8,Medium,High,High,1,Medium,99,Pass
+Male,20,21,100.00%,80,73.00%,65,0,No,High,Master's,Low,4,5,Medium,Medium,High,2,Medium,94,Pass
+Female,25,26,72.00%,69,55.00%,53,2,No,Medium,PhD,High,9,5,High,High,Medium,1,Medium,106,Fail
+Male,18,16,75.00%,66,100.00%,52,0,No,Medium,High School,Medium,9,4,High,Medium,High,3,High,93,Pass
+Male,21,24,66.00%,89,65.00%,84,3,No,Low,PhD,High,4,5,Low,Low,High,1,High,69,Fail
+Male,23,5,76.00%,54,86.00%,97,2,No,Low,Bachelor's,High,6,2,Low,Low,Low,3,Medium,118,Pass
+Male,21,17,72.00%,69,71.00%,69,1,Yes,High,Master's,Medium,7,4,Medium,Medium,Medium,1,High,13,Fail
+Male,19,22,65.00%,70,62.00%,54,2,No,High,PhD,High,4,6,High,Medium,Medium,0,Medium,120,Pass
+Male,18,23,81.00%,100,90.00%,73,1,Yes,Medium,Master's,High,7,7,Low,High,High,3,High,32,Fail
+Male,18,5,93.00%,57,100.00%,96,3,No,Low,High School,High,4,2,Medium,High,Medium,2,High,27,Pass
+Male,20,25,93.00%,53,87.00%,77,3,Yes,Low,PhD,Medium,8,3,Medium,High,Low,4,High,62,Pass
+Female,20,19,57.00%,79,99.00%,86,1,Yes,High,Master's,Low,5,4,Medium,Low,Low,5,High,97,Fail
+Male,18,29,62.00%,93,88.00%,83,1,No,Low,PhD,Low,9,5,Low,Low,Medium,3,Low,118,Fail
+Male,25,12,82.00%,64,75.00%,62,3,Yes,High,High School,Low,4,6,Low,Medium,Medium,1,High,50,Fail
+Female,18,10,70.00%,55,82.00%,99,2,No,Low,Master's,Medium,4,8,Low,Low,Low,1,High,27,Pass
+Male,22,30,71.00%,91,92.00%,65,2,No,Low,Bachelor's,High,7,2,High,Medium,High,3,Medium,29,Pass
+Male,21,10,50.00%,60,66.00%,50,3,No,Low,Bachelor's,Medium,4,4,High,Low,High,0,Medium,27,Pass
+Male,20,6,65.00%,55,94.00%,76,1,Yes,Medium,High School,Medium,6,8,Medium,Low,Medium,3,Low,40,Pass
+Female,22,17,57.00%,51,56.00%,55,0,No,High,Master's,High,6,2,High,Low,Medium,5,Low,55,Pass
+Male,18,18,91.00%,90,63.00%,84,2,Yes,High,PhD,Low,7,3,Low,Low,Low,5,Medium,39,Pass
+Female,25,16,98.00%,82,70.00%,85,2,Yes,Low,Master's,Medium,6,4,Medium,High,Low,3,High,84,Pass
+Female,21,10,96.00%,88,93.00%,57,0,Yes,Low,PhD,High,4,5,Medium,High,Medium,1,Low,24,Fail
+Female,23,13,75.00%,74,100.00%,94,3,Yes,High,PhD,High,7,4,Medium,High,Medium,2,Medium,56,Pass
+Male,21,25,82.00%,66,58.00%,88,2,Yes,Medium,High School,High,5,1,High,High,High,1,High,104,Pass
+Female,19,5,89.00%,92,66.00%,67,1,Yes,Low,Bachelor's,Low,9,2,High,Medium,High,4,Medium,30,Fail
+Female,21,28,87.00%,66,53.00%,50,2,Yes,High,Bachelor's,High,6,1,High,Low,Low,0,Low,100,Fail
+Male,25,7,66.00%,100,62.00%,96,2,Yes,Medium,Bachelor's,Low,6,7,Low,Medium,High,1,High,35,Pass
+Female,25,7,100.00%,100,59.00%,59,3,Yes,High,High School,High,6,4,Low,High,High,2,Low,24,Pass
+Female,25,13,84.00%,53,62.00%,72,0,No,High,Bachelor's,High,5,8,Low,Low,Medium,2,Medium,38,Fail
+Male,21,23,80.00%,77,93.00%,51,0,Yes,Medium,Bachelor's,Medium,6,7,Medium,Medium,Low,1,High,60,Fail
+Male,21,7,54.00%,77,58.00%,50,3,Yes,Medium,PhD,High,7,8,Medium,High,High,1,High,14,Fail
+Male,22,28,59.00%,67,68.00%,62,0,No,High,High School,High,5,3,High,Low,Low,0,Low,69,Fail
+Male,21,25,53.00%,74,79.00%,74,0,No,High,Master's,High,4,5,High,Low,High,2,High,70,Pass
+Female,24,7,77.00%,81,69.00%,50,2,No,High,PhD,Low,9,5,High,Medium,Medium,1,Low,106,Fail
+Female,25,10,82.00%,90,84.00%,61,1,Yes,Medium,Master's,Low,7,8,High,High,High,5,Medium,82,Pass
+Female,20,5,83.00%,72,63.00%,56,2,No,Low,PhD,Medium,4,7,Low,Medium,Low,1,Medium,40,Pass
+Male,22,20,57.00%,66,92.00%,69,2,No,High,PhD,High,6,3,High,Low,Low,4,Low,21,Fail
+Male,19,26,67.00%,97,50.00%,89,3,No,Medium,High School,High,6,4,High,Low,Medium,1,High,70,Pass
+Male,18,17,96.00%,77,72.00%,85,3,Yes,High,High School,Low,8,3,Medium,Low,High,1,Low,17,Fail
+Female,22,9,85.00%,77,77.00%,99,0,No,High,PhD,High,8,7,Medium,Medium,High,3,Medium,101,Pass
+Female,25,24,74.00%,79,74.00%,75,3,Yes,High,PhD,High,7,6,Low,Medium,High,3,Low,45,Pass
+Female,21,6,73.00%,95,96.00%,88,3,Yes,Low,Bachelor's,High,7,2,Low,Medium,Low,4,High,19,Pass
+Female,25,18,61.00%,73,97.00%,68,2,No,High,Master's,High,7,8,Medium,High,High,5,High,74,Fail
+Female,18,10,91.00%,58,93.00%,75,1,No,Low,Bachelor's,Medium,4,8,Low,Low,High,3,Medium,72,Pass
+Female,18,10,65.00%,72,51.00%,93,3,No,High,PhD,High,5,6,Low,Low,Medium,0,Medium,34,Fail
+Male,18,7,66.00%,62,73.00%,78,1,No,High,High School,Medium,8,3,Medium,Low,High,5,Low,102,Pass
+Male,24,28,73.00%,84,60.00%,76,0,Yes,Low,High School,High,4,8,Medium,Medium,Medium,2,Low,91,Pass
+Male,21,27,50.00%,66,78.00%,100,3,Yes,Medium,Bachelor's,Medium,8,3,Low,Low,High,3,Low,23,Fail
+Male,19,6,84.00%,70,53.00%,56,0,Yes,High,High School,High,5,6,Low,High,Medium,1,High,38,Pass
+Female,21,30,64.00%,57,66.00%,95,2,Yes,High,High School,High,4,6,Medium,High,Low,5,Medium,79,Fail
+Male,24,14,59.00%,75,94.00%,100,2,No,Medium,PhD,High,9,5,Low,Low,High,5,Low,105,Fail
+Male,18,16,52.00%,97,53.00%,57,1,No,High,Master's,Low,6,3,Low,Medium,High,3,High,62,Fail
+Female,18,27,80.00%,84,85.00%,56,1,No,Medium,High School,Medium,8,8,Low,High,Low,1,Medium,31,Pass
+Female,22,11,66.00%,65,91.00%,87,0,No,Medium,PhD,Medium,6,5,Low,Medium,Medium,4,Low,79,Fail
+Female,23,18,64.00%,72,72.00%,79,3,Yes,High,High School,Low,6,3,Low,High,High,2,Medium,40,Fail
+Male,25,27,78.00%,83,87.00%,100,1,Yes,Medium,PhD,Low,8,5,High,Low,Medium,5,Medium,65,Pass
+Male,18,21,80.00%,82,56.00%,64,2,No,High,High School,Low,9,4,Medium,Low,High,4,High,10,Fail
+Female,22,28,70.00%,68,63.00%,86,1,No,Low,Master's,High,4,3,Low,Low,Medium,1,Medium,13,Pass
+Male,23,20,64.00%,90,58.00%,65,3,Yes,Low,Master's,Medium,6,3,Medium,Low,High,5,Low,49,Fail
+Female,19,26,73.00%,76,66.00%,82,0,Yes,Low,High School,Low,5,5,Medium,Medium,Low,5,Medium,37,Pass
+Male,19,20,84.00%,56,77.00%,96,1,Yes,Medium,High School,Low,9,8,Medium,High,Low,0,Medium,34,Pass
+Female,19,30,90.00%,72,97.00%,50,2,Yes,High,PhD,High,9,2,Medium,Medium,Medium,5,Low,31,Fail
+Female,24,14,85.00%,85,59.00%,53,1,No,Medium,Bachelor's,Medium,7,3,High,Medium,Medium,3,Low,32,Fail
+Female,23,20,88.00%,82,76.00%,60,2,No,High,Bachelor's,Low,5,1,High,High,Low,2,High,119,Pass
+Male,18,20,94.00%,56,97.00%,56,2,Yes,High,Master's,Low,9,1,Medium,High,High,3,Medium,82,Fail
+Female,18,23,92.00%,51,86.00%,60,2,No,Low,PhD,Low,4,8,High,High,High,1,Low,105,Fail
+Male,25,23,100.00%,56,66.00%,99,2,No,Medium,Master's,Medium,8,2,Low,Medium,High,1,Low,115,Fail
+Female,23,21,64.00%,82,92.00%,52,0,No,Low,Bachelor's,Medium,6,3,Medium,High,Medium,2,High,41,Pass
+Male,19,7,53.00%,70,83.00%,76,1,No,Low,High School,Medium,4,4,High,High,Medium,1,Medium,106,Pass
+Female,23,7,57.00%,67,89.00%,57,2,No,Low,Bachelor's,High,5,1,Medium,High,High,2,Low,84,Fail
+Male,20,22,80.00%,88,80.00%,98,1,Yes,Low,PhD,Medium,6,1,Medium,Low,High,1,High,28,Pass
+Male,23,19,74.00%,55,53.00%,63,1,Yes,Low,High School,Medium,6,3,Low,High,Low,2,High,115,Fail
+Male,24,23,95.00%,73,98.00%,73,0,No,Medium,High School,High,7,3,High,Low,Medium,0,Low,71,Pass
+Male,23,18,78.00%,95,98.00%,55,1,No,Medium,High School,Low,9,1,Low,Low,High,1,Low,106,Fail
+Male,23,20,92.00%,59,57.00%,52,3,Yes,Medium,High School,Medium,7,6,Low,Medium,Low,3,Medium,39,Fail
+Male,25,21,98.00%,71,100.00%,89,0,Yes,High,Master's,High,7,6,Medium,High,Low,3,High,26,Pass
+Male,19,7,78.00%,83,74.00%,90,2,Yes,High,High School,High,4,3,High,High,Medium,2,High,23,Fail
+Male,18,12,94.00%,55,63.00%,84,0,No,Medium,High School,Low,9,1,Low,Low,Medium,2,Low,10,Fail
+Female,19,5,74.00%,78,85.00%,56,3,No,Medium,PhD,Low,4,2,High,High,High,0,Medium,31,Fail
+Male,23,25,60.00%,61,67.00%,84,3,Yes,Medium,Bachelor's,Medium,8,5,High,Low,High,5,High,44,Fail
+Female,20,20,65.00%,80,97.00%,75,0,Yes,Low,High School,Low,6,5,Medium,Low,Medium,3,Low,112,Fail
+Male,22,27,64.00%,58,91.00%,86,2,Yes,Low,High School,Low,6,8,Medium,High,Low,2,Low,101,Pass
+Female,20,13,67.00%,81,50.00%,56,2,Yes,High,PhD,Low,9,4,High,Low,Medium,4,Low,64,Fail
+Female,18,20,79.00%,94,70.00%,93,0,No,High,Master's,Medium,8,3,High,Medium,High,3,Medium,66,Fail
+Female,21,16,62.00%,94,68.00%,88,1,Yes,High,Master's,High,9,6,Low,Medium,High,2,Medium,101,Fail
+Male,24,6,96.00%,52,67.00%,99,3,No,Medium,Bachelor's,Low,7,5,High,Medium,Medium,3,High,14,Pass
+Male,22,5,51.00%,65,65.00%,75,2,Yes,High,PhD,Medium,9,7,Medium,Medium,Low,5,Low,104,Pass
+Male,21,14,56.00%,90,53.00%,96,3,No,Low,PhD,Low,5,3,Low,Low,Medium,4,Medium,81,Pass
+Female,24,11,66.00%,72,99.00%,73,2,Yes,Low,Master's,Low,8,8,Medium,High,Low,0,Low,80,Pass
+Male,24,10,60.00%,64,54.00%,50,3,No,Medium,High School,High,8,4,Low,Low,High,1,High,65,Fail
+Male,21,6,74.00%,68,72.00%,74,1,Yes,High,High School,Low,9,8,Medium,Low,Low,5,High,63,Pass
+Male,24,20,97.00%,88,60.00%,75,3,Yes,High,Master's,Medium,6,4,Low,Low,High,2,High,93,Fail
+Male,19,23,73.00%,56,93.00%,97,1,Yes,Medium,Bachelor's,Low,7,6,High,High,High,3,Low,81,Fail
+Female,24,26,93.00%,72,96.00%,73,1,Yes,High,High School,High,6,3,Medium,Medium,Low,5,Low,64,Pass
+Female,22,7,83.00%,67,81.00%,95,3,No,Medium,High School,Medium,7,7,Low,High,High,0,High,68,Fail
+Male,24,24,57.00%,83,89.00%,79,0,Yes,Low,High School,Low,8,3,Low,High,Medium,4,High,69,Pass
+Female,23,11,92.00%,60,71.00%,63,1,Yes,Medium,Bachelor's,Medium,9,2,High,Medium,Medium,2,Low,35,Fail
+Female,25,12,97.00%,96,61.00%,76,2,Yes,High,High School,Medium,8,4,Medium,Low,High,2,Medium,34,Pass
+Male,24,30,100.00%,71,77.00%,98,3,Yes,Medium,Bachelor's,Medium,8,5,Low,Medium,High,1,High,10,Fail
+Female,25,7,77.00%,53,87.00%,85,0,No,Low,PhD,High,9,1,Medium,Medium,High,2,Medium,33,Pass
+Female,20,10,62.00%,93,72.00%,65,1,No,High,High School,High,4,4,High,Medium,Low,1,High,24,Fail
+Male,21,29,81.00%,95,82.00%,60,1,No,Medium,High School,Medium,7,2,Low,Low,High,0,High,25,Pass
+Male,21,7,92.00%,66,62.00%,76,3,Yes,Medium,Bachelor's,Medium,6,1,Low,Medium,Low,3,High,13,Fail
+Male,18,8,95.00%,82,87.00%,96,3,No,Medium,Master's,High,6,2,High,Medium,Low,5,High,92,Pass
+Male,23,9,64.00%,57,51.00%,75,0,No,Medium,High School,Medium,4,1,High,High,High,1,Low,26,Pass
+Male,18,19,54.00%,96,54.00%,56,0,No,Medium,Bachelor's,High,6,6,Low,High,Low,5,High,18,Fail
+Female,23,25,92.00%,99,72.00%,92,0,Yes,High,PhD,Low,4,3,Medium,Medium,Medium,2,High,104,Pass
+Male,20,24,65.00%,85,78.00%,98,3,Yes,Low,PhD,Low,6,6,Low,Low,Medium,5,Medium,36,Pass
+Male,21,30,77.00%,92,59.00%,85,2,Yes,Low,PhD,High,6,1,Low,Low,Medium,4,High,55,Pass
+Female,18,24,76.00%,67,66.00%,60,0,No,Medium,PhD,Low,6,2,High,Medium,High,2,High,97,Pass
+Male,22,8,67.00%,75,55.00%,80,2,Yes,Low,High School,High,7,3,Medium,Low,Medium,2,Low,20,Fail
+Male,20,11,92.00%,87,68.00%,85,0,Yes,Low,Bachelor's,Medium,4,7,High,Low,Medium,4,Low,117,Pass
+Male,23,5,86.00%,85,68.00%,72,0,No,Medium,High School,Medium,7,2,High,Low,Low,4,Medium,69,Fail
+Female,20,17,59.00%,61,96.00%,70,3,No,Low,Master's,Low,9,1,Medium,High,Medium,1,High,101,Pass
+Male,20,28,72.00%,53,90.00%,55,0,No,Low,PhD,Low,7,4,High,Low,Low,1,High,26,Pass
+Male,19,29,97.00%,62,99.00%,85,0,Yes,High,PhD,Medium,6,8,Low,Low,Low,1,Low,56,Pass
+Female,25,10,92.00%,53,91.00%,93,0,No,Medium,Bachelor's,Low,6,7,Low,Medium,High,5,Medium,95,Pass
+Male,25,5,64.00%,94,72.00%,73,3,No,Low,High School,Medium,6,3,Medium,High,Low,4,High,86,Fail
+Male,22,19,79.00%,51,55.00%,60,3,No,Low,Master's,Low,8,2,High,High,Low,0,Low,72,Fail
+Male,20,8,72.00%,74,84.00%,73,1,Yes,High,High School,Medium,5,2,Medium,High,High,0,Low,42,Fail
+Male,25,20,80.00%,67,78.00%,84,1,Yes,Low,High School,Medium,8,2,Medium,Medium,Low,5,High,36,Pass
+Male,25,29,73.00%,60,99.00%,59,2,Yes,Low,Bachelor's,High,8,3,High,Medium,High,5,Low,107,Fail
+Male,24,7,93.00%,81,55.00%,71,3,Yes,Low,Bachelor's,Low,7,6,Low,High,Medium,3,Low,26,Fail
+Male,20,6,57.00%,97,94.00%,57,0,No,Medium,Master's,Medium,8,1,Medium,High,Medium,3,Low,98,Pass
+Female,25,25,96.00%,96,100.00%,75,1,Yes,Low,Master's,Low,6,3,Medium,High,Low,3,Medium,18,Pass
+Female,25,8,61.00%,71,64.00%,68,1,No,Medium,Bachelor's,Medium,4,6,Low,Medium,High,1,Low,64,Pass
+Female,25,18,80.00%,82,71.00%,84,1,Yes,Low,High School,Low,9,3,High,High,High,1,Medium,31,Pass
+Male,23,10,95.00%,93,81.00%,60,0,Yes,Medium,High School,Low,9,2,High,Low,High,3,Medium,81,Fail
+Female,19,9,68.00%,76,50.00%,77,2,Yes,Low,High School,Medium,7,3,Low,Low,High,1,High,102,Pass
+Female,25,15,51.00%,77,88.00%,98,3,Yes,High,Bachelor's,Low,8,2,Low,Low,Medium,2,Low,113,Fail
+Male,24,12,75.00%,74,57.00%,58,2,No,Medium,High School,Medium,5,5,Medium,High,Medium,2,Low,36,Pass
+Female,22,30,56.00%,58,88.00%,56,2,No,Low,PhD,Medium,5,5,High,Medium,Medium,1,High,11,Pass
+Male,21,11,66.00%,53,85.00%,77,2,No,Medium,Master's,Low,8,6,Medium,Medium,High,4,Medium,81,Pass
+Male,19,20,67.00%,82,81.00%,51,0,No,Medium,Master's,Low,7,6,Low,Low,Medium,5,Low,107,Pass
+Female,22,30,76.00%,90,67.00%,90,3,Yes,High,PhD,High,9,7,High,High,Low,0,Low,76,Pass
+Male,25,29,68.00%,100,70.00%,65,0,Yes,High,PhD,Low,4,5,Low,Medium,Low,0,Medium,98,Pass
+Male,18,8,69.00%,76,65.00%,90,1,No,Medium,High School,Low,8,8,High,High,Medium,5,Low,97,Fail
+Male,19,11,82.00%,52,64.00%,87,2,No,Low,Master's,Medium,7,5,High,Low,High,3,Medium,43,Fail
+Male,24,15,75.00%,77,96.00%,65,1,No,Low,Bachelor's,Medium,9,6,Medium,Low,High,4,High,12,Pass
+Male,24,29,98.00%,51,84.00%,72,1,Yes,High,Master's,High,5,6,Medium,High,Medium,5,High,49,Pass
+Male,21,11,73.00%,70,70.00%,76,0,Yes,High,PhD,Medium,9,8,High,High,High,4,High,40,Fail
+Male,20,22,86.00%,54,92.00%,85,3,No,High,Bachelor's,Medium,4,4,Medium,High,Medium,1,Low,63,Pass
+Male,25,9,73.00%,71,74.00%,53,2,No,Medium,Master's,Medium,5,2,Medium,Low,High,2,High,68,Fail
+Female,19,28,80.00%,81,74.00%,67,3,No,High,Bachelor's,Low,7,2,High,Low,High,1,High,97,Pass
+Male,18,27,74.00%,70,87.00%,90,3,No,Low,Bachelor's,Medium,7,2,High,High,High,5,High,22,Pass
+Female,22,12,87.00%,94,60.00%,84,1,Yes,High,PhD,Low,5,6,High,High,Medium,5,Low,108,Pass
+Male,19,19,96.00%,69,97.00%,81,3,No,Low,Master's,High,5,6,Medium,Low,High,5,Low,85,Pass
+Male,18,29,97.00%,97,93.00%,96,0,Yes,High,High School,Medium,9,7,Medium,Low,Low,1,Medium,65,Fail
+Female,23,16,100.00%,80,95.00%,72,1,Yes,Low,PhD,Medium,9,2,Medium,Medium,Low,0,Medium,55,Pass
+Male,19,11,91.00%,88,95.00%,61,0,Yes,Medium,Master's,Low,9,4,Low,Medium,High,2,Low,102,Fail
+Male,25,8,65.00%,89,100.00%,66,3,Yes,Low,Master's,High,9,5,Medium,Low,Medium,3,Medium,79,Fail
+Male,18,29,96.00%,50,64.00%,97,2,Yes,High,Master's,Low,5,3,Medium,Medium,High,5,High,91,Fail
+Female,18,19,76.00%,98,62.00%,67,3,Yes,High,PhD,High,4,7,High,High,Low,2,Medium,14,Fail
+Female,23,13,74.00%,89,76.00%,83,0,Yes,High,PhD,Low,8,6,Low,Medium,High,3,Medium,36,Pass
+Male,22,9,86.00%,91,93.00%,96,2,No,Low,High School,Low,7,4,High,Low,High,2,Low,10,Fail
+Female,20,9,53.00%,62,73.00%,51,1,No,High,PhD,Medium,8,8,Low,Medium,High,5,High,46,Pass
+Female,18,7,52.00%,58,65.00%,88,3,No,Medium,PhD,High,8,1,High,High,Medium,0,High,75,Pass
+Male,20,11,96.00%,69,90.00%,68,1,Yes,Medium,Bachelor's,Low,9,7,High,High,Medium,2,Medium,33,Pass
+Male,24,28,81.00%,97,59.00%,80,0,No,Medium,PhD,Medium,8,5,Low,Low,Medium,1,High,57,Pass
+Female,24,26,81.00%,99,51.00%,82,0,No,Low,Master's,Low,8,6,High,Low,High,4,Low,59,Pass
+Female,22,27,52.00%,67,68.00%,98,2,No,Medium,Master's,Low,9,5,Low,Low,Low,5,High,85,Pass
+Female,23,28,61.00%,88,70.00%,80,1,No,Medium,PhD,Medium,8,6,Medium,Low,Medium,0,Medium,55,Fail
+Male,24,23,52.00%,68,74.00%,100,3,Yes,Low,PhD,Medium,9,2,Medium,High,High,2,Low,91,Pass
+Female,19,27,51.00%,64,53.00%,84,1,Yes,High,High School,Low,9,8,High,Low,Medium,3,Medium,115,Fail
+Male,22,30,74.00%,65,88.00%,70,0,No,Medium,Bachelor's,Medium,8,3,Low,Medium,Low,0,Low,100,Pass
+Male,22,22,92.00%,55,57.00%,68,0,Yes,Medium,High School,High,7,4,Medium,Medium,Medium,4,High,111,Fail
+Male,20,7,93.00%,58,73.00%,73,1,Yes,Low,High School,High,9,1,High,Medium,Medium,4,Medium,13,Fail
+Male,24,24,99.00%,89,86.00%,94,1,No,Low,PhD,High,9,5,Low,Low,High,0,Low,53,Pass
+Female,25,24,59.00%,67,81.00%,52,2,Yes,Low,Master's,Low,9,1,High,Low,Medium,2,Low,84,Pass
+Female,20,20,68.00%,70,68.00%,77,3,Yes,Low,Bachelor's,Medium,6,6,Medium,Medium,High,4,High,22,Pass
+Female,20,29,59.00%,59,80.00%,71,0,Yes,Medium,Bachelor's,Medium,9,6,High,High,Medium,4,Low,41,Pass
+Female,23,27,94.00%,66,100.00%,53,1,No,Low,Master's,Low,4,1,Medium,Low,High,2,Medium,112,Pass
+Male,24,14,96.00%,89,74.00%,59,2,No,Medium,Bachelor's,Medium,5,8,Medium,Medium,High,1,Low,97,Pass
+Female,21,16,99.00%,82,65.00%,55,0,Yes,High,High School,Medium,5,4,High,High,Medium,3,High,24,Pass
+Male,19,15,94.00%,80,58.00%,73,3,Yes,High,High School,High,7,5,Medium,Medium,Medium,2,Medium,111,Pass
+Female,21,7,88.00%,71,56.00%,68,2,Yes,Low,High School,Medium,8,5,High,High,High,3,Medium,76,Pass
+Male,22,21,59.00%,80,58.00%,98,3,No,High,Master's,High,7,5,High,Medium,Medium,2,High,99,Pass
+Female,21,10,53.00%,83,92.00%,91,0,No,High,Bachelor's,Medium,4,4,Medium,Medium,Medium,3,Medium,38,Pass
+Male,23,14,59.00%,69,60.00%,100,0,No,Low,PhD,High,4,6,Medium,High,High,5,High,115,Fail
+Male,24,27,78.00%,51,59.00%,70,1,Yes,Low,Bachelor's,High,9,3,High,High,High,1,High,33,Fail
+Female,22,8,53.00%,95,90.00%,61,1,No,Low,PhD,Low,4,1,Medium,High,Low,2,Low,76,Pass
+Female,19,20,97.00%,88,55.00%,59,2,Yes,Medium,High School,Low,4,1,High,Medium,High,4,High,97,Pass
+Female,21,27,95.00%,93,71.00%,80,0,Yes,Low,Master's,High,9,7,Medium,High,Medium,4,Low,22,Pass
+Female,24,25,52.00%,50,80.00%,58,0,No,High,PhD,Low,8,8,Low,Medium,Medium,0,Low,11,Fail
+Female,23,11,56.00%,79,66.00%,53,1,No,Medium,Master's,Medium,4,2,Medium,Medium,High,0,Low,20,Pass
+Male,22,10,93.00%,60,59.00%,62,3,No,Medium,PhD,High,8,8,Medium,Low,Low,3,Medium,29,Pass
+Male,19,25,75.00%,57,81.00%,87,1,Yes,Medium,Bachelor's,Medium,7,3,High,High,High,1,Medium,116,Pass
+Female,20,5,92.00%,66,58.00%,52,2,No,High,Master's,Low,5,6,High,Low,High,5,Low,77,Pass
+Female,20,17,64.00%,59,61.00%,89,2,No,Low,Bachelor's,Medium,4,7,Medium,High,Low,5,Low,39,Fail
+Male,22,11,57.00%,81,62.00%,58,0,Yes,Low,Bachelor's,High,9,2,Low,Low,Low,2,High,104,Pass
+Male,19,15,69.00%,79,76.00%,65,1,No,Medium,Master's,High,6,8,Medium,Low,Low,2,High,101,Pass
+Male,20,13,68.00%,96,100.00%,82,3,No,Low,Bachelor's,Medium,9,5,Low,Medium,Medium,1,High,25,Pass
+Male,25,16,50.00%,51,59.00%,92,1,No,High,Master's,Medium,9,1,Medium,Medium,Low,4,Medium,53,Fail
+Male,23,9,91.00%,82,99.00%,70,1,Yes,Medium,Bachelor's,Low,7,1,High,Low,High,3,Medium,100,Pass
+Female,20,9,52.00%,99,72.00%,81,3,Yes,Low,Master's,Medium,4,4,Medium,Low,Medium,4,Medium,112,Pass
+Male,19,17,78.00%,57,88.00%,56,1,Yes,High,High School,Low,7,7,Medium,Low,High,5,Medium,25,Pass
+Male,24,18,98.00%,82,80.00%,63,0,Yes,Low,Master's,Medium,6,6,Medium,Medium,High,5,Medium,36,Pass
+Male,25,20,88.00%,70,82.00%,59,1,No,Medium,PhD,Medium,9,6,High,Medium,Medium,0,High,37,Pass
+Male,23,5,53.00%,54,61.00%,71,2,Yes,Medium,Master's,Low,4,7,Low,Medium,Medium,0,Low,29,Fail
+Male,19,15,87.00%,93,74.00%,92,1,No,Low,Master's,Medium,8,2,High,Low,Medium,5,High,67,Pass
+Female,18,21,92.00%,84,99.00%,66,2,No,Medium,High School,Medium,4,6,Medium,High,High,2,Low,40,Pass
+Male,25,27,71.00%,84,81.00%,95,1,No,High,Master's,Low,6,4,Medium,Medium,Medium,2,Low,60,Pass
+Male,25,14,62.00%,70,69.00%,53,2,No,Low,High School,High,5,5,Medium,Medium,Low,4,Medium,38,Pass
+Male,19,7,69.00%,91,99.00%,83,2,Yes,Low,Master's,High,9,3,Low,Medium,Medium,5,Low,67,Pass
+Male,22,23,92.00%,71,50.00%,64,0,No,High,High School,Medium,5,7,High,High,Medium,1,Low,72,Pass
+Male,22,8,91.00%,66,73.00%,88,2,Yes,High,Bachelor's,Medium,9,3,Low,Low,High,5,Medium,41,Pass
+Male,21,23,90.00%,78,91.00%,81,2,Yes,Low,PhD,Medium,6,6,Medium,High,High,0,Low,80,Pass
+Male,21,22,98.00%,53,70.00%,50,3,Yes,Medium,Master's,High,6,8,High,Medium,High,5,Medium,95,Pass
+Female,25,12,88.00%,79,67.00%,67,0,Yes,Low,Master's,High,5,2,Medium,Medium,Low,5,Low,68,Pass
+Male,25,13,83.00%,88,52.00%,53,3,No,High,Master's,High,7,5,Low,High,Medium,4,Low,13,Pass
+Male,20,21,90.00%,51,71.00%,81,3,Yes,Medium,Master's,High,9,2,Medium,Low,Medium,5,High,78,Pass
+Female,20,24,53.00%,92,68.00%,95,0,No,Medium,Bachelor's,Low,7,7,High,High,High,2,Low,117,Pass
+Female,22,19,97.00%,75,96.00%,95,1,No,Low,Bachelor's,High,4,1,High,Low,Medium,5,Medium,110,Pass
+Male,20,13,63.00%,52,50.00%,94,2,Yes,Medium,Bachelor's,High,4,4,Medium,High,High,3,High,33,Fail
+Male,18,29,95.00%,95,86.00%,76,2,Yes,High,PhD,Low,5,5,High,Medium,Medium,3,High,85,Pass
+Male,24,25,94.00%,72,72.00%,62,1,No,Medium,Bachelor's,Medium,7,7,Low,Low,Medium,0,Medium,10,Pass
+Female,18,10,73.00%,70,78.00%,85,2,Yes,High,Bachelor's,High,8,7,Medium,Low,High,0,Low,78,Pass
+Male,24,26,70.00%,93,83.00%,68,0,Yes,Medium,High School,Medium,5,1,Low,Low,Low,0,Low,118,Pass
+Male,19,14,67.00%,66,69.00%,68,1,Yes,High,High School,High,5,6,High,Low,Medium,3,High,99,Pass
+Female,20,6,91.00%,57,84.00%,62,3,Yes,Low,Master's,Low,4,8,High,Medium,High,4,High,114,Pass
+Female,23,21,68.00%,69,50.00%,50,2,Yes,Low,High School,Medium,6,6,Low,Medium,Medium,0,High,75,Fail
+Female,18,24,72.00%,100,58.00%,99,2,Yes,High,PhD,Low,7,7,Low,Low,Low,3,High,93,Pass
+Male,21,22,50.00%,71,91.00%,97,0,Yes,Low,Master's,Medium,7,8,High,Low,Medium,0,High,67,Pass
+Male,22,12,80.00%,76,92.00%,91,1,Yes,Low,High School,High,5,1,Low,Low,High,3,High,47,Pass
+Female,19,9,56.00%,62,81.00%,64,1,No,High,High School,Low,7,4,Medium,High,High,1,Low,83,Pass
+Female,22,5,66.00%,82,78.00%,79,1,No,Low,PhD,High,6,3,High,High,Low,3,Medium,18,Pass
+Female,18,30,58.00%,60,66.00%,95,0,Yes,Medium,PhD,Medium,5,3,Low,High,High,2,High,59,Fail
+Male,23,21,59.00%,60,66.00%,89,2,No,Medium,High School,Medium,7,8,Low,Medium,Medium,2,Medium,65,Fail
+Female,21,10,52.00%,81,54.00%,93,0,No,Medium,High School,Low,5,6,High,High,Medium,0,Low,100,Fail
+Male,19,12,97.00%,51,57.00%,80,2,Yes,Low,Bachelor's,Low,6,3,High,High,Medium,2,High,40,Pass
+Female,19,10,54.00%,78,53.00%,85,3,No,Low,High School,Low,9,4,High,Medium,Low,1,High,61,Fail
+Male,22,7,87.00%,86,54.00%,100,1,No,Low,High School,Low,7,4,High,High,High,5,High,120,Pass
+Female,22,24,99.00%,80,89.00%,67,2,Yes,Low,Master's,Medium,8,7,Low,Medium,Medium,3,Medium,29,Pass
+Female,25,5,68.00%,84,53.00%,56,2,Yes,Medium,PhD,Medium,7,3,Low,High,Medium,0,Low,43,Pass
+Male,21,22,97.00%,98,55.00%,94,1,No,Low,High School,Medium,5,5,Medium,High,Low,0,Low,48,Pass
+Female,24,15,81.00%,69,57.00%,77,3,Yes,High,High School,Medium,8,7,Medium,Medium,Medium,0,Medium,13,Pass
+Male,21,17,93.00%,96,92.00%,78,1,No,Medium,Bachelor's,Medium,7,7,Low,High,Medium,5,Low,45,Pass
+Male,20,11,78.00%,59,55.00%,78,0,No,Medium,PhD,Low,8,3,Medium,Medium,Low,5,Low,87,Fail
+Male,24,26,50.00%,95,100.00%,87,2,No,Low,PhD,High,8,2,Medium,Medium,High,3,High,106,Pass
+Male,23,25,58.00%,82,98.00%,50,2,No,High,PhD,High,7,4,Medium,Medium,Low,4,High,36,Pass
+Female,24,20,82.00%,73,100.00%,54,3,No,Low,Bachelor's,Low,9,7,Low,High,Medium,1,Low,119,Pass
+Male,20,9,82.00%,97,95.00%,94,0,No,High,Master's,High,9,5,Medium,Medium,Low,3,Low,64,Pass
+Female,21,11,64.00%,77,55.00%,80,3,No,Medium,Bachelor's,Low,6,4,Medium,Low,High,2,Low,37,Pass
+Female,24,29,81.00%,70,86.00%,54,3,No,Low,High School,Medium,6,6,Medium,Low,Medium,4,High,74,Pass
+Female,25,7,70.00%,58,92.00%,73,3,Yes,Low,Bachelor's,Low,4,8,High,Medium,Medium,5,High,112,Pass
+Female,20,9,50.00%,93,81.00%,82,0,No,Medium,Bachelor's,Low,5,8,Low,High,Low,2,High,29,Pass
+Female,20,21,66.00%,70,86.00%,66,3,No,High,High School,High,8,2,Medium,Low,Medium,0,Medium,86,Pass
+Male,24,8,58.00%,96,99.00%,83,3,No,High,Master's,High,9,5,Low,Low,High,2,Low,33,Pass
+Male,22,10,68.00%,51,67.00%,60,3,No,Low,High School,High,5,2,High,Low,Low,4,Low,110,Fail
+Female,24,16,69.00%,96,65.00%,50,3,No,Medium,High School,Medium,9,8,High,Medium,High,2,High,55,Pass
+Male,24,22,70.00%,58,79.00%,58,2,Yes,Low,Master's,High,6,4,Medium,Low,Low,1,Low,61,Pass
+Male,21,6,96.00%,93,81.00%,60,3,No,Medium,Master's,Low,5,5,Medium,Low,High,1,Medium,30,Pass
+Female,25,28,74.00%,87,55.00%,78,3,No,Medium,Master's,Low,5,4,High,High,Medium,4,Medium,104,Pass
+Female,22,17,51.00%,51,59.00%,51,1,No,Low,Bachelor's,Medium,5,2,Medium,Low,High,1,High,13,Fail
+Female,18,21,64.00%,97,96.00%,98,2,No,Low,High School,Low,5,1,High,Medium,Medium,4,Low,115,Pass
+Male,23,9,96.00%,59,60.00%,67,2,Yes,Medium,High School,Low,6,2,Medium,Low,Low,3,High,48,Pass
+Male,23,7,88.00%,72,80.00%,56,1,No,High,High School,Medium,9,8,High,Medium,Low,5,Medium,29,Pass
+Male,20,18,58.00%,70,74.00%,54,2,No,Low,Master's,High,6,5,Low,High,Medium,3,High,71,Pass
+Male,22,5,73.00%,89,78.00%,96,3,No,High,High School,High,4,3,High,Low,High,2,High,87,Pass
+Female,22,18,72.00%,53,53.00%,74,3,Yes,High,High School,Medium,7,3,Medium,High,Low,2,Medium,85,Fail
+Female,24,25,55.00%,76,70.00%,56,0,No,High,Bachelor's,Medium,4,7,High,Medium,Medium,3,Low,97,Pass
+Female,22,28,73.00%,76,67.00%,68,0,No,Low,High School,Medium,5,3,Medium,Low,High,0,Low,88,Pass
+Male,25,23,91.00%,93,90.00%,100,3,No,Medium,Bachelor's,Low,6,3,High,Medium,High,5,Low,106,Pass
+Male,20,21,73.00%,63,69.00%,94,1,Yes,Medium,PhD,Medium,9,7,High,High,High,2,Medium,108,Pass
+Female,22,14,57.00%,67,54.00%,93,2,Yes,High,Bachelor's,Low,8,6,Low,Low,Low,4,Low,96,Fail
+Male,22,22,71.00%,70,89.00%,63,3,Yes,Medium,Bachelor's,High,9,4,High,Medium,High,4,Low,85,Pass
+Female,19,9,99.00%,67,97.00%,83,1,Yes,Medium,PhD,Medium,5,8,Medium,Medium,Low,0,Low,102,Pass
+Female,19,5,85.00%,91,70.00%,77,1,No,High,Bachelor's,Medium,9,4,Low,Medium,Low,3,High,15,Pass
+Male,25,12,70.00%,99,96.00%,94,3,Yes,High,PhD,Medium,6,7,Low,Medium,High,1,High,16,Pass
+Male,22,27,76.00%,98,84.00%,90,0,Yes,High,PhD,Low,5,2,Medium,High,Medium,5,High,78,Pass
+Female,22,5,56.00%,84,87.00%,54,1,Yes,High,Master's,High,9,8,Low,High,Low,3,Low,46,Pass
+Male,21,30,98.00%,59,81.00%,62,1,Yes,Low,Bachelor's,Medium,7,2,Medium,Medium,Medium,3,High,96,Pass
+Male,19,8,62.00%,62,50.00%,98,0,No,High,PhD,Low,9,2,High,High,High,3,High,12,Fail
+Male,21,20,67.00%,90,68.00%,71,1,No,High,High School,Low,9,5,High,Medium,Low,0,Medium,117,Pass
+Female,23,11,91.00%,63,70.00%,72,0,No,High,Master's,Low,9,4,High,Low,High,2,Medium,84,Pass
+Female,23,28,94.00%,76,63.00%,86,1,No,High,Bachelor's,High,9,4,Medium,Low,Medium,0,Low,48,Pass
+Female,19,30,52.00%,51,89.00%,76,3,No,Medium,PhD,Medium,5,5,Medium,Low,High,4,Medium,44,Fail
+Male,19,10,51.00%,56,64.00%,77,3,No,High,PhD,Medium,8,2,Low,Low,High,1,High,11,Fail
+Female,21,25,67.00%,58,88.00%,60,1,No,Low,PhD,Medium,9,8,High,Low,Medium,4,Low,107,Pass
+Female,19,13,70.00%,62,58.00%,53,0,Yes,Medium,PhD,High,4,6,High,Low,Low,1,Medium,118,Fail
+Male,20,5,67.00%,55,75.00%,52,3,Yes,High,High School,Low,8,8,High,Medium,Low,4,Medium,18,Fail
+Female,23,17,62.00%,90,95.00%,81,2,Yes,Low,PhD,High,6,4,Low,High,Medium,0,High,45,Pass
+Female,22,24,73.00%,84,64.00%,58,0,Yes,Medium,High School,Medium,7,5,Low,Low,Low,3,Low,98,Pass
+Female,18,25,52.00%,56,99.00%,77,3,Yes,High,Master's,High,6,5,High,Low,High,1,High,71,Pass
+Female,23,14,90.00%,70,50.00%,54,3,No,High,PhD,Low,4,1,Medium,Low,Medium,2,High,80,Pass
+Female,21,7,79.00%,52,60.00%,95,3,Yes,Low,High School,Medium,8,7,High,High,Medium,4,Medium,67,Fail
+Female,23,27,59.00%,53,61.00%,75,3,Yes,Low,High School,High,6,8,Low,High,Medium,4,Low,81,Fail
+Female,25,7,89.00%,85,52.00%,84,0,Yes,Medium,PhD,Low,8,2,Low,Low,High,2,Medium,98,Pass
+Female,21,27,80.00%,83,59.00%,80,0,Yes,Low,Master's,Low,5,1,Low,Medium,High,2,High,55,Pass
+Male,24,30,66.00%,63,88.00%,95,0,Yes,High,PhD,Low,6,4,High,Low,Low,2,Medium,33,Pass
+Female,22,8,67.00%,100,61.00%,55,0,Yes,High,Bachelor's,Medium,7,7,High,Low,Medium,2,High,17,Pass
+Male,25,13,52.00%,89,92.00%,87,0,No,High,Master's,Low,8,1,Medium,Medium,Low,4,High,18,Pass
+Male,22,28,65.00%,99,83.00%,64,1,No,High,Bachelor's,Medium,9,5,Low,Low,High,3,High,16,Pass
+Male,19,21,76.00%,92,50.00%,76,0,No,Low,High School,Low,6,1,Low,High,High,2,Medium,95,Pass
+Male,18,21,78.00%,69,100.00%,74,1,No,Medium,Master's,Medium,8,4,Medium,High,Medium,1,Low,74,Pass
+Female,18,20,79.00%,50,71.00%,84,3,Yes,Medium,Bachelor's,Low,5,2,Low,Medium,Medium,2,Low,115,Fail
+Female,22,13,88.00%,97,57.00%,53,1,No,Medium,Bachelor's,Low,9,3,Medium,Low,Low,1,Low,33,Pass
+Male,23,18,65.00%,82,67.00%,83,1,No,High,Master's,High,5,3,High,Low,Medium,1,Low,112,Pass
+Male,22,27,94.00%,91,87.00%,57,3,Yes,Medium,Bachelor's,Medium,8,5,Medium,Medium,Low,3,Low,68,Pass
+Female,22,17,98.00%,93,90.00%,53,1,No,Medium,PhD,Medium,9,3,Low,Low,Medium,3,Medium,81,Pass
+Male,21,16,79.00%,55,96.00%,75,3,Yes,Medium,Master's,High,7,7,Medium,Low,Medium,1,High,97,Pass
+Female,20,18,97.00%,97,65.00%,86,3,No,High,PhD,High,6,6,Medium,Medium,Medium,4,High,45,Pass
+Female,20,15,90.00%,57,91.00%,69,0,No,Low,Bachelor's,High,6,6,High,Low,Low,5,Low,31,Pass
+Male,18,13,82.00%,95,63.00%,89,2,Yes,High,PhD,Medium,6,4,Medium,Medium,High,2,Low,61,Pass
+Male,23,5,76.00%,86,72.00%,90,2,No,Low,High School,High,9,1,Medium,Medium,Low,2,Low,34,Pass
+Female,25,5,56.00%,78,61.00%,55,2,No,High,High School,High,5,4,High,High,Medium,4,Medium,47,Pass
+Male,22,6,51.00%,50,78.00%,84,3,Yes,Low,PhD,Low,5,2,High,High,Medium,1,Medium,67,Fail
+Male,19,12,54.00%,53,74.00%,71,1,No,Low,High School,Low,4,4,Medium,Low,Low,2,Low,111,Fail
+Male,25,28,69.00%,53,96.00%,79,1,Yes,High,Master's,High,9,6,High,Low,High,1,Low,74,Pass
+Female,22,18,61.00%,94,58.00%,85,1,Yes,High,High School,Low,5,3,Low,Medium,Medium,3,High,101,Pass
+Male,23,8,75.00%,97,74.00%,66,2,No,Low,PhD,Low,5,1,High,High,High,0,Medium,66,Pass
+Female,19,17,88.00%,64,65.00%,56,3,No,High,High School,Medium,5,6,Medium,Low,High,0,Low,59,Pass
+Female,18,16,80.00%,67,75.00%,94,0,Yes,Medium,Bachelor's,Low,7,1,High,High,Medium,4,High,93,Pass
+Male,20,15,62.00%,95,62.00%,64,2,No,High,PhD,Medium,5,5,High,Low,Medium,3,High,63,Pass
+Male,21,5,52.00%,74,86.00%,90,0,Yes,Medium,PhD,Low,8,1,Low,High,Low,5,Low,60,Pass
+Female,21,23,67.00%,87,80.00%,60,2,No,Medium,Bachelor's,Low,5,3,Medium,Medium,High,0,Low,118,Pass
+Male,23,21,78.00%,52,71.00%,64,1,No,Low,High School,Medium,5,1,Low,Medium,High,4,Low,38,Pass
+Female,18,18,72.00%,51,85.00%,65,1,Yes,High,PhD,High,7,2,Medium,Medium,Medium,4,High,24,Pass
+Female,22,23,86.00%,65,64.00%,100,2,No,Medium,Master's,Low,5,2,Medium,High,Medium,5,High,106,Pass
+Female,25,7,54.00%,55,84.00%,68,3,No,Medium,PhD,High,8,3,Low,Medium,Medium,5,Medium,69,Fail
+Female,24,18,87.00%,58,60.00%,65,0,No,Medium,Master's,Low,7,2,Low,Medium,Medium,5,High,73,Pass
+Female,20,26,78.00%,84,95.00%,90,3,No,High,PhD,High,7,4,Medium,High,High,1,High,57,Pass
+Male,22,22,62.00%,57,78.00%,89,2,No,High,Master's,Low,6,4,High,High,Low,5,Medium,72,Fail
+Female,20,21,53.00%,66,62.00%,78,3,Yes,Low,PhD,Medium,9,7,Low,High,High,5,Medium,66,Fail
+Female,21,10,60.00%,59,69.00%,50,3,No,Medium,Bachelor's,High,4,1,Low,High,High,5,Low,27,Fail
+Female,22,29,70.00%,64,97.00%,85,2,No,Medium,PhD,Low,9,2,Medium,Low,High,0,High,90,Pass
+Female,24,15,81.00%,75,78.00%,88,0,Yes,Low,Master's,High,9,2,High,Medium,Medium,2,High,20,Pass
+Male,18,20,90.00%,75,81.00%,60,1,Yes,Low,High School,Medium,4,4,High,Low,Medium,2,High,61,Pass
+Male,20,9,83.00%,99,78.00%,91,1,No,Medium,Master's,Low,7,8,Low,High,High,4,High,19,Pass
+Female,25,24,72.00%,95,75.00%,64,0,No,Low,High School,Low,6,1,Low,Medium,Medium,1,High,61,Pass
+Female,24,21,54.00%,59,58.00%,95,3,No,High,Bachelor's,High,9,2,High,Low,Low,5,Medium,50,Fail
+Male,21,7,76.00%,96,74.00%,55,3,Yes,High,Bachelor's,Low,8,1,Medium,Low,Low,0,Medium,51,Pass
+Female,18,27,55.00%,100,62.00%,67,3,Yes,Low,Master's,Low,9,5,Low,High,Low,2,High,13,Pass
+Male,19,16,55.00%,84,57.00%,82,1,No,Medium,PhD,High,8,3,Medium,High,Low,1,Medium,94,Pass
+Female,18,5,86.00%,84,78.00%,75,2,Yes,Low,High School,High,4,5,Low,Medium,High,0,High,99,Pass
+Male,19,28,59.00%,50,97.00%,63,1,No,Medium,Bachelor's,Low,4,2,Medium,High,Medium,2,Low,12,Pass
+Female,20,16,79.00%,73,90.00%,60,0,Yes,Low,Bachelor's,Medium,9,2,Low,Medium,Medium,3,Medium,117,Pass
+Male,22,26,69.00%,74,55.00%,68,0,No,Medium,Bachelor's,Medium,5,3,High,Medium,Low,2,High,52,Pass
+Male,24,25,62.00%,57,50.00%,83,1,Yes,Medium,High School,High,4,1,High,Low,High,3,Medium,103,Fail
+Female,22,27,58.00%,60,78.00%,75,3,Yes,Low,Bachelor's,High,8,5,Low,Medium,Low,0,High,114,Fail
+Male,24,22,92.00%,82,69.00%,71,2,No,Medium,High School,Low,4,3,Medium,Medium,High,1,Medium,86,Pass
+Male,22,20,57.00%,68,59.00%,95,3,Yes,High,High School,Medium,7,4,High,Medium,Medium,3,Medium,78,Fail
+Male,22,21,95.00%,75,91.00%,84,2,No,Medium,PhD,Low,9,6,Low,High,Medium,2,High,13,Pass
+Male,22,16,70.00%,73,79.00%,65,1,No,Low,High School,High,6,3,Medium,Medium,Low,4,High,63,Pass
+Female,24,16,80.00%,73,97.00%,70,3,Yes,Medium,High School,Medium,7,6,Medium,Medium,Low,3,High,24,Pass
+Female,24,18,98.00%,83,99.00%,60,2,Yes,Low,Master's,Low,5,3,Medium,Medium,Low,1,High,61,Pass
+Male,20,19,95.00%,99,72.00%,84,3,No,Low,Bachelor's,High,8,5,Medium,Low,Low,5,High,81,Pass
+Male,23,22,95.00%,63,62.00%,80,0,Yes,High,High School,Medium,4,8,High,Low,High,3,High,37,Pass
+Female,18,24,65.00%,65,58.00%,59,2,No,Low,Bachelor's,Medium,8,3,Medium,High,Low,2,High,54,Fail
+Male,19,17,96.00%,68,58.00%,74,3,Yes,Low,PhD,High,6,8,High,Medium,High,2,Low,71,Pass
+Male,19,25,62.00%,98,94.00%,55,2,No,Low,Bachelor's,Medium,7,7,Low,High,High,1,Low,65,Pass
+Female,23,10,56.00%,96,50.00%,76,3,Yes,Medium,Master's,Low,6,5,Medium,High,Medium,4,Low,16,Pass
+Female,21,21,61.00%,85,88.00%,58,1,No,Low,High School,Low,4,3,Medium,Medium,High,1,High,97,Pass
+Female,23,24,68.00%,84,61.00%,66,3,Yes,High,PhD,Medium,6,3,High,High,High,2,Low,64,Pass
+Male,22,27,97.00%,93,98.00%,60,0,Yes,Medium,Master's,Medium,5,5,Medium,Medium,Low,1,High,74,Pass
+Male,23,14,52.00%,100,61.00%,58,3,Yes,High,PhD,Medium,7,7,High,Low,Medium,1,Low,114,Pass
+Male,20,20,98.00%,79,79.00%,52,2,No,High,Master's,Low,8,1,Medium,High,Low,3,Low,113,Pass
+Male,24,30,56.00%,99,97.00%,89,2,No,Low,PhD,Medium,4,1,Low,Medium,Medium,0,Low,25,Pass
+Female,24,19,78.00%,91,91.00%,90,3,No,Low,Master's,High,7,6,Medium,Medium,Low,1,Medium,21,Pass
+Female,18,15,72.00%,50,72.00%,96,2,Yes,High,Master's,Low,5,6,High,High,Medium,1,High,26,Fail
+Female,23,11,97.00%,83,89.00%,73,1,Yes,Low,Bachelor's,High,7,1,High,Medium,Low,1,Medium,96,Pass
+Male,24,10,83.00%,82,98.00%,59,1,No,Low,Master's,Medium,4,5,High,Low,High,4,Low,100,Pass
+Female,18,26,73.00%,64,90.00%,62,2,No,Low,Bachelor's,Medium,7,4,Medium,Medium,Medium,0,Low,45,Pass
+Male,23,23,57.00%,53,91.00%,78,2,No,Medium,High School,Medium,5,7,Low,Low,Medium,3,Low,81,Pass
+Male,18,19,84.00%,60,52.00%,73,3,No,Low,PhD,Medium,9,5,Medium,High,Medium,3,Low,79,Fail
+Male,23,11,84.00%,99,53.00%,61,2,Yes,High,Bachelor's,Low,6,4,High,Medium,Medium,2,Medium,50,Pass
+Female,19,12,61.00%,55,61.00%,87,0,No,Low,PhD,Medium,6,5,Medium,Low,Medium,4,Low,72,Fail
+Female,20,29,64.00%,56,64.00%,70,3,No,Low,PhD,Low,4,6,Medium,High,Low,2,Low,54,Fail
+Male,24,23,72.00%,53,81.00%,85,0,Yes,Low,PhD,High,8,5,Low,Low,High,3,Medium,89,Pass
+Male,21,25,75.00%,84,96.00%,83,2,Yes,Low,Master's,Low,4,4,High,Medium,Medium,2,Low,45,Pass
+Male,23,25,90.00%,52,76.00%,94,1,Yes,Medium,PhD,High,4,3,Low,Low,Low,4,Low,27,Pass
+Female,21,21,52.00%,100,57.00%,81,1,Yes,High,Bachelor's,Low,6,6,Medium,Low,Medium,0,High,115,Pass
+Female,19,6,57.00%,58,68.00%,80,3,No,High,Master's,Low,4,5,High,High,Medium,2,Low,107,Fail
+Female,25,11,92.00%,85,60.00%,71,2,Yes,Low,PhD,Low,5,5,High,Low,High,3,Low,82,Pass
+Female,21,29,87.00%,58,64.00%,67,0,Yes,High,Master's,Medium,5,5,Medium,Medium,Medium,5,Medium,26,Pass
+Female,20,14,60.00%,77,55.00%,53,1,Yes,Low,PhD,High,6,7,Low,Medium,Medium,0,High,97,Pass
+Female,20,23,50.00%,76,55.00%,73,1,No,Medium,Master's,Medium,5,4,High,Medium,Medium,1,Medium,52,Fail
+Male,21,26,92.00%,95,71.00%,62,3,Yes,Medium,PhD,Medium,4,7,Low,Low,Low,0,Low,100,Pass
+Male,21,23,65.00%,89,83.00%,50,1,No,High,Master's,Low,8,5,High,Medium,Medium,4,Medium,26,Pass
+Female,24,21,80.00%,65,86.00%,99,3,No,Low,Master's,Low,7,8,Low,High,High,5,High,61,Pass
+Male,20,27,63.00%,85,75.00%,88,1,Yes,Low,PhD,Low,5,1,Low,Medium,High,2,Medium,12,Pass
+Male,18,11,82.00%,51,51.00%,68,3,No,High,PhD,High,7,6,Low,Low,Low,4,High,33,Fail
+Female,25,15,97.00%,77,65.00%,53,3,No,High,Bachelor's,Low,6,6,Medium,Low,Low,5,Medium,10,Pass
+Female,19,9,89.00%,71,54.00%,71,3,Yes,High,Bachelor's,Medium,8,5,Low,Low,High,4,Low,35,Pass
+Female,23,24,52.00%,76,94.00%,77,2,No,High,Master's,High,4,8,High,High,Medium,1,High,65,Pass
+Female,18,15,55.00%,96,71.00%,100,1,Yes,Low,Bachelor's,High,5,2,High,High,High,4,Low,43,Pass
+Female,22,20,53.00%,67,73.00%,95,1,Yes,High,PhD,Low,7,7,Low,High,Medium,0,Low,10,Fail
+Female,18,12,85.00%,51,94.00%,100,0,Yes,Medium,Master's,High,7,8,High,Medium,Low,0,High,63,Pass
+Male,21,28,89.00%,81,96.00%,86,3,No,Low,Bachelor's,Medium,9,4,High,High,Medium,4,High,67,Pass
+Male,18,20,79.00%,74,63.00%,98,1,No,High,PhD,High,8,4,Medium,High,High,5,Medium,54,Pass
+Female,20,10,93.00%,86,95.00%,69,1,No,High,PhD,High,5,4,Low,Medium,High,5,Medium,74,Pass
+Female,24,24,59.00%,67,85.00%,55,3,No,Medium,PhD,Medium,7,1,High,Medium,Medium,2,Low,67,Pass
+Female,25,17,92.00%,64,50.00%,58,1,Yes,Low,Master's,Medium,9,2,Low,Low,Low,0,Medium,111,Pass
+Male,18,11,90.00%,83,76.00%,65,1,No,Medium,Master's,High,4,8,High,High,Medium,3,Medium,112,Pass
+Female,23,6,85.00%,69,78.00%,91,2,Yes,High,PhD,Low,7,3,High,Medium,High,2,High,69,Pass
+Male,21,14,58.00%,62,84.00%,84,1,No,High,PhD,High,4,2,Medium,High,Medium,2,Low,29,Pass
+Male,25,6,71.00%,57,75.00%,90,2,Yes,Medium,Master's,Low,9,8,Low,Low,Medium,3,High,87,Pass
+Male,22,28,59.00%,52,74.00%,97,2,Yes,Medium,High School,Medium,8,2,High,High,High,5,Medium,18,Fail
+Female,22,30,92.00%,65,71.00%,55,3,No,Low,Bachelor's,High,4,6,Medium,Low,High,5,High,20,Pass
+Male,23,30,78.00%,83,59.00%,94,2,No,High,High School,High,6,3,Low,Low,Medium,1,High,76,Pass
+Female,19,9,53.00%,78,73.00%,93,0,Yes,Low,High School,Low,4,4,Low,High,Medium,0,Low,76,Pass
+Male,21,19,61.00%,52,75.00%,94,0,No,High,Bachelor's,High,6,6,Low,Low,Low,4,Low,89,Fail
+Female,23,15,95.00%,78,90.00%,62,1,Yes,Medium,Bachelor's,Medium,4,3,Low,High,High,1,Low,71,Pass
+Female,22,16,63.00%,56,62.00%,100,3,Yes,High,Bachelor's,Low,6,3,High,Medium,High,0,Low,57,Fail
+Male,23,9,97.00%,58,72.00%,64,1,No,Medium,PhD,High,4,2,Medium,Medium,Low,5,Medium,91,Pass
+Male,22,8,52.00%,79,71.00%,56,3,No,Medium,High School,Medium,6,8,Low,Low,Medium,0,High,20,Pass
+Male,22,13,100.00%,66,78.00%,96,1,No,Low,Bachelor's,Low,8,8,Low,Low,Low,0,Medium,117,Pass
+Male,21,16,84.00%,87,57.00%,59,0,Yes,Medium,High School,High,6,3,Medium,High,High,5,High,42,Pass
+Male,21,12,89.00%,72,56.00%,70,3,Yes,Low,High School,High,9,5,High,Low,Low,1,High,37,Pass
+Male,22,17,57.00%,66,96.00%,94,2,Yes,High,High School,Medium,9,1,Medium,Medium,Low,0,Low,65,Pass
+Female,23,29,98.00%,65,86.00%,100,0,No,Low,PhD,High,7,6,High,Medium,High,4,Medium,71,Pass
+Female,24,20,69.00%,86,70.00%,51,1,Yes,Low,Master's,Low,7,7,Medium,Medium,Low,5,Medium,88,Pass
+Male,24,27,97.00%,78,75.00%,95,2,Yes,Medium,Master's,Low,9,2,Medium,High,Low,3,Medium,69,Pass
+Male,18,23,63.00%,94,74.00%,71,0,Yes,Medium,Bachelor's,High,7,8,Low,Medium,Low,3,Low,54,Pass
+Female,23,22,81.00%,76,55.00%,56,2,No,Medium,Bachelor's,Medium,4,2,High,High,Medium,3,Low,94,Pass
+Male,21,5,96.00%,66,92.00%,78,3,No,Medium,Bachelor's,High,7,1,Low,High,Low,4,Low,32,Pass
+Female,24,15,66.00%,66,81.00%,82,2,Yes,Medium,High School,Low,6,8,High,Medium,Low,1,High,33,Pass
+Female,25,7,82.00%,82,64.00%,86,1,Yes,Low,PhD,Medium,7,7,High,Medium,Medium,5,Low,48,Pass
+Female,24,9,51.00%,66,67.00%,54,3,No,High,High School,Medium,4,2,High,Medium,Low,4,High,67,Fail
+Female,23,18,71.00%,77,73.00%,90,2,No,Medium,Bachelor's,Low,5,8,High,Low,Low,4,High,76,Pass
+Female,23,16,84.00%,98,67.00%,51,3,Yes,Low,PhD,Low,9,6,Low,Low,High,0,Medium,72,Pass
+Female,18,11,84.00%,84,53.00%,93,2,No,Medium,PhD,High,8,3,Low,Low,High,0,Medium,56,Pass
+Male,21,5,89.00%,53,71.00%,79,1,No,Low,Master's,High,5,5,High,High,High,0,Low,26,Pass
+Female,23,5,54.00%,57,84.00%,70,0,No,Low,Bachelor's,Medium,7,1,Medium,Low,High,2,Low,50,Fail
+Female,19,5,54.00%,94,62.00%,65,1,No,Low,PhD,Medium,9,3,Medium,Low,Low,4,Low,18,Pass
+Female,24,13,94.00%,92,69.00%,70,0,No,Low,High School,Medium,5,8,High,Low,High,2,Low,80,Pass
+Male,21,27,72.00%,54,72.00%,52,1,Yes,Low,High School,Medium,6,3,Medium,Medium,Medium,3,High,87,Fail
+Male,18,21,98.00%,83,59.00%,96,3,No,High,Bachelor's,Low,4,2,Low,High,Medium,3,Medium,107,Pass
+Male,24,21,88.00%,61,75.00%,55,0,Yes,High,Master's,High,8,6,Low,Low,Low,0,Medium,120,Pass
+Male,23,26,97.00%,52,72.00%,95,2,No,High,High School,Medium,8,7,Medium,High,High,0,Low,85,Pass
+Female,22,7,59.00%,52,90.00%,52,3,Yes,High,PhD,Medium,4,7,High,Medium,Medium,2,Medium,83,Pass
+Male,23,7,68.00%,76,82.00%,60,3,No,High,Master's,Medium,8,8,High,High,Low,4,Low,92,Pass
+Male,23,29,91.00%,55,98.00%,96,0,No,Medium,Master's,Medium,9,3,Low,Medium,Low,1,Low,32,Pass
+Female,19,27,67.00%,79,82.00%,95,0,No,High,Bachelor's,High,6,1,Medium,High,Low,2,Low,69,Pass
+Male,23,29,69.00%,100,59.00%,93,1,No,High,Master's,Low,6,8,Medium,Medium,Medium,2,High,32,Pass
+Male,18,20,96.00%,97,72.00%,79,1,Yes,Medium,High School,High,7,7,Low,Low,Medium,2,Medium,32,Pass
+Male,24,22,78.00%,77,69.00%,64,3,Yes,Low,High School,Low,9,5,Low,Low,Medium,3,High,73,Pass
+Female,23,21,76.00%,67,58.00%,92,2,Yes,Low,Bachelor's,Low,7,7,Medium,Medium,Medium,4,High,107,Pass
+Male,20,25,72.00%,69,61.00%,58,0,No,High,Bachelor's,High,4,2,Low,Medium,Medium,2,Medium,65,Pass
+Male,19,26,50.00%,97,72.00%,68,0,No,Low,Master's,Medium,8,4,High,Medium,High,3,Low,100,Pass
+Female,22,19,74.00%,91,98.00%,78,3,No,Medium,High School,Low,6,8,Low,Low,Low,4,Medium,113,Pass
+Female,20,7,60.00%,71,60.00%,61,2,Yes,Medium,High School,High,8,8,Low,High,Low,3,High,61,Fail
+Female,20,28,96.00%,91,100.00%,74,0,Yes,Low,Bachelor's,High,7,1,Low,Low,High,2,High,98,Pass
+Male,23,5,80.00%,64,50.00%,96,0,No,High,Bachelor's,High,9,1,Medium,Low,Medium,0,Low,116,Fail
+Male,24,20,55.00%,72,89.00%,69,0,No,High,High School,Low,8,6,Low,High,High,3,Low,24,Pass
+Female,18,22,74.00%,64,92.00%,74,2,No,Low,Bachelor's,Low,9,5,High,Medium,High,1,High,96,Pass
+Female,25,18,91.00%,62,95.00%,66,1,Yes,Medium,PhD,Low,9,2,Low,High,High,3,Medium,77,Pass
+Female,20,16,59.00%,78,54.00%,84,3,Yes,Low,Bachelor's,Low,5,6,Low,High,Low,5,Low,82,Pass
+Female,21,29,84.00%,91,61.00%,57,0,No,High,Bachelor's,Low,8,7,Medium,High,High,2,Medium,50,Pass
+Male,23,29,92.00%,58,88.00%,75,2,Yes,Medium,PhD,High,7,1,Low,High,High,2,Low,111,Pass
+Male,22,20,51.00%,97,51.00%,84,2,Yes,Medium,Bachelor's,Medium,9,7,High,Low,Low,0,Low,30,Pass
+Female,21,12,72.00%,83,84.00%,61,2,No,High,High School,Low,4,8,Low,Low,Low,2,High,79,Pass
+Female,20,18,69.00%,89,94.00%,87,3,Yes,Low,Bachelor's,High,6,6,Low,Medium,Medium,2,High,84,Pass
+Male,19,22,96.00%,96,63.00%,54,3,Yes,Medium,Bachelor's,High,9,4,Medium,Low,High,3,High,84,Pass
+Female,23,19,70.00%,66,73.00%,83,2,Yes,Low,Bachelor's,Medium,9,4,High,Low,High,5,Medium,84,Pass
+Male,18,16,94.00%,60,92.00%,76,2,Yes,Medium,PhD,High,9,4,Low,High,Medium,5,Medium,64,Pass
+Male,24,18,67.00%,51,74.00%,59,0,Yes,Low,Master's,Low,9,7,Medium,Low,Low,0,High,104,Fail
+Female,25,18,64.00%,100,90.00%,67,3,Yes,Low,High School,High,4,8,High,Low,Medium,4,High,68,Pass
+Female,20,14,64.00%,65,73.00%,50,3,Yes,High,High School,Low,7,1,Medium,Low,Low,4,High,82,Pass
+Female,22,29,64.00%,78,70.00%,93,2,Yes,Low,Master's,Low,6,6,Low,Medium,High,2,High,102,Pass
+Male,20,28,66.00%,64,71.00%,67,0,Yes,High,PhD,Low,4,5,High,Medium,Low,0,High,50,Pass
+Female,21,12,97.00%,91,57.00%,97,0,Yes,Low,Bachelor's,High,8,4,Low,Low,Low,0,High,51,Pass
+Female,24,6,62.00%,52,56.00%,61,1,No,High,Bachelor's,High,8,5,Low,High,Medium,0,Medium,103,Fail
+Female,19,26,69.00%,59,94.00%,60,0,No,Low,Master's,Low,8,7,Low,Low,High,0,Low,57,Pass
+Female,23,9,89.00%,51,54.00%,74,0,No,Medium,Bachelor's,Medium,4,4,Low,Medium,Medium,2,High,78,Fail
+Female,25,19,73.00%,93,51.00%,65,3,No,High,PhD,Low,7,1,Medium,Low,High,2,Low,66,Pass
+Female,18,8,56.00%,55,84.00%,90,0,No,Low,Bachelor's,High,6,1,Medium,Low,Medium,4,Low,10,Fail
+Female,21,26,80.00%,80,62.00%,91,3,No,High,Bachelor's,Low,4,3,High,Medium,High,1,Medium,14,Pass
+Female,22,19,58.00%,98,95.00%,70,0,Yes,Low,High School,High,9,3,Low,High,Medium,5,High,117,Pass
+Male,24,21,83.00%,65,87.00%,92,1,No,Medium,Master's,Low,8,1,Low,Medium,Medium,1,High,103,Pass
+Female,19,9,93.00%,91,92.00%,54,0,Yes,Low,Bachelor's,Low,6,7,Low,Low,Low,3,Medium,56,Pass
+Female,21,28,76.00%,64,54.00%,52,2,Yes,Low,Bachelor's,High,9,3,Medium,High,Medium,2,Medium,113,Fail
+Male,20,17,51.00%,91,90.00%,61,1,Yes,High,Bachelor's,High,9,7,Low,High,Low,1,Medium,30,Pass
+Female,22,22,82.00%,74,60.00%,78,0,Yes,Low,High School,Medium,6,5,Medium,Medium,Medium,0,Medium,82,Pass
+Female,18,26,95.00%,73,98.00%,53,0,Yes,High,Master's,High,9,5,Medium,Low,Medium,1,Medium,107,Pass
+Female,19,9,86.00%,71,78.00%,63,2,No,High,High School,Low,7,3,Low,High,High,0,Medium,37,Pass
+Female,18,22,95.00%,81,75.00%,67,1,Yes,High,PhD,Low,6,1,High,High,Medium,0,High,65,Pass
+Female,24,14,51.00%,99,50.00%,94,2,Yes,Low,PhD,Medium,6,1,High,Medium,Low,4,High,14,Pass
+Female,20,7,51.00%,55,66.00%,77,2,No,Medium,Master's,Low,9,8,Medium,Medium,Low,5,Medium,75,Fail
+Male,23,22,98.00%,72,93.00%,63,1,Yes,High,High School,Medium,9,4,High,Medium,Medium,5,High,37,Pass
+Male,22,26,98.00%,98,84.00%,57,3,Yes,High,High School,Medium,5,8,Low,High,Medium,2,High,68,Pass
+Female,22,7,89.00%,77,60.00%,65,2,Yes,Low,PhD,High,6,2,Medium,Low,High,5,High,73,Pass
+Male,20,27,68.00%,97,59.00%,54,1,Yes,Medium,Bachelor's,High,9,7,High,High,Low,1,High,36,Pass
+Male,21,7,97.00%,92,64.00%,70,1,Yes,Low,Bachelor's,Low,4,4,Medium,High,Low,4,Medium,60,Pass
+Male,24,6,77.00%,72,75.00%,90,1,Yes,Low,High School,High,8,3,Low,High,Low,5,Medium,22,Pass
+Female,25,30,53.00%,76,79.00%,97,3,Yes,High,High School,Low,4,6,Medium,Low,High,4,Medium,60,Pass
+Female,21,18,51.00%,84,82.00%,53,0,No,Low,Bachelor's,High,9,6,High,Medium,Medium,0,Low,20,Pass
+Male,22,17,68.00%,61,80.00%,63,2,No,High,Bachelor's,Low,9,4,Low,High,High,0,Medium,97,Pass
+Female,22,14,96.00%,56,72.00%,52,2,No,Low,Bachelor's,High,5,3,High,Medium,High,4,High,12,Pass
+Female,24,14,69.00%,57,91.00%,82,3,No,Low,High School,Medium,9,2,Medium,Medium,High,2,Low,112,Pass
+Male,21,14,59.00%,79,93.00%,82,2,Yes,High,Bachelor's,Low,6,7,High,Low,Medium,2,Medium,48,Pass
+Female,22,8,63.00%,56,77.00%,76,0,Yes,Medium,Bachelor's,Medium,8,6,Low,Medium,Medium,0,Medium,82,Fail
+Male,21,25,65.00%,61,61.00%,100,1,No,Low,High School,Medium,7,7,Medium,Low,Medium,0,Low,71,Fail
+Female,21,7,69.00%,85,71.00%,90,2,No,Medium,Master's,Low,8,7,Low,Low,Medium,5,Medium,71,Pass
+Female,20,15,84.00%,63,69.00%,88,3,Yes,High,High School,High,8,3,High,Low,Low,3,Medium,59,Pass
+Female,25,28,94.00%,98,90.00%,73,1,No,Low,Bachelor's,Low,8,7,Low,Low,Medium,2,Medium,42,Pass
+Female,19,14,90.00%,100,50.00%,84,0,Yes,Medium,Master's,Low,9,5,Medium,Medium,Low,4,High,93,Pass
+Male,22,30,54.00%,89,94.00%,77,0,Yes,High,High School,Low,4,2,Low,High,High,4,Medium,90,Pass
+Male,19,20,65.00%,76,61.00%,73,3,No,Low,Master's,Medium,4,2,Medium,High,Low,1,Medium,72,Pass
+Male,18,18,99.00%,91,92.00%,67,1,Yes,Low,Bachelor's,Medium,5,1,Low,Medium,Medium,4,Medium,65,Pass
+Male,20,9,54.00%,83,94.00%,98,0,Yes,High,Bachelor's,High,4,7,Low,High,Medium,2,Medium,81,Pass
+Female,25,25,70.00%,57,81.00%,93,1,Yes,Low,High School,Low,4,3,Medium,Medium,Medium,0,High,20,Pass
+Male,18,6,73.00%,84,61.00%,99,3,Yes,Medium,Master's,Low,6,4,Medium,Medium,Medium,0,High,10,Pass
+Female,22,27,65.00%,100,69.00%,84,3,No,High,PhD,Low,6,1,Medium,Medium,Low,3,High,26,Pass
+Female,18,6,72.00%,80,100.00%,82,2,No,Low,Bachelor's,Medium,6,5,Low,High,Medium,2,Low,89,Pass
+Female,23,15,59.00%,93,97.00%,90,0,Yes,Medium,High School,Low,4,7,Medium,High,High,4,High,20,Pass
+Female,18,8,89.00%,88,73.00%,66,0,No,High,High School,Low,7,3,Low,Medium,Low,2,Low,114,Pass
+Male,22,7,60.00%,69,79.00%,83,0,Yes,Low,Master's,Medium,9,8,Medium,Medium,Low,5,Low,23,Pass
+Female,20,19,58.00%,97,78.00%,95,3,No,Low,Master's,Medium,7,7,Medium,Medium,High,1,Medium,89,Pass
+Male,19,8,68.00%,54,61.00%,95,3,Yes,Low,Master's,High,8,1,Medium,High,Low,4,High,101,Fail
+Female,22,16,62.00%,51,82.00%,84,3,Yes,High,Master's,Low,8,1,High,High,Low,5,Low,15,Fail
+Male,24,18,70.00%,51,91.00%,61,1,No,High,Master's,Medium,6,3,Low,High,High,5,Medium,42,Pass
+Male,22,11,58.00%,60,71.00%,65,0,No,High,High School,High,6,1,Medium,Medium,Low,0,Low,103,Fail
+Female,21,15,89.00%,63,51.00%,69,0,No,Medium,PhD,High,9,4,High,High,Low,4,High,107,Pass
+Male,18,27,54.00%,60,57.00%,83,1,No,Medium,High School,High,7,4,High,High,Medium,4,High,33,Fail
+Female,22,5,80.00%,79,94.00%,100,3,No,High,Master's,Low,5,2,High,Medium,High,5,High,76,Pass
+Female,19,5,64.00%,68,78.00%,52,0,No,Low,PhD,Medium,9,5,High,Medium,Medium,2,Medium,101,Pass
+Female,21,6,62.00%,66,96.00%,64,1,Yes,Medium,Bachelor's,Medium,9,4,Low,Medium,High,3,High,48,Pass
+Male,24,19,91.00%,80,78.00%,91,0,Yes,Medium,High School,Low,9,3,Medium,Low,Low,1,Low,73,Pass
+Male,25,14,68.00%,85,71.00%,85,3,Yes,High,PhD,Low,7,6,High,High,Low,0,High,60,Pass
+Female,24,12,92.00%,86,60.00%,64,1,Yes,High,Bachelor's,Medium,7,6,Medium,Medium,High,5,High,21,Pass
+Male,21,8,60.00%,99,75.00%,55,0,Yes,Low,Bachelor's,High,4,7,High,Medium,High,0,Low,26,Pass
+Female,19,12,54.00%,77,76.00%,97,1,Yes,High,High School,Medium,6,8,High,Low,Low,0,Medium,109,Pass
+Female,23,19,66.00%,85,68.00%,96,1,Yes,Medium,PhD,High,8,2,Medium,Low,Low,2,Low,117,Pass
+Female,23,18,99.00%,52,92.00%,98,3,Yes,Medium,Master's,Medium,5,3,High,High,Medium,4,Low,35,Pass
+Male,24,19,54.00%,98,83.00%,85,2,Yes,Medium,Bachelor's,Low,7,4,Medium,Low,Low,0,High,113,Pass
+Male,18,13,76.00%,74,70.00%,75,3,No,Low,Bachelor's,High,9,3,Medium,High,High,5,Medium,81,Pass
+Male,21,17,96.00%,63,80.00%,59,1,No,High,Bachelor's,Low,8,8,High,Medium,High,5,Low,100,Pass
+Male,21,5,67.00%,71,87.00%,62,1,No,Medium,Bachelor's,Low,5,2,Medium,Low,High,1,High,111,Pass
+Male,25,28,99.00%,76,68.00%,60,3,Yes,High,High School,Low,7,6,High,High,Low,0,Low,60,Pass
+Male,18,18,60.00%,67,60.00%,90,1,Yes,Medium,Bachelor's,Medium,9,1,Medium,Medium,Low,2,High,54,Fail
+Female,22,6,61.00%,70,96.00%,54,1,Yes,Low,Bachelor's,Low,9,3,High,Low,High,4,Medium,15,Pass
+Female,19,10,68.00%,75,87.00%,78,1,Yes,Low,Bachelor's,High,4,5,Medium,Medium,Low,4,Low,68,Pass
+Male,24,7,66.00%,92,97.00%,53,1,Yes,High,High School,Medium,9,5,Medium,High,High,4,Low,79,Pass
+Female,24,9,88.00%,54,98.00%,96,0,No,Medium,PhD,Low,6,4,Medium,High,High,1,Low,51,Pass
+Female,23,11,54.00%,69,52.00%,94,3,Yes,Low,Master's,Medium,8,6,Medium,Low,Medium,2,Low,39,Fail
+Female,21,29,100.00%,89,85.00%,69,1,Yes,Low,Master's,Low,9,7,High,High,High,3,Medium,95,Pass
+Male,22,7,74.00%,81,89.00%,70,0,Yes,Medium,High School,Low,9,3,High,High,Medium,4,High,44,Pass
+Female,21,11,66.00%,63,67.00%,55,3,No,Low,Bachelor's,Low,4,5,Medium,Medium,Low,1,Low,58,Pass
+Female,22,13,90.00%,74,82.00%,59,1,Yes,Low,High School,Medium,6,6,Medium,Medium,High,2,High,42,Pass
+Female,25,23,63.00%,90,100.00%,96,0,No,High,High School,Medium,5,3,Medium,Medium,High,2,Low,49,Pass
+Female,20,22,57.00%,78,53.00%,71,2,No,Medium,Master's,Low,9,5,High,Low,Medium,4,High,115,Fail
+Male,19,11,89.00%,56,54.00%,61,1,No,Low,Bachelor's,High,6,6,High,Low,Medium,3,Low,107,Pass
+Male,25,23,57.00%,85,57.00%,88,2,Yes,Medium,High School,Medium,7,1,Medium,Low,Low,5,Low,92,Pass
+Female,25,26,83.00%,58,67.00%,58,0,Yes,Medium,Bachelor's,High,4,7,Low,Low,Low,2,High,89,Pass
+Male,22,8,98.00%,79,65.00%,79,3,Yes,High,High School,Low,8,8,Medium,High,Medium,0,Medium,50,Pass
+Male,21,30,85.00%,75,76.00%,59,2,No,High,Master's,High,8,3,Low,Low,High,1,High,32,Pass
+Male,18,12,67.00%,67,93.00%,66,3,No,High,Bachelor's,Medium,4,4,Medium,High,High,3,Low,48,Pass
+Female,24,11,89.00%,55,63.00%,58,1,No,Medium,Bachelor's,High,4,7,High,Medium,Low,0,High,73,Pass
+Female,22,7,56.00%,82,89.00%,97,2,Yes,Low,PhD,Medium,9,3,High,High,Low,0,Medium,119,Pass
+Female,23,11,76.00%,82,78.00%,51,2,Yes,Medium,Bachelor's,Low,4,8,Medium,Medium,High,4,Low,102,Pass
+Female,18,6,79.00%,52,57.00%,85,1,Yes,Low,Bachelor's,Low,6,5,Low,High,Low,1,High,71,Fail
+Male,25,10,99.00%,56,68.00%,89,2,Yes,High,PhD,Medium,5,1,High,Low,High,5,Low,15,Pass
+Female,21,30,78.00%,69,58.00%,98,3,No,High,PhD,High,4,6,Low,High,Low,2,Medium,23,Pass
+Female,21,8,94.00%,94,85.00%,81,2,No,Low,Master's,Medium,7,8,High,Low,Low,4,Low,10,Pass
+Male,19,5,77.00%,62,83.00%,89,1,No,Medium,High School,High,5,4,High,High,Low,3,High,41,Pass
+Male,24,9,71.00%,99,82.00%,70,0,No,Low,PhD,Medium,5,4,High,Low,Medium,2,High,37,Pass
+Female,25,18,68.00%,56,97.00%,58,2,No,Low,Master's,Low,9,2,High,Medium,High,5,Low,98,Pass
+Female,19,29,55.00%,58,70.00%,88,0,No,Low,PhD,Medium,4,3,Medium,Low,High,4,High,59,Fail
+Female,20,21,50.00%,82,82.00%,57,2,Yes,High,Master's,Low,7,7,High,Low,Medium,1,Low,61,Pass
+Female,21,20,98.00%,64,65.00%,63,3,Yes,Medium,Master's,Medium,4,8,Medium,High,High,3,High,73,Pass
+Female,24,10,90.00%,97,88.00%,81,1,No,Medium,PhD,Medium,6,5,High,Medium,High,5,Low,41,Pass
+Female,19,27,57.00%,98,58.00%,54,0,No,High,PhD,High,7,5,High,Medium,Medium,4,Medium,48,Pass
+Male,18,23,99.00%,71,100.00%,84,2,No,Low,Master's,Low,5,3,Medium,Low,Low,0,High,59,Pass
+Female,18,11,78.00%,53,55.00%,62,3,No,Low,Bachelor's,Low,4,2,Low,Medium,High,3,High,20,Fail
+Female,19,17,52.00%,79,56.00%,73,2,Yes,Low,Master's,High,5,5,High,Medium,Medium,0,Low,36,Fail
+Female,20,28,67.00%,63,63.00%,75,3,Yes,High,Bachelor's,Medium,5,6,Medium,Medium,Low,2,Medium,117,Fail
+Male,25,8,69.00%,57,83.00%,58,2,No,Low,High School,Medium,9,1,Low,High,High,5,Low,10,Pass
+Male,25,18,80.00%,57,62.00%,97,3,Yes,Medium,Master's,High,5,1,High,High,Low,3,Medium,13,Pass
+Male,18,19,67.00%,67,97.00%,82,0,No,High,PhD,High,4,5,High,Medium,Low,4,Medium,13,Pass
+Male,19,24,61.00%,72,62.00%,76,1,Yes,Low,High School,High,7,7,High,High,High,5,High,90,Pass
+Female,22,19,90.00%,87,51.00%,71,3,No,High,PhD,Low,6,7,Low,Medium,Low,2,High,69,Pass
+Male,19,6,91.00%,78,89.00%,62,3,Yes,Low,PhD,Low,7,1,High,Low,Medium,3,Low,113,Pass
+Male,25,7,66.00%,85,87.00%,92,1,Yes,Medium,PhD,Medium,7,1,Medium,High,High,5,High,102,Pass
+Female,25,10,64.00%,87,98.00%,52,3,No,High,High School,Low,7,7,Low,Medium,Low,3,Medium,17,Pass
+Male,18,11,90.00%,51,73.00%,80,3,Yes,High,PhD,Medium,6,8,Medium,Low,High,5,Medium,51,Pass
+Male,22,21,76.00%,71,52.00%,95,3,Yes,Low,Master's,Low,7,5,High,Low,High,0,Low,88,Pass
+Male,23,8,97.00%,86,96.00%,55,1,Yes,Low,High School,Medium,8,6,Medium,Low,High,2,High,91,Pass
+Male,25,17,65.00%,70,52.00%,83,1,No,Medium,Master's,Low,6,5,High,Medium,Low,1,Low,62,Fail
+Male,23,9,65.00%,81,91.00%,96,2,No,Low,High School,Medium,5,8,Medium,Low,High,0,Low,43,Pass
+Male,18,17,66.00%,87,69.00%,94,1,No,Low,Master's,Low,5,5,High,Medium,Low,5,Medium,57,Pass
+Male,18,19,71.00%,72,63.00%,98,0,Yes,Low,Master's,Low,4,5,High,Medium,Low,0,Low,20,Pass
+Male,23,10,85.00%,70,72.00%,89,0,Yes,Medium,High School,Medium,6,1,Medium,High,Medium,4,Low,88,Pass
+Male,23,10,98.00%,58,79.00%,83,1,Yes,Medium,Bachelor's,Low,5,2,Low,Medium,Medium,4,Medium,91,Pass
+Female,24,12,84.00%,72,66.00%,89,3,Yes,Low,Bachelor's,Medium,8,2,Low,Medium,Medium,5,High,41,Pass
+Male,23,27,65.00%,79,52.00%,100,0,No,Low,PhD,High,7,8,Medium,High,High,5,Low,17,Pass
+Female,19,21,68.00%,57,95.00%,54,2,Yes,Medium,Master's,Low,9,6,Medium,High,Medium,1,High,74,Pass
+Female,18,12,57.00%,53,62.00%,76,0,Yes,High,Bachelor's,Low,6,1,Medium,Low,Low,3,Medium,118,Fail
+Male,18,5,80.00%,91,70.00%,59,1,Yes,High,Master's,High,5,4,High,Low,Low,2,Medium,30,Pass
+Female,22,25,51.00%,87,69.00%,100,1,No,Medium,Bachelor's,Medium,6,5,High,Low,High,5,Medium,74,Pass
+Male,20,12,62.00%,76,57.00%,57,0,No,Medium,Bachelor's,Low,4,2,Medium,High,Medium,4,High,42,Pass
+Female,19,30,97.00%,76,81.00%,55,3,Yes,Medium,Master's,High,7,4,Low,High,Low,3,High,116,Pass
+Male,19,21,87.00%,51,61.00%,86,1,No,High,High School,Medium,9,8,Low,Low,High,1,Medium,57,Fail
+Female,20,9,95.00%,93,71.00%,80,0,No,Low,Bachelor's,High,5,5,Low,High,Low,5,Low,56,Pass
+Female,21,20,80.00%,57,94.00%,92,3,Yes,High,High School,Low,8,5,Medium,Medium,High,1,Medium,42,Pass
+Male,19,17,69.00%,70,83.00%,95,3,No,High,Master's,Medium,5,8,Low,High,Medium,3,Low,45,Pass
+Male,20,16,50.00%,66,87.00%,85,0,Yes,Medium,PhD,Low,8,5,High,Medium,Medium,4,Medium,115,Pass
+Male,18,27,94.00%,59,95.00%,71,1,Yes,High,Bachelor's,Medium,9,6,Low,High,Low,0,Low,77,Pass
+Female,20,11,65.00%,76,97.00%,91,0,No,Low,High School,High,7,2,High,High,Medium,4,Low,40,Pass
+Female,25,9,97.00%,97,71.00%,90,2,No,Low,PhD,Medium,9,4,Low,Medium,Low,3,Medium,117,Pass
+Female,22,8,71.00%,91,76.00%,74,0,Yes,High,Bachelor's,Medium,8,4,Medium,Low,High,5,Low,87,Pass
+Female,23,16,51.00%,55,55.00%,88,1,Yes,Medium,Bachelor's,Medium,6,8,High,High,High,5,High,12,Fail
+Female,23,22,69.00%,93,82.00%,85,2,No,Medium,High School,Low,6,3,High,Low,Medium,0,Medium,94,Pass
+Male,20,25,91.00%,86,91.00%,76,3,Yes,Medium,Bachelor's,Low,8,3,Low,Low,Medium,3,Medium,111,Pass
+Male,23,27,96.00%,50,88.00%,51,0,No,Low,High School,High,7,1,High,High,Medium,2,High,68,Pass
+Male,20,23,60.00%,51,74.00%,59,0,Yes,Medium,High School,High,4,5,Medium,Medium,Low,5,Medium,26,Fail
+Female,25,10,52.00%,73,75.00%,64,2,No,High,PhD,Medium,4,3,Medium,Low,Low,3,High,69,Pass
+Female,22,17,51.00%,97,57.00%,69,1,No,Medium,PhD,High,4,2,Low,Medium,High,1,High,37,Pass
+Male,21,17,64.00%,78,64.00%,58,1,No,High,High School,Medium,7,2,Medium,High,Medium,2,High,91,Pass
+Male,22,6,92.00%,81,91.00%,70,2,Yes,Medium,PhD,Medium,6,2,Low,High,Low,0,Medium,49,Pass
+Female,22,28,98.00%,74,92.00%,69,3,Yes,High,Master's,Low,6,7,High,High,Low,3,Medium,39,Pass
+Female,23,29,51.00%,65,54.00%,52,0,Yes,High,High School,Medium,7,1,High,Medium,High,0,Medium,20,Fail
+Male,18,25,75.00%,72,69.00%,61,3,Yes,Low,High School,Medium,4,7,Medium,Medium,High,1,Low,64,Pass
+Female,19,7,85.00%,84,50.00%,76,2,Yes,High,PhD,Low,7,2,Low,Low,High,1,High,83,Pass
+Female,21,20,51.00%,91,92.00%,55,1,No,High,Master's,Low,6,1,Medium,High,Low,2,Medium,19,Pass
+Female,25,22,56.00%,97,63.00%,73,2,Yes,High,PhD,High,5,7,Medium,Low,Medium,1,Low,40,Pass
+Female,20,12,71.00%,78,91.00%,88,1,Yes,High,High School,Medium,9,3,Medium,Medium,Medium,5,High,110,Pass
+Male,24,7,93.00%,59,56.00%,57,3,No,High,Master's,Medium,5,6,Low,High,Low,1,Low,78,Pass
+Male,21,25,92.00%,62,60.00%,67,2,No,High,PhD,Medium,7,6,Medium,Low,High,4,Low,83,Pass
+Female,24,20,68.00%,86,99.00%,82,2,No,Low,Bachelor's,Low,6,1,Medium,Medium,High,2,High,80,Pass
+Male,23,24,81.00%,89,68.00%,57,2,No,Low,Bachelor's,Low,9,5,Medium,Low,Low,3,Low,20,Pass
+Female,22,29,89.00%,67,94.00%,77,2,No,Low,High School,High,4,7,Medium,Medium,High,4,High,90,Pass
+Female,21,5,79.00%,87,52.00%,86,1,No,Low,High School,High,5,8,Medium,Medium,High,1,Medium,13,Pass
+Male,24,17,88.00%,79,98.00%,63,1,Yes,High,High School,Medium,8,4,High,Low,High,5,Low,107,Pass
+Female,22,9,56.00%,90,50.00%,85,3,No,Medium,Master's,High,4,1,Low,Medium,High,2,Medium,91,Pass
+Male,19,30,70.00%,50,64.00%,77,2,Yes,Medium,Bachelor's,High,9,3,Medium,High,Low,1,High,43,Fail
+Female,20,9,88.00%,74,78.00%,97,2,No,High,Master's,High,7,3,High,Medium,High,1,Medium,21,Pass
+Female,19,11,78.00%,93,68.00%,80,0,No,Low,Master's,Low,7,8,Low,Low,High,4,Medium,15,Pass
+Male,18,16,97.00%,60,80.00%,94,2,Yes,Low,Bachelor's,High,7,2,High,Low,High,0,Low,86,Pass
+Female,23,14,79.00%,74,71.00%,80,3,No,Low,Master's,Low,5,8,Medium,Medium,High,0,Low,87,Pass
+Male,22,22,80.00%,88,86.00%,74,2,No,Medium,PhD,Medium,4,2,High,Low,Medium,2,Low,100,Pass
+Male,22,11,62.00%,58,53.00%,93,2,Yes,High,Bachelor's,Low,5,3,High,Low,High,5,Medium,87,Fail
+Male,18,15,89.00%,68,78.00%,55,2,No,Low,Master's,High,4,7,High,Medium,Low,2,Low,109,Pass
+Female,25,10,51.00%,98,77.00%,87,3,No,Medium,High School,Medium,4,8,High,Medium,High,0,Low,43,Pass
+Male,20,9,66.00%,80,62.00%,56,3,Yes,High,PhD,Medium,9,8,Medium,Low,High,2,Medium,27,Pass
+Female,24,12,85.00%,77,50.00%,82,1,Yes,Medium,High School,Medium,9,1,Medium,Medium,Low,2,High,28,Pass
+Male,24,21,76.00%,60,92.00%,66,1,Yes,Low,High School,Low,4,1,Low,Low,High,4,High,85,Pass
+Female,20,17,100.00%,70,71.00%,79,3,No,Medium,PhD,Medium,7,6,High,Medium,Medium,1,Low,102,Pass
+Female,25,5,77.00%,88,71.00%,86,0,No,Low,PhD,High,4,8,Medium,Low,High,0,Low,19,Pass
+Male,25,30,85.00%,99,90.00%,68,3,Yes,High,Bachelor's,High,6,3,High,High,Medium,2,Low,57,Pass
+Male,19,19,95.00%,79,90.00%,64,0,Yes,Low,High School,High,5,8,Medium,Low,Low,0,High,67,Pass
+Male,19,28,70.00%,88,79.00%,72,0,Yes,Medium,Master's,Low,9,7,Low,Low,High,2,High,116,Pass
+Female,19,21,55.00%,98,81.00%,58,0,Yes,Low,Master's,Medium,8,3,Low,Low,Medium,0,Low,106,Pass
+Male,23,10,50.00%,74,74.00%,97,0,No,Low,Master's,Low,6,1,Medium,Medium,High,5,Low,51,Pass
+Female,18,26,83.00%,73,82.00%,75,3,Yes,Low,High School,High,9,3,Low,Medium,High,4,High,106,Pass
+Male,24,7,65.00%,53,77.00%,89,2,No,Low,High School,Medium,9,4,Medium,Low,High,4,Low,67,Fail
+Male,23,24,97.00%,82,75.00%,71,0,No,High,High School,Medium,9,2,Low,High,High,5,High,112,Pass
+Male,20,6,63.00%,62,84.00%,87,1,No,Low,Master's,Low,9,3,High,Medium,Low,3,Low,50,Pass
+Male,22,10,92.00%,82,87.00%,84,3,Yes,Medium,PhD,Medium,5,4,Medium,High,Medium,5,High,32,Pass
+Male,22,25,98.00%,84,58.00%,58,2,Yes,Medium,High School,High,9,4,Medium,Medium,Low,4,Medium,12,Pass
+Female,21,19,80.00%,96,78.00%,73,2,No,Low,PhD,Medium,6,1,High,High,Low,2,Low,64,Pass
+Female,19,23,73.00%,61,58.00%,54,1,No,Low,PhD,High,6,8,Medium,Medium,High,4,Low,73,Fail
+Female,22,10,60.00%,66,73.00%,50,0,Yes,Medium,Bachelor's,High,8,7,High,Low,High,4,High,72,Pass
+Male,23,5,86.00%,84,90.00%,67,0,No,High,High School,Medium,9,8,Low,High,Medium,0,Medium,85,Pass
+Male,25,30,66.00%,83,88.00%,66,2,No,High,PhD,High,6,1,Low,High,Low,4,Medium,17,Pass
+Male,24,27,61.00%,60,71.00%,56,1,No,High,PhD,Medium,6,7,Low,Medium,Medium,0,High,63,Fail
+Male,22,13,53.00%,91,52.00%,80,2,Yes,Medium,High School,Medium,6,6,High,Medium,Low,5,Medium,104,Pass
+Male,20,11,82.00%,97,72.00%,89,2,No,Low,PhD,Low,7,3,High,Low,High,2,Low,61,Pass
+Female,25,14,56.00%,95,69.00%,51,1,No,Medium,Bachelor's,Medium,4,6,Medium,High,Low,1,Medium,102,Pass
+Female,24,15,54.00%,51,65.00%,90,1,No,High,Master's,High,7,7,Low,High,Low,5,Low,104,Fail
+Male,21,17,59.00%,87,66.00%,89,2,Yes,Medium,Bachelor's,High,8,1,High,Medium,Low,0,High,115,Pass
+Male,21,21,84.00%,60,86.00%,50,3,No,Low,PhD,High,6,6,Low,Medium,High,4,Low,51,Pass
+Female,18,22,88.00%,51,90.00%,65,2,Yes,Low,PhD,High,8,1,Low,High,Medium,1,High,49,Pass
+Female,20,9,81.00%,50,53.00%,83,0,Yes,High,High School,Low,7,5,Medium,Medium,High,4,Low,23,Fail
+Female,25,6,56.00%,73,81.00%,50,3,No,High,Master's,Medium,7,4,Medium,Medium,High,5,Low,39,Pass
+Female,20,12,95.00%,61,59.00%,59,0,Yes,Low,Bachelor's,High,8,7,High,Low,Medium,3,Medium,69,Pass
+Male,21,11,53.00%,97,75.00%,57,0,Yes,High,PhD,Low,9,7,Medium,Medium,High,4,Medium,54,Pass
+Male,22,20,85.00%,63,56.00%,76,0,No,High,High School,Medium,4,8,Medium,High,Medium,2,Medium,52,Pass
+Female,22,12,57.00%,76,72.00%,99,2,No,High,Master's,Medium,4,3,Medium,High,Low,1,Medium,73,Pass
