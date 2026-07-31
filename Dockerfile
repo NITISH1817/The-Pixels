@@ -23,11 +23,12 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# 6. Copy source code, model artifacts, and API frontend files
+# 6. Copy source code, model artifacts, monitoring, and API frontend files
 COPY src/ ./src/
 COPY models/ ./models/
 COPY api/ ./api/
 COPY data/ ./data/
+COPY monitoring/ ./monitoring/
 
 # 7. Expose port 8000
 EXPOSE 8000
