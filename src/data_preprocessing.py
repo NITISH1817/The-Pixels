@@ -18,15 +18,45 @@ from sklearn.model_selection import train_test_split
 # ------------------------------------------------------------------
 # Which columns are categorical (need encoding) vs numeric (keep as-is)
 # ------------------------------------------------------------------
-CATEGORICAL_COLS = ["sex", "address", "Mjob", "Fjob", "famsup", "internet"]
 
-NUMERIC_COLS = ["age", "studytime", "failures", "Medu", "Fedu", "absences"]
+# Categorical features (will be one-hot encoded)
+CATEGORICAL_COLS = [
+    "sex",      # Male / Female
+    "address",  # Urban / Rural
+    "Mjob",     # Mother's job
+    "Fjob",     # Father's job
+    "famsup",   # Family educational support
+    "internet", # Internet access at home
+    "higher",   # Wants to pursue higher education -- STRONG predictor!
+    "schoolsup",# Extra school support
+    "paid",     # Paid extra classes
+    "romantic", # In a romantic relationship
+    "Pstatus",  # Parents living together (T) or apart (A)
+]
+
+# Numeric features (kept as numbers, scaled during training)
+NUMERIC_COLS = [
+    "age",
+    "studytime",  # Weekly study time (1-4)
+    "failures",   # Past class failures
+    "Medu",       # Mother's education (0-4)
+    "Fedu",       # Father's education (0-4)
+    "absences",   # Number of absences
+    "famrel",     # Family relationship quality (1-5)
+    "freetime",   # Free time after school (1-5)
+    "goout",      # Going out with friends (1-5) -- more = less studying
+    "Walc",       # Weekend alcohol consumption (1-5)
+    "Dalc",       # Workday alcohol consumption (1-5)
+    "health",     # Current health status (1-5)
+    "traveltime", # Home-to-school travel time (1-4)
+]
 
 # All input features we actually use (everything else gets dropped)
 FEATURE_COLS = NUMERIC_COLS + CATEGORICAL_COLS
 
 # The target column we engineer from G3
 TARGET_COL = "pass_fail"
+
 
 
 # ------------------------------------------------------------------

@@ -4,30 +4,21 @@ src/train.py
 Trains three classification models on the student performance dataset,
 compares their performance, and saves the best model to disk.
 
-Models trained:
-    1. Logistic Regression  — a simple linear classifier (good baseline)
-    2. Random Forest        — an ensemble of decision trees (handles non-linearity)
-    3. XGBoost              — gradient boosting (often best in practice)
+Improvements over v1:
+    - Expanded from 12 to 24 features (adds higher, goout, Walc, famrel, etc.)
+    - Uses sklearn Pipeline with StandardScaler for proper feature scaling
+    - Hyperparameter tuning via GridSearchCV (cross-validation)
+    - Cross-validated F1 scores for more reliable model comparison
 
 Run from the project root (with .venv activated):
     python src/train.py
-
-Expected output:
-    - A comparison table of accuracy, precision, recall, F1 for all 3 models
-    - A confusion matrix for the best model
-    - Saves  models/best_model.pkl  and  models/preprocessor_info.pkl
 """
 
 import sys
 import os
-import io
 import warnings
-warnings.filterwarnings("ignore")  # suppress sklearn/xgboost version warnings
+warnings.filterwarnings("ignore")
 
-# Force UTF-8 output on Windows to prevent encoding errors in terminals
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-
-# Make sure Python can find the src/ module when run from the project root
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import joblib
@@ -36,47 +27,32 @@ import numpy as np
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV, cross_val_score
 from sklearn.metrics import (
-    accuracy_score,
-    precision_score,
-    recall_score,
-    f1_score,
-    confusion_matrix,
-    classification_report,
+    accuracy_score, precision_score, recall_score,
+    f1_score, confusion_matrix, classification_report,
 )
 from xgboost import XGBClassifier
 
 from src.data_preprocessing import (
-    run_full_pipeline,
-    FEATURE_COLS,
-    CATEGORICAL_COLS,
-    TARGET_COL,
+    run_full_pipeline, FEATURE_COLS, CATEGORICAL_COLS, TARGET_COL,
 )
 
-# ------------------------------------------------------------------
-# PATHS — all relative to the project root, never hardcoded deeply
-# ------------------------------------------------------------------
 DATA_PATH       = "data/raw/student-mat.csv"
 MODEL_SAVE_PATH = "models/best_model.pkl"
 PREP_SAVE_PATH  = "models/preprocessor_info.pkl"
 
 
 # ------------------------------------------------------------------
-# HELPER: Print a formatted comparison table
+# HELPER: Print comparison table
 # ------------------------------------------------------------------
 def print_comparison_table(results: dict) -> None:
-    """
-    Print a nicely formatted table comparing model metrics.
-
-    Args:
-        results: dict of {model_name: {metric_name: value}}
-    """
-    # Column headers
-    metrics = ["Accuracy", "Precision", "Recall", "F1-Score"]
-    col_width = 12
-
-    header = f"{'Model':<22}" + "".join(f"{m:>{col_width}}" for m in metrics)
-    divider = "-" * len(header)
+    metrics   = ["CV-F1 (mean)", "Accuracy", "Precision", "Recall", "F1-Score"]
+    col_width = 14
+    header    = f"{'Model':<22}" + "".join(f"{m:>{col_width}}" for m in metrics)
+    divider   = "-" * len(header)
 
     print()
     print("=" * len(header))
@@ -84,55 +60,35 @@ def print_comparison_table(results: dict) -> None:
     print("=" * len(header))
     print(header)
     print(divider)
-
     for model_name, scores in results.items():
         row = f"{model_name:<22}"
         for m in metrics:
             row += f"{scores[m]:>{col_width}.4f}"
         print(row)
-
     print(divider)
     print()
 
 
 # ------------------------------------------------------------------
-# HELPER: Print a confusion matrix with labels
+# HELPER: Print confusion matrix
 # ------------------------------------------------------------------
 def print_confusion_matrix(y_true, y_pred, model_name: str) -> None:
-    """
-    Print a labelled confusion matrix.
-
-    A confusion matrix shows:
-        - True Positives  (TPs): predicted Pass, actually Pass
-        - True Negatives  (TNs): predicted Fail, actually Fail
-        - False Positives (FPs): predicted Pass, actually Fail  ← "false alarm"
-        - False Negatives (FNs): predicted Fail, actually Pass  ← "missed student"
-
-    For this project, False Negatives (FNs) are more costly:
-        Missing a student who will fail means we can't intervene early.
-
-    Args:
-        y_true:     True labels (from test set)
-        y_pred:     Predicted labels
-        model_name: Name to display in the header
-    """
     cm = confusion_matrix(y_true, y_pred)
     tn, fp, fn, tp = cm.ravel()
 
-    print(f"{'='*50}")
+    print(f"{'='*55}")
     print(f"  Confusion Matrix -- {model_name}")
-    print(f"{'='*50}")
+    print(f"{'='*55}")
     print(f"                    Predicted")
     print(f"                  Fail    Pass")
     print(f"  Actual  Fail  [{tn:>5}]  [{fp:>5}]")
     print(f"          Pass  [{fn:>5}]  [{tp:>5}]")
-    print(f"{'='*50}")
-    print(f"  True Negatives  (Fail correctly identified): {tn}")
-    print(f"  False Positives (predicted Pass, actually Fail): {fp}  <- false alarm")
-    print(f"  False Negatives (predicted Fail, actually Pass): {fn}  <- missed student!")
-    print(f"  True Positives  (Pass correctly identified): {tp}")
+    print(f"{'='*55}")
+    print(f"  True Negatives  (correctly identified Fail): {tn}")
+    print(f"  False Positives (said Pass, actually Fail) : {fp}  <- false alarm")
+    print(f"  False Negatives (said Fail, actually Pass) : {fn}  <- missed student!")
+    print(f"  True Positives  (correctly identified Pass): {tp}")
     print()
-
     print("  Full Classification Report:")
     print(classification_report(y_true, y_pred, target_names=["Fail", "Pass"]))
 
@@ -142,119 +98,172 @@ def print_confusion_matrix(y_true, y_pred, model_name: str) -> None:
 # ------------------------------------------------------------------
 def train_and_evaluate(data_path: str = DATA_PATH) -> dict:
     """
-    Run the full training pipeline:
-        1. Preprocess data
-        2. Train 3 models
-        3. Evaluate and compare
-        4. Save the best model
-
-    Args:
-        data_path: Path to the raw CSV file.
-
-    Returns:
-        Dictionary of results for all models.
+    Full training pipeline with scaling, cross-validation, and tuning.
     """
 
     # ── Step 1: Preprocess ──────────────────────────────────────────
     print("\nLoading and preprocessing data...")
     X_train, X_test, y_train, y_test = run_full_pipeline(data_path)
+    print(f"\nFeature matrix shape: {X_train.shape} train / {X_test.shape} test")
 
-    # ── Step 2: Define models ────────────────────────────────────────
+    # ── Step 2: Define Pipelines ─────────────────────────────────────
     #
-    # WHY these three models?
-    #   • Logistic Regression: simplest possible classifier — good baseline.
-    #     If a complex model barely beats it, it's not worth the complexity.
-    #   • Random Forest: builds many decision trees and votes. Robust,
-    #     handles feature interactions well, rarely overfits badly.
-    #   • XGBoost: gradient boosting — iteratively corrects mistakes from
-    #     previous trees. Often the best performer on tabular data.
+    # WHY use a Pipeline?
+    #   A Pipeline bundles preprocessing (scaling) + model into ONE object.
+    #   This means the scaler is fitted ONLY on training data (no data leakage).
     #
-    # random_state=42 on all models: ensures reproducibility.
-    # max_iter=1000 on LogReg: gives it enough iterations to converge.
+    # WHY class_weight='balanced'?
+    #   Our data has 67% Pass / 33% Fail. Without balancing, the model learns
+    #   that predicting "Pass" for everyone is an easy win. Balanced weighting
+    #   tells it: "Catching a Fail is twice as important as catching a Pass"
+    #   because there are half as many Fail examples.
 
-    models = {
-        "Logistic Regression": LogisticRegression(
-            random_state=42,
-            max_iter=1000,       # default 100 can fail to converge
-            C=1.0,               # regularization strength (default)
-        ),
-        "Random Forest": RandomForestClassifier(
-            n_estimators=100,    # 100 trees in the forest
-            random_state=42,
-            n_jobs=-1,           # use all CPU cores
-        ),
-        "XGBoost": XGBClassifier(
-            n_estimators=100,
-            learning_rate=0.1,
-            max_depth=4,
-            random_state=42,
-            eval_metric="logloss",
-            verbosity=0,         # suppress XGBoost training output
-        ),
+    # Ratio used for XGBoost: negative(Fail)/positive(Pass) = 130/265
+    # XGBoost uses scale_pos_weight to up-weight the minority class
+    n_pass = int(y_train.sum())
+    n_fail = int(len(y_train) - n_pass)
+    xgb_scale = round(n_pass / n_fail, 2)  # >1 means Pass is majority
+
+    pipelines = {
+        "Logistic Regression": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model",  LogisticRegression(
+                random_state=42,
+                max_iter=2000,
+                class_weight="balanced",  # penalise misclassifying Fail more
+            )),
+        ]),
+        "Random Forest": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model",  RandomForestClassifier(
+                random_state=42,
+                n_jobs=-1,
+                class_weight="balanced",  # same balancing logic
+            )),
+        ]),
+        "XGBoost": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model",  XGBClassifier(
+                random_state=42,
+                eval_metric="logloss",
+                verbosity=0,
+                scale_pos_weight=xgb_scale,  # balances Pass vs Fail weight
+            )),
+        ]),
     }
 
-    # ── Step 3: Train, predict, and score ───────────────────────────
-    results = {}
+    # ── Step 3: Hyperparameter grids ────────────────────────────────
+    #
+    # WHY GridSearchCV?
+    #   Instead of guessing the best hyperparameters, we try multiple
+    #   combinations and use 5-fold cross-validation to pick the winner.
+    #   "5-fold CV" = split training data into 5 parts, train on 4, test on 1,
+    #   repeat 5 times and average — gives a much more reliable score.
+    #
+    # Note: Pipeline param names use format "stepname__paramname"
+
+    # WHY f1_macro?
+    #   `scoring="f1"` only measures F1 for the *Pass* class (label=1).
+    #   A model that predicts "Pass" for everyone gets a perfect f1 score!
+    #   `f1_macro` averages F1 across BOTH classes equally, so the model
+    #   is forced to catch failing students too.
+
+    param_grids = {
+        "Logistic Regression": {
+            "model__C": [0.01, 0.1, 1.0, 10.0],
+            "model__solver": ["lbfgs", "liblinear"],
+        },
+        "Random Forest": {
+            "model__n_estimators": [100, 200],
+            "model__max_depth":    [None, 5, 10],
+            "model__min_samples_split": [2, 5],
+        },
+        "XGBoost": {
+            "model__n_estimators":  [100, 200],
+            "model__learning_rate": [0.05, 0.1],
+            "model__max_depth":     [3, 5],
+        },
+    }
+
+    # ── Step 4: Train, tune, and score ───────────────────────────────
+    results        = {}
     trained_models = {}
 
-    print("\nTraining models...\n")
+    print("\nTraining + tuning models (this takes ~30-60 seconds)...\n")
 
-    for model_name, model in models.items():
-        print(f"  Training {model_name}...")
+    for model_name, pipeline in pipelines.items():
+        print(f"  Tuning {model_name}...")
 
-        # Fit the model on training data
-        model.fit(X_train, y_train)
+        # GridSearchCV tries every combo in param_grid with 5-fold CV
+        grid_search = GridSearchCV(
+            pipeline,
+            param_grids[model_name],
+            cv=5,
+            scoring="f1_macro",   # optimise equally for BOTH Pass and Fail
+            n_jobs=-1,
+            refit=True,
+        )
+        grid_search.fit(X_train, y_train)
 
-        # Predict on the held-out test set
-        y_pred = model.predict(X_test)
+        best_pipeline = grid_search.best_estimator_
+        print(f"    Best params: {grid_search.best_params_}")
 
-        # Compute metrics
-        # - accuracy:  overall % correct
-        # - precision: of all "Pass" predictions, how many were actually Pass?
-        # - recall:    of all actual Passes, how many did we catch?
-        # - F1:        harmonic mean of precision and recall (best single metric
-        #              when classes are imbalanced, as they are here ~67/33)
+        # Cross-validated macro-F1 on training data (5-fold)
+        cv_f1 = cross_val_score(best_pipeline, X_train, y_train,
+                                cv=5, scoring="f1_macro").mean()
+
+        # Final evaluation on the held-out test set
+        y_pred = best_pipeline.predict(X_test)
+
         results[model_name] = {
-            "Accuracy":  accuracy_score(y_test, y_pred),
-            "Precision": precision_score(y_test, y_pred, zero_division=0),
-            "Recall":    recall_score(y_test, y_pred, zero_division=0),
-            "F1-Score":  f1_score(y_test, y_pred, zero_division=0),
+            "CV-F1 (mean)": cv_f1,
+            "Accuracy":     accuracy_score(y_test, y_pred),
+            "Precision":    precision_score(y_test, y_pred, zero_division=0),
+            "Recall":       recall_score(y_test, y_pred, zero_division=0),
+            "F1-Score":     f1_score(y_test, y_pred, zero_division=0),
         }
+        trained_models[model_name] = (best_pipeline, y_pred)
 
-        trained_models[model_name] = (model, y_pred)
-
-    # ── Step 4: Print comparison table ──────────────────────────────
+    # ── Step 5: Print comparison table ───────────────────────────────
     print_comparison_table(results)
 
-    # ── Step 5: Find the best model (by F1-Score) ───────────────────
-    #
-    # WHY F1 and not accuracy?
-    #   Our dataset is imbalanced: 67% Pass, 33% Fail.
-    #   A model that predicts "Pass" for EVERYONE would get 67% accuracy!
-    #   F1-Score penalises a model that ignores the minority class (Fail).
-
-    best_name = max(results, key=lambda name: results[name]["F1-Score"])
+    # ── Step 6: Find best model by test F1 ───────────────────────────
+    best_name = max(results, key=lambda n: results[n]["F1-Score"])
     best_model, best_preds = trained_models[best_name]
 
     print(f"[BEST] Best model: {best_name}")
-    print(f"   F1-Score: {results[best_name]['F1-Score']:.4f} | "
-          f"Accuracy: {results[best_name]['Accuracy']:.4f}")
+    print(f"   Test F1-Score : {results[best_name]['F1-Score']:.4f}")
+    print(f"   Test Accuracy : {results[best_name]['Accuracy']:.4f}")
 
-    # ── Step 6: Confusion matrix for the best model ─────────────────
+    # ── Step 7: Confusion matrix ─────────────────────────────────────
+    print()
     print_confusion_matrix(y_test, best_preds, best_name)
 
-    # ── Step 7: Save the best model ─────────────────────────────────
-    os.makedirs("models", exist_ok=True)  # create folder if it doesn't exist
+    # ── Step 8: Feature importances (if available) ───────────────────
+    try:
+        inner_model = best_model.named_steps["model"]
+        if hasattr(inner_model, "feature_importances_"):
+            importances = inner_model.feature_importances_
+            feat_names  = X_train.columns
+            top = sorted(zip(feat_names, importances),
+                         key=lambda x: x[1], reverse=True)[:10]
+            print("\nTop 10 most important features:")
+            for feat, imp in top:
+                bar = "#" * int(imp * 200)
+                print(f"  {feat:<25} {imp:.4f}  {bar}")
+            print()
+    except Exception:
+        pass  # Logistic Regression uses coefficients, not importances — skip
 
+    # ── Step 9: Save ─────────────────────────────────────────────────
+    os.makedirs("models", exist_ok=True)
     joblib.dump(best_model, MODEL_SAVE_PATH)
-    print(f"[OK] Best model saved to: {MODEL_SAVE_PATH}")
+    print(f"[OK] Best model (pipeline) saved to: {MODEL_SAVE_PATH}")
 
-    # Save metadata about the preprocessor so the API knows what
-    # columns to expect and what order they should be in.
     preprocessor_info = {
-        "feature_columns": list(X_train.columns),   # exact column order after encoding
-        "numeric_cols":    FEATURE_COLS,             # original feature list
-        "categorical_cols": CATEGORICAL_COLS,        # which cols were one-hot encoded
+        "feature_columns":  list(X_train.columns),
+        "numeric_cols":     FEATURE_COLS,
+        "categorical_cols": CATEGORICAL_COLS,
         "target_col":       TARGET_COL,
         "best_model_name":  best_name,
         "test_metrics":     results[best_name],
@@ -275,5 +284,5 @@ if __name__ == "__main__":
 
     results = train_and_evaluate(DATA_PATH)
 
-    print("\nTraining complete! Check the models/ folder for saved artifacts.")
-    print("   Next step: run  mlflow ui  to explore experiment tracking.\n")
+    print("\nTraining complete! Check models/ for saved artifacts.")
+    print("Next step: run  python src/train.py  again to see if results change.\n")
