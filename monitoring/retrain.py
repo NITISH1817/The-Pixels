@@ -7,7 +7,6 @@ Run with:
     python monitoring/retrain.py
 """
 
-import os
 import sys
 from pathlib import Path
 import joblib
@@ -16,7 +15,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 from monitoring.drift_detection import run_drift_detection
-from src.train import train_and_evaluate, MODEL_SAVE_PATH, PREP_SAVE_PATH
+from src.train import train_and_evaluate, PREP_SAVE_PATH
 
 
 def check_and_retrain(drift_threshold: float = 0.3, min_prediction_count: int = 500) -> bool:

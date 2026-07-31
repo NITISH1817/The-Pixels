@@ -5,3 +5,6 @@ timestamp,model_version,prediction,success_probability,risk_score,risk_level,Gen
 2026-07-31T22:30:44.022872,v2.0.0,PASS,71.1,28.9,Low,Female,20,25.0,98.0,90.0,95.0,92.0,0,Yes,High,Master's,High,8.0,2.0,Low,High,High,3,High,15.0
 2026-07-31T22:30:44.081838,v2.0.0,PASS,79.5,20.5,Low,Female,20,15,95.0,85,98.0,88,0,Yes,High,Bachelor's,Medium,7,3,Medium,High,High,2,High,30
 2026-07-31T22:30:44.082701,v2.0.0,FAIL,11.3,88.7,High,Male,22,5,60.0,55,50.0,60,2,Yes,Low,High School,Low,5,6,High,Low,Low,0,Medium,60
+2026-07-31T22:37:26.090432,v2.0.0,PASS,71.1,28.9,Low,Female,20,25.0,98.0,90.0,95.0,92.0,0,Yes,High,Master's,High,8.0,2.0,Low,High,High,3,High,15.0
+2026-07-31T22:37:26.147061,v2.0.0,PASS,79.5,20.5,Low,Female,20,15,95.0,85,98.0,88,0,Yes,High,Bachelor's,Medium,7,3,Medium,High,High,2,High,30
+2026-07-31T22:37:26.147758,v2.0.0,FAIL,11.3,88.7,High,Male,22,5,60.0,55,50.0,60,2,Yes,Low,High School,Low,5,6,High,Low,Low,0,Medium,60

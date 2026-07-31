@@ -11,11 +11,10 @@ Run with:
 import os
 import sys
 import io
-import time
 import joblib
 import pandas as pd
 from datetime import datetime
-from typing import Optional, List, Dict
+from typing import List, Dict
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -249,7 +248,7 @@ def predict_performance(data: StudentInput):
         raise HTTPException(status_code=500, detail="Model is not initialized.")
 
     try:
-        input_dict = data.dict()
+        input_dict = data.model_dump() if hasattr(data, "model_dump") else data.dict()
         df_raw = pd.DataFrame([input_dict])
 
         cat_cols = prep_info["categorical_cols"]
