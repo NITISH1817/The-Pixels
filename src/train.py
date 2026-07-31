@@ -20,8 +20,12 @@ Expected output:
 
 import sys
 import os
+import io
 import warnings
 warnings.filterwarnings("ignore")  # suppress sklearn/xgboost version warnings
+
+# Force UTF-8 output on Windows to prevent encoding errors in terminals
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 # Make sure Python can find the src/ module when run from the project root
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -115,8 +119,8 @@ def print_confusion_matrix(y_true, y_pred, model_name: str) -> None:
     cm = confusion_matrix(y_true, y_pred)
     tn, fp, fn, tp = cm.ravel()
 
-    print(f"\n{'='*50}")
-    print(f"  Confusion Matrix — {model_name}")
+    print(f"{'='*50}")
+    print(f"  Confusion Matrix -- {model_name}")
     print(f"{'='*50}")
     print(f"                    Predicted")
     print(f"                  Fail    Pass")
@@ -124,8 +128,8 @@ def print_confusion_matrix(y_true, y_pred, model_name: str) -> None:
     print(f"          Pass  [{fn:>5}]  [{tp:>5}]")
     print(f"{'='*50}")
     print(f"  True Negatives  (Fail correctly identified): {tn}")
-    print(f"  False Positives (predicted Pass, actually Fail): {fp}  ← false alarm")
-    print(f"  False Negatives (predicted Fail, actually Pass): {fn}  ← missed student!")
+    print(f"  False Positives (predicted Pass, actually Fail): {fp}  <- false alarm")
+    print(f"  False Negatives (predicted Fail, actually Pass): {fn}  <- missed student!")
     print(f"  True Positives  (Pass correctly identified): {tp}")
     print()
 
