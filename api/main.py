@@ -2,7 +2,7 @@
 api/main.py
 ------------
 FastAPI prediction server + HTML Frontend serving for Student Performance Prediction.
-Includes Risk Score Engine (Option 1) and Personalised Recommendations (Option 2).
+Includes Risk Score Engine, Actionable Recommendations, Batch Prediction, Logging & Health Metrics.
 
 Run with:
     uvicorn api.main:app --reload
@@ -10,25 +10,33 @@ Run with:
 
 import os
 import sys
+import io
+import time
 import joblib
 import pandas as pd
+from datetime import datetime
 from typing import Optional, List, Dict
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-# Make sure src module is importable
+# Make sure src and monitoring modules are importable
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from monitoring.logger import log_prediction
 
 MODEL_PATH = "models/best_model.pkl"
 PREP_PATH  = "models/preprocessor_info.pkl"
 
+START_TIME = datetime.now()
+PREDICTION_COUNT = 0
+
 app = FastAPI(
     title="Student Performance Prediction & Decision Support System",
     description="MLOps Prediction Service + Educational Decision Support Engine",
-    version="2.0.0"
+    version="2.1.0"
 )
 
 # Enable CORS
@@ -94,51 +102,61 @@ class StudentInput(BaseModel):
 # ------------------------------------------------------------------
 # HELPER: Generate Reasons & Personalised Actionable Recommendations
 # ------------------------------------------------------------------
-def generate_reasons_and_recommendations(data: StudentInput) -> Dict[str, List[str]]:
+def generate_reasons_and_recommendations(data_dict: dict) -> Dict[str, List[str]]:
     reasons = []
     recommendations = []
 
-    if data.Attendance_Rate < 85.0:
-        reasons.append(f"Low Attendance Rate ({data.Attendance_Rate}%)")
+    att = float(data_dict.get("Attendance_Rate", 100))
+    sub = float(data_dict.get("Assignment_Submission_Rate", 100))
+    past = float(data_dict.get("Past_Exam_Scores", 100))
+    study = float(data_dict.get("Study_Hours_per_Week", 20))
+    screen = float(data_dict.get("Screen_Time", 0))
+    fails = int(data_dict.get("Previous_Failures", 0))
+    sleep = float(data_dict.get("Sleep_Hours", 8))
+    stress = str(data_dict.get("Stress_Level", "Low"))
+    motiv = str(data_dict.get("Motivation_Level", "High"))
+    quiz = float(data_dict.get("Quiz_Average", 100))
+
+    if att < 85.0:
+        reasons.append(f"Low Attendance Rate ({att}%)")
         recommendations.append("Increase classroom attendance to at least 85%")
 
-    if data.Assignment_Submission_Rate < 80.0:
-        reasons.append(f"Low Assignment Completion Rate ({data.Assignment_Submission_Rate}%)")
+    if sub < 80.0:
+        reasons.append(f"Low Assignment Completion Rate ({sub}%)")
         recommendations.append("Complete and submit all pending assignments on time")
 
-    if data.Past_Exam_Scores < 65.0:
-        reasons.append(f"Low Past Exam Score ({data.Past_Exam_Scores}/100)")
+    if past < 65.0:
+        reasons.append(f"Low Past Exam Score ({past}/100)")
         recommendations.append("Enroll in subject-specific remedial tutoring sessions")
 
-    if data.Study_Hours_per_Week < 12.0:
-        reasons.append(f"Insufficient Weekly Study Time ({data.Study_Hours_per_Week} hrs/week)")
+    if study < 12.0:
+        reasons.append(f"Insufficient Weekly Study Time ({study} hrs/week)")
         recommendations.append("Increase self-study time to at least 15 hours per week")
 
-    if data.Screen_Time > 4.0:
-        reasons.append(f"Excessive Daily Screen Time ({data.Screen_Time} hrs/day)")
+    if screen > 4.0:
+        reasons.append(f"Excessive Daily Screen Time ({screen} hrs/day)")
         recommendations.append("Limit non-academic screen time to under 4 hours per day")
 
-    if data.Previous_Failures > 0:
-        reasons.append(f"History of Class Failures ({data.Previous_Failures} previous failure(s))")
+    if fails > 0:
+        reasons.append(f"History of Class Failures ({fails} previous failure(s))")
         recommendations.append("Schedule 1-on-1 academic counseling with faculty mentor")
 
-    if data.Sleep_Hours < 6.0:
-        reasons.append(f"Inadequate Sleep ({data.Sleep_Hours} hrs/night)")
+    if sleep < 6.0:
+        reasons.append(f"Inadequate Sleep ({sleep} hrs/night)")
         recommendations.append("Maintain a healthy sleep schedule of 7 to 8 hours daily")
 
-    if data.Stress_Level == "High":
+    if stress == "High":
         reasons.append("High Self-Reported Stress Level")
         recommendations.append("Utilize campus wellness & stress management resources")
 
-    if data.Motivation_Level == "Low":
+    if motiv == "Low":
         reasons.append("Low Academic Motivation Level")
         recommendations.append("Join peer study circles to build motivation & peer accountability")
 
-    if data.Quiz_Average < 65.0:
-        reasons.append(f"Low Quiz Average ({data.Quiz_Average}%)")
+    if quiz < 65.0:
+        reasons.append(f"Low Quiz Average ({quiz}%)")
         recommendations.append("Review weekly quiz feedback and practice mock quizzes")
 
-    # Default positive reinforcement if student has good habits
     if not reasons:
         reasons.append("Consistent academic habits & strong class engagement")
         recommendations.append("Maintain current study routine and continue active participation")
@@ -153,18 +171,17 @@ def generate_reasons_and_recommendations(data: StudentInput) -> Dict[str, List[s
 # HELPER: Calculate Risk Metrics
 # ------------------------------------------------------------------
 def calculate_risk_metrics(pass_probability: float):
-    # Risk Score ranges from 0 (safest) to 100 (highest risk)
     risk_score = round((1.0 - pass_probability) * 100, 1)
 
     if risk_score < 30.0:
         risk_level = "Low"
-        risk_color = "#10b981"  # Green
+        risk_color = "#10b981"
     elif risk_score <= 60.0:
         risk_level = "Medium"
-        risk_color = "#f59e0b"  # Amber/Yellow
+        risk_color = "#f59e0b"
     else:
         risk_level = "High"
-        risk_color = "#ef4444"  # Red
+        risk_color = "#ef4444"
 
     return {
         "risk_score": risk_score,
@@ -186,18 +203,47 @@ def serve_ui(request: Request):
 
 @app.get("/health")
 def health_check():
-    """Health check endpoint for CI/CD or monitoring."""
+    """Health check endpoint for monitoring."""
     init_artifacts()
+    uptime_seconds = round((datetime.now() - START_TIME).total_seconds(), 2)
     return {
         "status": "healthy",
         "model_loaded": model is not None,
-        "model_name": prep_info.get("best_model_name") if prep_info else None
+        "model_version": "v2.0.0",
+        "uptime_seconds": uptime_seconds,
+        "prediction_count": PREDICTION_COUNT
+    }
+
+
+@app.get("/model-info")
+def get_model_info():
+    """Returns trained model details, features, and metrics."""
+    init_artifacts()
+    if not prep_info:
+        raise HTTPException(status_code=500, detail="Model info not found.")
+    return {
+        "model_name": prep_info.get("best_model_name"),
+        "model_version": "v2.0.0",
+        "feature_count": len(prep_info.get("feature_columns", [])),
+        "test_metrics": prep_info.get("test_metrics", {})
+    }
+
+
+@app.get("/metrics")
+def get_system_metrics():
+    """System prediction metrics for Prometheus or monitoring services."""
+    uptime_seconds = round((datetime.now() - START_TIME).total_seconds(), 2)
+    return {
+        "total_predictions": PREDICTION_COUNT,
+        "uptime_seconds": uptime_seconds,
+        "status": "active"
     }
 
 
 @app.post("/predict")
 def predict_performance(data: StudentInput):
     """Predict Pass / Fail + Risk Metrics + Actionable Recommendations."""
+    global PREDICTION_COUNT
     init_artifacts()
     if model is None or prep_info is None:
         raise HTTPException(status_code=500, detail="Model is not initialized.")
@@ -206,11 +252,9 @@ def predict_performance(data: StudentInput):
         input_dict = data.dict()
         df_raw = pd.DataFrame([input_dict])
 
-        # One-hot encode categorical fields
         cat_cols = prep_info["categorical_cols"]
         df_encoded = pd.get_dummies(df_raw, columns=cat_cols, drop_first=True, dtype=int)
 
-        # Align with feature columns
         trained_cols = prep_info["feature_columns"]
         for col in trained_cols:
             if col not in df_encoded.columns:
@@ -218,18 +262,29 @@ def predict_performance(data: StudentInput):
 
         df_encoded = df_encoded[trained_cols]
 
-        # Make prediction
         pred_class = int(model.predict(df_encoded)[0])
         probabilities = model.predict_proba(df_encoded)[0]
         pass_probability = float(probabilities[1])
 
-        # Compute Option 1: Risk Metrics
         risk = calculate_risk_metrics(pass_probability)
-
-        # Compute Option 2: Reasons & Personalized Recommendations
-        advisory = generate_reasons_and_recommendations(data)
+        advisory = generate_reasons_and_recommendations(input_dict)
 
         result_label = "PASS" if pred_class == 1 else "FAIL"
+
+        PREDICTION_COUNT += 1
+
+        # Automatically log prediction event
+        try:
+            log_prediction(
+                input_features=input_dict,
+                prediction=result_label,
+                success_probability=round(pass_probability * 100, 1),
+                risk_score=risk["risk_score"],
+                risk_level=risk["risk_level"],
+                model_version="v2.0.0"
+            )
+        except Exception as log_err:
+            print(f"Logging error: {log_err}")
 
         return {
             "prediction": result_label,
@@ -247,3 +302,82 @@ def predict_performance(data: StudentInput):
         }
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Prediction error: {str(e)}")
+
+
+@app.post("/predict-batch")
+async def predict_batch(file: UploadFile = File(...)):
+    """
+    Accepts CSV file upload, processes batch predictions for multiple students,
+    and returns predictions, risk scores, probabilities, and recommendations for every student.
+    """
+    global PREDICTION_COUNT
+    init_artifacts()
+    if model is None or prep_info is None:
+        raise HTTPException(status_code=500, detail="Model is not initialized.")
+
+    if not file.filename.endswith(".csv"):
+        raise HTTPException(status_code=400, detail="Only CSV files are supported.")
+
+    try:
+        contents = await file.read()
+        df_batch = pd.read_csv(io.BytesIO(contents))
+
+        # Clean percentage columns if present
+        for col in ["Attendance_Rate", "Assignment_Submission_Rate"]:
+            if col in df_batch.columns and df_batch[col].dtype == object:
+                df_batch[col] = df_batch[col].astype(str).str.rstrip("%").astype(float)
+
+        cat_cols = prep_info["categorical_cols"]
+        df_encoded = pd.get_dummies(df_batch, columns=cat_cols, drop_first=True, dtype=int)
+
+        trained_cols = prep_info["feature_columns"]
+        for col in trained_cols:
+            if col not in df_encoded.columns:
+                df_encoded[col] = 0
+
+        df_encoded = df_encoded[trained_cols]
+
+        predictions = model.predict(df_encoded)
+        probabilities = model.predict_proba(df_encoded)
+
+        batch_results = []
+        for idx, row_raw in df_batch.iterrows():
+            pred_class = int(predictions[idx])
+            pass_prob = float(probabilities[idx][1])
+            result_label = "PASS" if pred_class == 1 else "FAIL"
+
+            risk = calculate_risk_metrics(pass_prob)
+            row_dict = row_raw.to_dict()
+            advisory = generate_reasons_and_recommendations(row_dict)
+
+            batch_results.append({
+                "student_index": idx + 1,
+                "prediction": result_label,
+                "success_probability": round(pass_prob * 100, 1),
+                "academic_risk_level": risk["risk_level"],
+                "risk_score": risk["risk_score"],
+                "reasons": advisory["reasons"],
+                "recommendations": advisory["recommendations"]
+            })
+
+            # Log prediction event
+            try:
+                log_prediction(
+                    input_features=row_dict,
+                    prediction=result_label,
+                    success_probability=round(pass_prob * 100, 1),
+                    risk_score=risk["risk_score"],
+                    risk_level=risk["risk_level"],
+                    model_version="v2.0.0"
+                )
+            except Exception:
+                pass
+
+        PREDICTION_COUNT += len(batch_results)
+
+        return {
+            "total_students_processed": len(batch_results),
+            "results": batch_results
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Batch processing error: {str(e)}")
