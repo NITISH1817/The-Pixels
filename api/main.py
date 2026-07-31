@@ -98,7 +98,7 @@ def serve_ui(request: Request):
     """Serve the Web Dashboard Frontend UI."""
     init_artifacts()
     metrics = prep_info.get("test_metrics", {}) if prep_info else {}
-    return templates.TemplateResponse("index.html", {"request": request, "metrics": metrics})
+    return templates.TemplateResponse(request=request, name="index.html", context={"metrics": metrics})
 
 
 @app.get("/health")
