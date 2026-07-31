@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor | MLOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="badge">MLOps Production Demo</div>
+            <h1>Student Performance Prediction</h1>
+            <p>Predict student academic outcome early using Random Forest Machine Learning pipeline</p>
+        </header>
+
+        <!-- Metrics Banner -->
+        <div class="metrics-row">
+            <div class="metric-card">
+                <span class="metric-title">Model Accuracy</span>
+                <span class="metric-value">{{ "%.1f"|format(metrics.get('Accuracy', 0.734) * 100) }}%</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">F1 Score</span>
+                <span class="metric-value">{{ "%.4f"|format(metrics.get('F1-Score', 0.8125)) }}</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">Active Model</span>
+                <span class="metric-value highlight">Random Forest</span>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Prediction Form -->
+            <div class="card form-card">
+                <h2>🎓 Enter Student Attributes</h2>
+                <form id="prediction-form">
+                    
+                    <div class="form-section-title">Academic History</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Past Exam Score (0-100)</label>
+                            <input type="number" id="Past_Exam_Scores" value="85" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Attendance Rate (%)</label>
+                            <input type="number" id="Attendance_Rate" value="92" min="0" max="100" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Assignment Submission (%)</label>
+                            <input type="number" id="Assignment_Submission_Rate" value="90" min="0" max="100" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Quiz Average (0-100)</label>
+                            <input type="number" id="Quiz_Average" value="88" min="0" max="100" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section-title">Study Habits & Habits</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Study Hours / Week</label>
+                            <input type="number" id="Study_Hours_per_Week" value="18" min="0" max="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Previous Failures</label>
+                            <input type="number" id="Previous_Failures" value="0" min="0" max="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Sleep Hours / Day</label>
+                            <input type="number" id="Sleep_Hours" value="7" min="0" max="24" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Screen Time (Hrs/Day)</label>
+                            <input type="number" id="Screen_Time" value="3" min="0" max="24" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section-title">Background & Environment</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="Gender">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" id="Age" value="20" min="15" max="30" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Internet Access</label>
+                            <select id="Internet_Access">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Parent Support</label>
+                            <select id="Parents_Support">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Parental Education</label>
+                            <select id="Parental_Education">
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's">Master's</option>
+                                <option value="PhD">PhD</option>
+                                <option value="High School">High School</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Family Income</label>
+                            <select id="Family_Income">
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stress Level</label>
+                            <select id="Stress_Level">
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Motivation Level</label>
+                            <select id="Motivation_Level">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Class Participation</label>
+                            <select id="Class_Participation">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Extracurricular Activities</label>
+                            <input type="number" id="Extracurricular_Activities" value="2" min="0" max="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label>School Support</label>
+                            <select id="School_Support">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Travel Time (Mins)</label>
+                            <input type="number" id="Travel_Time" value="20" min="0" max="180" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-predict" id="predict-btn">
+                        <span>Predict Student Performance</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Prediction Result Output -->
+            <div class="card result-card">
+                <h2>🚀 Prediction Output</h2>
+                
+                <div id="placeholder-state" class="result-state active">
+                    <div class="icon">🔮</div>
+                    <p>Fill out student information and click <strong>Predict Student Performance</strong> to generate ML prediction.</p>
+                </div>
+
+                <div id="loading-state" class="result-state">
+                    <div class="spinner"></div>
+                    <p>Evaluating Random Forest Model...</p>
+                </div>
+
+                <div id="result-state" class="result-state">
+                    <div class="prediction-badge" id="prediction-badge">PASS</div>
+                    
+                    <div class="confidence-container">
+                        <div class="confidence-header">
+                            <span>Prediction Confidence</span>
+                            <span id="confidence-val">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="probabilities-grid">
+                        <div class="prob-box pass">
+                            <span class="prob-label">Pass Probability</span>
+                            <span class="prob-value" id="pass-prob">85%</span>
+                        </div>
+                        <div class="prob-box fail">
+                            <span class="prob-label">Fail Probability</span>
+                            <span class="prob-value" id="fail-prob">15%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formBtn = document.getElementById('predict-btn');
+            const placeholderState = document.getElementById('placeholder-state');
+            const loadingState = document.getElementById('loading-state');
+            const resultState = document.getElementById('result-state');
+
+            // Hide old states & show loading
+            placeholderState.classList.remove('active');
+            resultState.classList.remove('active');
+            loadingState.classList.add('active');
+
+            const payload = {
+                Gender: document.getElementById('Gender').value,
+                Age: parseInt(document.getElementById('Age').value),
+                Study_Hours_per_Week: parseFloat(document.getElementById('Study_Hours_per_Week').value),
+                Attendance_Rate: parseFloat(document.getElementById('Attendance_Rate').value),
+                Past_Exam_Scores: parseFloat(document.getElementById('Past_Exam_Scores').value),
+                Assignment_Submission_Rate: parseFloat(document.getElementById('Assignment_Submission_Rate').value),
+                Quiz_Average: parseFloat(document.getElementById('Quiz_Average').value),
+                Previous_Failures: parseInt(document.getElementById('Previous_Failures').value),
+                Internet_Access: document.getElementById('Internet_Access').value,
+                Parents_Support: document.getElementById('Parents_Support').value,
+                Parental_Education: document.getElementById('Parental_Education').value,
+                Family_Income: document.getElementById('Family_Income').value,
+                Sleep_Hours: parseFloat(document.getElementById('Sleep_Hours').value),
+                Screen_Time: parseFloat(document.getElementById('Screen_Time').value),
+                Stress_Level: document.getElementById('Stress_Level').value,
+                Motivation_Level: document.getElementById('Motivation_Level').value,
+                Class_Participation: document.getElementById('Class_Participation').value,
+                Extracurricular_Activities: parseInt(document.getElementById('Extracurricular_Activities').value),
+                School_Support: document.getElementById('School_Support').value,
+                Travel_Time: parseFloat(document.getElementById('Travel_Time').value),
+            };
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error('API Prediction failed');
+
+                const data = await response.json();
+
+                // Populate results
+                const badge = document.getElementById('prediction-badge');
+                badge.innerText = data.prediction;
+                badge.className = 'prediction-badge ' + (data.prediction === 'PASS' ? 'pass' : 'fail');
+
+                document.getElementById('confidence-val').innerText = data.confidence + '%';
+                const fill = document.getElementById('progress-fill');
+                fill.style.width = data.confidence + '%';
+                fill.style.background = data.prediction === 'PASS' ? 'linear-gradient(90deg, #10b981, #059669)' : 'linear-gradient(90deg, #ef4444, #dc2626)';
+
+                document.getElementById('pass-prob').innerText = data.probabilities.PASS + '%';
+                document.getElementById('fail-prob').innerText = data.probabilities.FAIL + '%';
+
+                loadingState.classList.remove('active');
+                resultState.classList.add('active');
+            } catch (err) {
+                alert('Error making prediction: ' + err.message);
+                loadingState.classList.remove('active');
+                placeholderState.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
