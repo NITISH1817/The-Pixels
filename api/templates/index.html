@@ -4,46 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance & Decision Support System | MLOps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-    </div>
 
     <div class="container">
-        <!-- Header -->
+        <!-- Header Banner with Stats -->
         <header class="header">
-            <div class="badge">MLOps Decision Support System</div>
-            <h1>Student Performance & Risk Advisory</h1>
-            <p>Predict student academic outcome, evaluate risk scores, and generate personalized intervention recommendations</p>
+            <div class="header-left">
+                <div class="badge">MLOps Educational Decision Support System</div>
+                <h1>Student Performance Risk & Advisory</h1>
+                <p>Predict student academic outcome, calculate risk scores, and generate personalized intervention plans</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Model Accuracy</span>
+                    <span class="stat-value">{{ "%.1f"|format(metrics.get('Accuracy', 0.734) * 100) }}%</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">F1 Score</span>
+                    <span class="stat-value">{{ "%.4f"|format(metrics.get('F1-Score', 0.8125)) }}</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Active Model</span>
+                    <span class="stat-value highlight">Random Forest</span>
+                </div>
+            </div>
         </header>
 
-        <!-- Metrics Banner -->
-        <div class="metrics-row">
-            <div class="metric-card">
-                <span class="metric-title">Model Accuracy</span>
-                <span class="metric-value">{{ "%.1f"|format(metrics.get('Accuracy', 0.734) * 100) }}%</span>
-            </div>
-            <div class="metric-card">
-                <span class="metric-title">F1 Score</span>
-                <span class="metric-value">{{ "%.4f"|format(metrics.get('F1-Score', 0.8125)) }}</span>
-            </div>
-            <div class="metric-card">
-                <span class="metric-title">Active Model</span>
-                <span class="metric-value highlight">Random Forest</span>
-            </div>
-        </div>
-
+        <!-- Main 2-Column Fullscreen Grid -->
         <div class="main-grid">
             <!-- Prediction Form -->
             <div class="card form-card">
-                <h2>🎓 Student Profile Inputs</h2>
+                <h2>🎓 Student Profile Attributes</h2>
                 <form id="prediction-form">
                     
-                    <div class="form-section-title">Academic History</div>
+                    <div class="form-section-title">1. Academic Performance History</div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Past Exam Score (0-100)</label>
@@ -63,7 +60,7 @@
                         </div>
                     </div>
 
-                    <div class="form-section-title">Study Habits & Behavior</div>
+                    <div class="form-section-title">2. Study Habits & Lifestyle</div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Study Hours / Week</label>
@@ -74,7 +71,7 @@
                             <input type="number" id="Previous_Failures" value="2" min="0" max="10" required>
                         </div>
                         <div class="form-group">
-                            <label>Sleep Hours / Day</label>
+                            <label>Sleep Hours / Night</label>
                             <input type="number" id="Sleep_Hours" value="5" min="0" max="24" required>
                         </div>
                         <div class="form-group">
@@ -83,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="form-section-title">Background & Environment</div>
+                    <div class="form-section-title">3. Background & Support Environment</div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Gender</label>
@@ -178,20 +175,19 @@
 
             <!-- Prediction Result & Decision Support Output -->
             <div class="card result-card">
-                <h2>📊 Decision Support Report</h2>
+                <h2>📊 Decision Support Advisory Report</h2>
                 
                 <div id="placeholder-state" class="result-state active">
                     <div class="icon">🔮</div>
-                    <p>Enter student information and click <strong>Analyze & Generate Decision Support Report</strong> to evaluate risk and action items.</p>
+                    <p>Enter student profile information and click <strong>Analyze & Generate Decision Support Report</strong> to evaluate academic risk scores and personalized action items.</p>
                 </div>
 
                 <div id="loading-state" class="result-state">
                     <div class="spinner"></div>
-                    <p>Evaluating Decision Support Engine & Model...</p>
+                    <p>Evaluating Decision Support Engine & Machine Learning Pipeline...</p>
                 </div>
 
                 <div id="result-state" class="result-state">
-                    <!-- Option 1: Prediction Badge & Risk Score -->
                     <div class="result-top-bar">
                         <div class="prediction-badge" id="prediction-badge">PASS</div>
                         <div class="risk-pill" id="risk-pill">Academic Risk: Medium</div>
@@ -218,19 +214,15 @@
                         </div>
                     </div>
 
-                    <!-- Option 2: Reasons List -->
                     <div class="decision-section">
                         <h3>⚠️ Primary Risk Factors / Reasons</h3>
                         <ul class="reason-list" id="reasons-list">
-                            <!-- Populated dynamically -->
                         </ul>
                     </div>
 
-                    <!-- Option 2: Actionable Recommendations Checklist -->
                     <div class="decision-section">
                         <h3>💡 Actionable Recommendations for Teacher</h3>
                         <ul class="rec-list" id="recommendations-list">
-                            <!-- Populated dynamically -->
                         </ul>
                     </div>
 
@@ -291,10 +283,10 @@
                 badge.innerText = data.prediction;
                 badge.className = 'prediction-badge ' + (data.prediction === 'PASS' ? 'pass' : 'fail');
 
-                // 2. Risk Pill & Colors
+                // 2. Risk Pill
                 const riskPill = document.getElementById('risk-pill');
                 riskPill.innerText = `Academic Risk: ${data.academic_risk_level}`;
-                riskPill.style.backgroundColor = `${data.risk_color}22`;
+                riskPill.style.backgroundColor = `${data.risk_color}18`;
                 riskPill.style.borderColor = data.risk_color;
                 riskPill.style.color = data.risk_color;
 
@@ -307,7 +299,7 @@
                 document.getElementById('confidence-val').innerText = data.success_probability + '%';
                 const fill = document.getElementById('progress-fill');
                 fill.style.width = data.success_probability + '%';
-                fill.style.background = data.prediction === 'PASS' ? 'linear-gradient(90deg, #10b981, #059669)' : 'linear-gradient(90deg, #ef4444, #dc2626)';
+                fill.style.background = data.prediction === 'PASS' ? 'linear-gradient(90deg, #16a34a, #15803d)' : 'linear-gradient(90deg, #dc2626, #b91c1c)';
 
                 // 4. Reasons List
                 const reasonsList = document.getElementById('reasons-list');
