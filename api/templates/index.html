@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Performance Predictor | MLOps</title>
+    <title>Student Performance & Decision Support System | MLOps</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -16,9 +16,9 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="badge">MLOps Production Demo</div>
-            <h1>Student Performance Prediction</h1>
-            <p>Predict student academic outcome early using Random Forest Machine Learning pipeline</p>
+            <div class="badge">MLOps Decision Support System</div>
+            <h1>Student Performance & Risk Advisory</h1>
+            <p>Predict student academic outcome, evaluate risk scores, and generate personalized intervention recommendations</p>
         </header>
 
         <!-- Metrics Banner -->
@@ -40,46 +40,46 @@
         <div class="main-grid">
             <!-- Prediction Form -->
             <div class="card form-card">
-                <h2>🎓 Enter Student Attributes</h2>
+                <h2>🎓 Student Profile Inputs</h2>
                 <form id="prediction-form">
                     
                     <div class="form-section-title">Academic History</div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Past Exam Score (0-100)</label>
-                            <input type="number" id="Past_Exam_Scores" value="85" min="0" max="100" required>
+                            <input type="number" id="Past_Exam_Scores" value="55" min="0" max="100" required>
                         </div>
                         <div class="form-group">
                             <label>Attendance Rate (%)</label>
-                            <input type="number" id="Attendance_Rate" value="92" min="0" max="100" step="0.1" required>
+                            <input type="number" id="Attendance_Rate" value="60" min="0" max="100" step="0.1" required>
                         </div>
                         <div class="form-group">
                             <label>Assignment Submission (%)</label>
-                            <input type="number" id="Assignment_Submission_Rate" value="90" min="0" max="100" step="0.1" required>
+                            <input type="number" id="Assignment_Submission_Rate" value="50" min="0" max="100" step="0.1" required>
                         </div>
                         <div class="form-group">
                             <label>Quiz Average (0-100)</label>
-                            <input type="number" id="Quiz_Average" value="88" min="0" max="100" step="0.1" required>
+                            <input type="number" id="Quiz_Average" value="60" min="0" max="100" step="0.1" required>
                         </div>
                     </div>
 
-                    <div class="form-section-title">Study Habits & Habits</div>
+                    <div class="form-section-title">Study Habits & Behavior</div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Study Hours / Week</label>
-                            <input type="number" id="Study_Hours_per_Week" value="18" min="0" max="50" required>
+                            <input type="number" id="Study_Hours_per_Week" value="5" min="0" max="50" required>
                         </div>
                         <div class="form-group">
                             <label>Previous Failures</label>
-                            <input type="number" id="Previous_Failures" value="0" min="0" max="10" required>
+                            <input type="number" id="Previous_Failures" value="2" min="0" max="10" required>
                         </div>
                         <div class="form-group">
                             <label>Sleep Hours / Day</label>
-                            <input type="number" id="Sleep_Hours" value="7" min="0" max="24" required>
+                            <input type="number" id="Sleep_Hours" value="5" min="0" max="24" required>
                         </div>
                         <div class="form-group">
                             <label>Screen Time (Hrs/Day)</label>
-                            <input type="number" id="Screen_Time" value="3" min="0" max="24" required>
+                            <input type="number" id="Screen_Time" value="6" min="0" max="24" required>
                         </div>
                     </div>
 
@@ -88,13 +88,13 @@
                         <div class="form-group">
                             <label>Gender</label>
                             <select id="Gender">
-                                <option value="Female">Female</option>
                                 <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Age</label>
-                            <input type="number" id="Age" value="20" min="15" max="30" required>
+                            <input type="number" id="Age" value="22" min="15" max="30" required>
                         </div>
                         <div class="form-group">
                             <label>Internet Access</label>
@@ -106,113 +106,134 @@
                         <div class="form-group">
                             <label>Parent Support</label>
                             <select id="Parents_Support">
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Parental Education</label>
                             <select id="Parental_Education">
+                                <option value="High School">High School</option>
                                 <option value="Bachelor's">Bachelor's</option>
                                 <option value="Master's">Master's</option>
                                 <option value="PhD">PhD</option>
-                                <option value="High School">High School</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Family Income</label>
                             <select id="Family_Income">
+                                <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
                                 <option value="High">High</option>
-                                <option value="Low">Low</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Stress Level</label>
                             <select id="Stress_Level">
+                                <option value="High">High</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
-                                <option value="High">High</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Motivation Level</label>
                             <select id="Motivation_Level">
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Class Participation</label>
                             <select id="Class_Participation">
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Extracurricular Activities</label>
-                            <input type="number" id="Extracurricular_Activities" value="2" min="0" max="10" required>
+                            <input type="number" id="Extracurricular_Activities" value="0" min="0" max="10" required>
                         </div>
                         <div class="form-group">
                             <label>School Support</label>
                             <select id="School_Support">
-                                <option value="High">High</option>
                                 <option value="Medium">Medium</option>
+                                <option value="High">High</option>
                                 <option value="Low">Low</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Travel Time (Mins)</label>
-                            <input type="number" id="Travel_Time" value="20" min="0" max="180" required>
+                            <input type="number" id="Travel_Time" value="60" min="0" max="180" required>
                         </div>
                     </div>
 
                     <button type="submit" class="btn-predict" id="predict-btn">
-                        <span>Predict Student Performance</span>
+                        <span>Analyze & Generate Decision Support Report</span>
                     </button>
                 </form>
             </div>
 
-            <!-- Prediction Result Output -->
+            <!-- Prediction Result & Decision Support Output -->
             <div class="card result-card">
-                <h2>🚀 Prediction Output</h2>
+                <h2>📊 Decision Support Report</h2>
                 
                 <div id="placeholder-state" class="result-state active">
                     <div class="icon">🔮</div>
-                    <p>Fill out student information and click <strong>Predict Student Performance</strong> to generate ML prediction.</p>
+                    <p>Enter student information and click <strong>Analyze & Generate Decision Support Report</strong> to evaluate risk and action items.</p>
                 </div>
 
                 <div id="loading-state" class="result-state">
                     <div class="spinner"></div>
-                    <p>Evaluating Random Forest Model...</p>
+                    <p>Evaluating Decision Support Engine & Model...</p>
                 </div>
 
                 <div id="result-state" class="result-state">
-                    <div class="prediction-badge" id="prediction-badge">PASS</div>
+                    <!-- Option 1: Prediction Badge & Risk Score -->
+                    <div class="result-top-bar">
+                        <div class="prediction-badge" id="prediction-badge">PASS</div>
+                        <div class="risk-pill" id="risk-pill">Academic Risk: Medium</div>
+                    </div>
                     
+                    <div class="risk-metrics-grid">
+                        <div class="risk-metric-box">
+                            <span class="box-label">Success Probability</span>
+                            <span class="box-val success" id="success-prob-val">78%</span>
+                        </div>
+                        <div class="risk-metric-box">
+                            <span class="box-label">Risk Score</span>
+                            <span class="box-val" id="risk-score-val">42 / 100</span>
+                        </div>
+                    </div>
+
                     <div class="confidence-container">
                         <div class="confidence-header">
-                            <span>Prediction Confidence</span>
-                            <span id="confidence-val">85%</span>
+                            <span>Success Probability Gauge</span>
+                            <span id="confidence-val">78%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="progress-fill" id="progress-fill"></div>
                         </div>
                     </div>
 
-                    <div class="probabilities-grid">
-                        <div class="prob-box pass">
-                            <span class="prob-label">Pass Probability</span>
-                            <span class="prob-value" id="pass-prob">85%</span>
-                        </div>
-                        <div class="prob-box fail">
-                            <span class="prob-label">Fail Probability</span>
-                            <span class="prob-value" id="fail-prob">15%</span>
-                        </div>
+                    <!-- Option 2: Reasons List -->
+                    <div class="decision-section">
+                        <h3>⚠️ Primary Risk Factors / Reasons</h3>
+                        <ul class="reason-list" id="reasons-list">
+                            <!-- Populated dynamically -->
+                        </ul>
                     </div>
+
+                    <!-- Option 2: Actionable Recommendations Checklist -->
+                    <div class="decision-section">
+                        <h3>💡 Actionable Recommendations for Teacher</h3>
+                        <ul class="rec-list" id="recommendations-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+
                 </div>
 
             </div>
@@ -223,12 +244,10 @@
         document.getElementById('prediction-form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const formBtn = document.getElementById('predict-btn');
             const placeholderState = document.getElementById('placeholder-state');
             const loadingState = document.getElementById('loading-state');
             const resultState = document.getElementById('result-state');
 
-            // Hide old states & show loading
             placeholderState.classList.remove('active');
             resultState.classList.remove('active');
             loadingState.classList.add('active');
@@ -267,23 +286,51 @@
 
                 const data = await response.json();
 
-                // Populate results
+                // 1. Prediction Badge
                 const badge = document.getElementById('prediction-badge');
                 badge.innerText = data.prediction;
                 badge.className = 'prediction-badge ' + (data.prediction === 'PASS' ? 'pass' : 'fail');
 
-                document.getElementById('confidence-val').innerText = data.confidence + '%';
+                // 2. Risk Pill & Colors
+                const riskPill = document.getElementById('risk-pill');
+                riskPill.innerText = `Academic Risk: ${data.academic_risk_level}`;
+                riskPill.style.backgroundColor = `${data.risk_color}22`;
+                riskPill.style.borderColor = data.risk_color;
+                riskPill.style.color = data.risk_color;
+
+                // 3. Risk Metrics
+                document.getElementById('success-prob-val').innerText = data.success_probability + '%';
+                const riskScoreVal = document.getElementById('risk-score-val');
+                riskScoreVal.innerText = data.risk_score + ' / 100';
+                riskScoreVal.style.color = data.risk_color;
+
+                document.getElementById('confidence-val').innerText = data.success_probability + '%';
                 const fill = document.getElementById('progress-fill');
-                fill.style.width = data.confidence + '%';
+                fill.style.width = data.success_probability + '%';
                 fill.style.background = data.prediction === 'PASS' ? 'linear-gradient(90deg, #10b981, #059669)' : 'linear-gradient(90deg, #ef4444, #dc2626)';
 
-                document.getElementById('pass-prob').innerText = data.probabilities.PASS + '%';
-                document.getElementById('fail-prob').innerText = data.probabilities.FAIL + '%';
+                // 4. Reasons List
+                const reasonsList = document.getElementById('reasons-list');
+                reasonsList.innerHTML = '';
+                data.reasons.forEach(reason => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span class="bullet">•</span> ${reason}`;
+                    reasonsList.appendChild(li);
+                });
+
+                // 5. Recommendations Checklist
+                const recsList = document.getElementById('recommendations-list');
+                recsList.innerHTML = '';
+                data.recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span class="check">✓</span> ${rec}`;
+                    recsList.appendChild(li);
+                });
 
                 loadingState.classList.remove('active');
                 resultState.classList.add('active');
             } catch (err) {
-                alert('Error making prediction: ' + err.message);
+                alert('Error generating report: ' + err.message);
                 loadingState.classList.remove('active');
                 placeholderState.classList.add('active');
             }

@@ -1,7 +1,7 @@
 """
 tests/test_api.py
 ------------------
-pytest unit tests for FastAPI prediction endpoints.
+pytest unit tests for FastAPI prediction & decision support endpoints.
 
 Run with:
     pytest tests/test_api.py -v
@@ -20,7 +20,7 @@ def test_health_check():
     assert json_data["model_loaded"] is True
 
 
-def test_predict_pass_student():
+def test_predict_pass_student_with_decision_support():
     payload = {
         "Gender": "Female",
         "Age": 20,
@@ -48,5 +48,11 @@ def test_predict_pass_student():
     data = response.json()
     assert "prediction" in data
     assert data["prediction"] in ["PASS", "FAIL"]
-    assert "confidence" in data
-    assert "probabilities" in data
+    assert "success_probability" in data
+    assert "academic_risk_level" in data
+    assert data["academic_risk_level"] in ["Low", "Medium", "High"]
+    assert "risk_score" in data
+    assert "reasons" in data
+    assert isinstance(data["reasons"], list)
+    assert "recommendations" in data
+    assert isinstance(data["recommendations"], list)
