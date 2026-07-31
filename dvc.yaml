@@ -1,0 +1,10 @@
+stages:
+  train:
+    cmd: .venv\Scripts\python.exe src/train.py
+    deps:
+      - data/raw/Student Performance Prediction with MLOps - Sheet1.csv
+      - src/data_preprocessing.py
+      - src/train.py
+    outs:
+      - models/best_model.pkl
+      - models/preprocessor_info.pkl

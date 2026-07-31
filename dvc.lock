@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: .venv\Scripts\python.exe src/train.py
+    deps:
+    - path: data/raw/Student Performance Prediction with MLOps - Sheet1.csv
+      hash: md5
+      md5: 91b6116efe63c7e6138fbe9963ba2d02
+      size: 95318
+    - path: src/data_preprocessing.py
+      hash: md5
+      md5: 725a74a8400a49f4f6f80baeac6ce760
+      size: 4972
+    - path: src/train.py
+      hash: md5
+      md5: a570d28ce79ea84fb52da229aab0b31b
+      size: 10327
+    outs:
+    - path: models/best_model.pkl
+      hash: md5
+      md5: d9b9b035cdb6310a8182f04cc862e8df
+      size: 2159570
+    - path: models/preprocessor_info.pkl
+      hash: md5
+      md5: 705c0e8dc0d40dc0b27510481243dd09
+      size: 1336
