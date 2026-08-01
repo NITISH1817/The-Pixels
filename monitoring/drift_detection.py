@@ -11,8 +11,20 @@ import json
 from pathlib import Path
 import pandas as pd
 
-from evidently.report import Report
-from evidently.metric_preset import DataDriftPreset
+try:
+    from evidently.report import Report
+    from evidently.metric_preset import DataDriftPreset
+except ImportError:
+    try:
+        from evidently.legacy.report import Report
+        from evidently.legacy.metric_preset import DataDriftPreset
+    except ImportError:
+        try:
+            from evidently import Report
+            from evidently.metric_preset import DataDriftPreset
+        except ImportError:
+            Report = None
+            DataDriftPreset = None
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 RAW_DATA_PATH = ROOT_DIR / "data" / "raw" / "Student Performance Prediction with MLOps - Sheet1.csv"
