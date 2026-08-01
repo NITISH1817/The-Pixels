@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
     color: #1e293b;
     min-height: 100vh;
     padding: 1.5rem 2rem;
@@ -142,7 +142,7 @@ body {
     box-shadow: 0 4px 15px -3px rgba(0,0,0,0.05);
 }
 .kpi-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 .kpi-info {
     display: flex;
@@ -154,8 +154,8 @@ body {
     font-weight: 600;
 }
 .kpi-val {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     color: #0f172a;
 }
 .text-danger {
@@ -186,20 +186,24 @@ body {
     gap: 1rem;
 }
 .roster-controls input, .roster-controls select {
-    padding: 0.6rem 1rem;
+    padding: 0.65rem 1rem;
     border: 1px solid #cbd5e1;
     border-radius: 0.5rem;
     font-size: 0.95rem;
     outline: none;
+    background: #ffffff;
 }
 .roster-controls input:focus, .roster-controls select:focus {
     border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
 /* Table Styling */
 .table-container {
     overflow-x: auto;
-    max-height: 550px;
+    max-height: 580px;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
 }
 .student-table {
     width: 100%;
@@ -209,17 +213,18 @@ body {
 .student-table th {
     position: sticky;
     top: 0;
-    background: #f8fafc;
-    padding: 0.85rem 1rem;
+    background: #f1f5f9;
+    padding: 0.9rem 1rem;
     font-size: 0.85rem;
     font-weight: 700;
     color: #475569;
     text-transform: uppercase;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #cbd5e1;
+    z-index: 10;
 }
 .student-table td {
-    padding: 0.9rem 1rem;
-    border-bottom: 1px solid #f1f5f9;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
     font-size: 0.95rem;
     color: #334155;
 }
