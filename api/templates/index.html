@@ -5,7 +5,496 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance Risk Assessment & Decision Support System</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            min-height: 100vh;
+            padding: 1.5rem 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* App Header */
+        .app-header {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+        .badge-tag {
+            display: inline-block;
+            padding: 0.3rem 0.75rem;
+            background: #e0e7ff;
+            color: #4338ca;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .app-header h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .app-header p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .header-metrics {
+            display: flex;
+            gap: 1rem;
+        }
+        .metric-pill {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 0.65rem 1.25rem;
+            border-radius: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pill-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .pill-val {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .highlight-pill .pill-val {
+            color: #4f46e5;
+        }
+
+        /* Mode Switcher Tabs */
+        .mode-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .mode-btn {
+            flex: 1;
+            padding: 1.1rem 1.5rem;
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 0.85rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .mode-btn:hover {
+            border-color: #94a3b8;
+            color: #1e293b;
+        }
+        .mode-btn.active {
+            background: #4f46e5;
+            color: #ffffff;
+            border-color: #4f46e5;
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+        }
+
+        .mode-content {
+            display: none;
+        }
+        .mode-content.active-content {
+            display: block;
+        }
+
+        /* Sub-Role Selector Bar */
+        .sub-role-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .sub-tab {
+            padding: 0.75rem 1.25rem;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.65rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+        }
+        .sub-tab.active {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
+
+        .sub-view {
+            display: none;
+        }
+        .sub-view.active-sub-view {
+            display: block;
+        }
+
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .kpi-card {
+            background: #ffffff;
+            border-radius: 0.85rem;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .kpi-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+        .blue-bg { background: #e0e7ff; }
+        .green-bg { background: #d1fae5; }
+        .red-bg { background: #fee2e2; }
+
+        .kpi-label { font-size: 0.85rem; color: #64748b; font-weight: 700; }
+        .kpi-number { font-size: 1.65rem; font-weight: 800; color: #0f172a; }
+        .text-red { color: #ef4444; }
+
+        /* Content Card */
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05);
+        }
+
+        .card-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .card-header-bar h2 { font-size: 1.25rem; font-weight: 800; color: #0f172a; }
+
+        .filter-controls {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .filter-controls input, .filter-controls select {
+            padding: 0.6rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        /* Data Table */
+        .table-wrapper {
+            overflow-x: auto;
+            max-height: 520px;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .data-table th {
+            position: sticky;
+            top: 0;
+            background: #f8fafc;
+            padding: 0.85rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #475569;
+            text-transform: uppercase;
+            border-bottom: 2px solid #cbd5e1;
+            z-index: 5;
+        }
+        .data-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+        .data-table tr:hover {
+            background: #f8fafc;
+        }
+        .font-bold { font-weight: 700; color: #0f172a; }
+
+        .btn-inspect {
+            padding: 0.35rem 0.75rem;
+            background: #4f46e5;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .btn-inspect:hover {
+            background: #4338ca;
+        }
+
+        /* Status Chips */
+        .status-chip {
+            padding: 0.3rem 0.65rem;
+            border-radius: 0.35rem;
+            font-weight: 800;
+            font-size: 0.75rem;
+        }
+        .chip-pass { background: #d1fae5; color: #047857; }
+        .chip-fail { background: #fee2e2; color: #b91c1c; }
+
+        .risk-chip {
+            padding: 0.3rem 0.65rem;
+            border-radius: 0.35rem;
+            font-weight: 800;
+            font-size: 0.75rem;
+        }
+        .risk-chip-high { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+        .risk-chip-medium { background: #fffbeb; color: #d97706; border: 1px solid #fcd34d; }
+        .risk-chip-low { background: #ecfdf5; color: #059669; border: 1px solid #6ee7b7; }
+
+        /* Student Profile Lookup inside Auto Mode */
+        .student-select-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            background: #f8fafc;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+        .student-select-bar select {
+            flex: 1;
+            padding: 0.65rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #cbd5e1;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .profile-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .badge-large {
+            font-size: 1.75rem;
+            font-weight: 900;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.75rem;
+        }
+        .badge-pass-large { background: #d1fae5; color: #047857; }
+        .badge-fail-large { background: #fee2e2; color: #b91c1c; }
+
+        .profile-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .p-stat {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .p-stat span { font-size: 0.75rem; color: #64748b; font-weight: 700; }
+        .p-stat strong { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem; }
+
+        .report-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.85rem;
+        }
+
+        /* Split Grid for Manual Calculator */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .section-divider {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #4f46e5;
+            text-transform: uppercase;
+            margin: 1.25rem 0 0.75rem 0;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.25rem;
+        }
+
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.85rem;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .input-field label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #475569;
+        }
+        .input-field input, .input-field select {
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #cbd5e1;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .btn-primary {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 5rem 2rem;
+            color: #94a3b8;
+        }
+        .empty-icon { font-size: 4rem; margin-bottom: 1rem; }
+
+        /* Outcome Display Styling */
+        .outcome-banner {
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        .outcome-pass { background: #ecfdf5; border: 2px solid #10b981; }
+        .outcome-fail { background: #fef2f2; border: 2px solid #ef4444; }
+        .outcome-title { font-size: 2.25rem; font-weight: 900; }
+        .outcome-pass .outcome-title { color: #047857; }
+        .outcome-fail .outcome-title { color: #b91c1c; }
+
+        .risk-badge-header {
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .section-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .box-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .text-warning { color: #d97706; }
+        .text-success { color: #059669; }
+
+        .reasons-list, .recs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .reasons-list li, .recs-list li {
+            font-size: 0.95rem;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .bullet-dot { color: #ef4444; font-weight: bold; }
+        .check-icon { color: #10b981; font-weight: bold; }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 650px;
+            padding: 1.75rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+        }
+        .modal-header h2 { font-size: 1.35rem; font-weight: 800; color: #0f172a; }
+        .modal-close {
+            background: none; border: none; font-size: 1.75rem; color: #64748b; cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -442,10 +931,7 @@
 
                 <div class="report-box">
                     <h3>📊 Decision Support & Risk Analysis</h3>
-                    <div class="risk-meter-bar">
-                        <div class="risk-meter-fill" style="width:${s.success_probability}%; background:${s.risk_color}"></div>
-                    </div>
-                    <p style="margin-top:0.5rem"><strong>Success Probability:</strong> ${s.success_probability}% | <strong>Risk Score:</strong> ${s.risk_score}/100 (${s.risk_level} Risk)</p>
+                    <div style="margin-top:0.75rem"><strong>Success Probability:</strong> ${s.success_probability}% | <strong>Risk Score:</strong> ${s.risk_score}/100 (${s.risk_level} Risk)</div>
                 </div>
             `;
             document.getElementById('student-profile-container').innerHTML = html;
