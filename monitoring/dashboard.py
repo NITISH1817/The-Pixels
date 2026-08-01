@@ -20,8 +20,15 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from monitoring.drift_detection import run_drift_detection
-from monitoring.retrain import check_and_retrain
+try:
+    from monitoring.drift_detection import run_drift_detection
+except ImportError:
+    run_drift_detection = None
+
+try:
+    from monitoring.retrain import check_and_retrain
+except ImportError:
+    check_and_retrain = None
 
 MONITORING_DIR = Path(__file__).resolve().parent
 LOGS_DIR = MONITORING_DIR / "logs"
@@ -84,23 +91,29 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("🔄 Actions & Pipelines")
 
 if st.sidebar.button("🧪 Run Evidently AI Drift Check"):
-    with st.spinner("Computing statistical feature drift..."):
-        try:
-            summary = run_drift_detection()
-            st.sidebar.success(f"Drift Check Complete! (Drifted: {summary.get('number_of_drifted_columns', 0)} cols)")
-        except Exception as e:
-            st.sidebar.error(f"Drift check failed: {e}")
+    if run_drift_detection is None:
+        st.sidebar.error("Evidently package not installed in active environment.")
+    else:
+        with st.spinner("Computing statistical feature drift..."):
+            try:
+                summary = run_drift_detection()
+                st.sidebar.success(f"Drift Check Complete! (Drifted: {summary.get('number_of_drifted_columns', 0)} cols)")
+            except Exception as e:
+                st.sidebar.error(f"Drift check failed: {e}")
 
 if st.sidebar.button("🚀 Trigger Auto Retraining Loop"):
-    with st.spinner("Evaluating candidate model against production champion..."):
-        try:
-            promoted = check_and_retrain()
-            if promoted:
-                st.sidebar.success("🏆 New model promoted to Production!")
-            else:
-                st.sidebar.info("🟢 Production model retained (No drift/F1 gain).")
-        except Exception as e:
-            st.sidebar.error(f"Retraining error: {e}")
+    if check_and_retrain is None:
+        st.sidebar.error("Retraining module missing optional dependency.")
+    else:
+        with st.spinner("Evaluating candidate model against production champion..."):
+            try:
+                promoted = check_and_retrain()
+                if promoted:
+                    st.sidebar.success("🏆 New model promoted to Production!")
+                else:
+                    st.sidebar.info("🟢 Production model retained (No drift/F1 gain).")
+            except Exception as e:
+                st.sidebar.error(f"Retraining error: {e}")
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("ℹ️ System Status")
