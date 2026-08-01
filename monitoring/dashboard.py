@@ -271,9 +271,9 @@ with tab3:
         #### 🏆 Champion Production Model
         - **Registered Name**: `student_performance_model`
         - **Stage**: `Production` (MLflow Registry)
-        - **Algorithm**: Random Forest Classifier
-        - **Accuracy**: `73.40%`
-        - **F1-Score**: `0.8125`
+        - **Algorithm**: XGBoost Classifier
+        - **Accuracy**: `59.06%`
+        - **F1-Score**: `0.7080`
         - **Cross-Validation**: 5-Fold Stratified CV (`f1_macro`)
         """)
 
@@ -289,8 +289,9 @@ with tab3:
     st.markdown("---")
     st.subheader("📜 Recent Pipeline Training History")
     history_df = pd.DataFrame([
-        {"Run ID": "run_002", "Algorithm": "Random Forest", "F1-Score": 0.8125, "Accuracy": 0.7340, "Status": "PROMOTED TO PRODUCTION"},
-        {"Run ID": "run_001", "Algorithm": "Logistic Regression", "F1-Score": 0.7410, "Accuracy": 0.6810, "Status": "ARCHIVED"}
+        {"Run ID": "run_003", "Algorithm": "XGBoost", "F1-Score": 0.7080, "Accuracy": 0.5906, "Status": "PROMOTED TO PRODUCTION"},
+        {"Run ID": "run_002", "Algorithm": "Random Forest", "F1-Score": 0.6950, "Accuracy": 0.5820, "Status": "ARCHIVED"},
+        {"Run ID": "run_001", "Algorithm": "Logistic Regression", "F1-Score": 0.6510, "Accuracy": 0.5480, "Status": "ARCHIVED"}
     ])
     st.dataframe(history_df, use_container_width=True)
 
