@@ -206,7 +206,7 @@ def get_teacher_student_roster():
                 df[col] = df[col].astype(str).str.rstrip("%").astype(float)
 
         cat_cols = prep_info["categorical_cols"]
-        df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True, dtype=int)
+        df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=False, dtype=int)
 
         trained_cols = prep_info["feature_columns"]
         for col in trained_cols:
@@ -322,7 +322,7 @@ def predict_performance(data: StudentInput):
         df_raw = pd.DataFrame([input_dict])
 
         cat_cols = prep_info["categorical_cols"]
-        df_encoded = pd.get_dummies(df_raw, columns=cat_cols, drop_first=True, dtype=int)
+        df_encoded = pd.get_dummies(df_raw, columns=cat_cols, drop_first=False, dtype=int)
 
         trained_cols = prep_info["feature_columns"]
         for col in trained_cols:
@@ -397,7 +397,7 @@ async def predict_batch(file: UploadFile = File(...)):
                 df_batch[col] = df_batch[col].astype(str).str.rstrip("%").astype(float)
 
         cat_cols = prep_info["categorical_cols"]
-        df_encoded = pd.get_dummies(df_batch, columns=cat_cols, drop_first=True, dtype=int)
+        df_encoded = pd.get_dummies(df_batch, columns=cat_cols, drop_first=False, dtype=int)
 
         trained_cols = prep_info["feature_columns"]
         for col in trained_cols:
