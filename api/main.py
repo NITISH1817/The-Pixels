@@ -335,8 +335,21 @@ def predict_performance(data: StudentInput):
         probabilities = model.predict_proba(df_encoded)[0]
         pass_probability = float(probabilities[1])
 
-        risk = calculate_risk_metrics(pass_probability)
         advisory = generate_reasons_and_recommendations(input_dict)
+
+        # Educational Decision Support Guardrail for extreme academic risk
+        past_score = float(input_dict.get("Past_Exam_Scores", 100))
+        att_rate = float(str(input_dict.get("Attendance_Rate", 100)).rstrip("%"))
+        fails = int(input_dict.get("Previous_Failures", 0))
+        study_hrs = float(input_dict.get("Study_Hours_per_Week", 20))
+        num_risk_factors = len(advisory["reasons"])
+
+        if past_score < 45.0 or (att_rate < 70.0 and fails >= 2) or (study_hrs < 8.0 and num_risk_factors >= 4):
+            pred_class = 0
+            pass_probability = min(pass_probability, 0.15)
+            probabilities = [1.0 - pass_probability, pass_probability]
+
+        risk = calculate_risk_metrics(pass_probability)
 
         result_label = "PASS" if pred_class == 1 else "FAIL"
 
