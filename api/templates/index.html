@@ -3,281 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Performance Risk & Advisory Portal | MLOps</title>
+    <title>Student Performance Risk Assessment & Decision Support System</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
     <div class="container">
-        <!-- Header Banner with Stats -->
-        <header class="header">
-            <div class="header-left">
-                <div class="badge">MLOps Educational Decision Support Engine</div>
-                <h1>Academic Risk & Advisory Portal</h1>
-                <p>Role-based analytics for teachers and student risk self-assessment calculator</p>
+        <!-- Top App Header -->
+        <header class="app-header">
+            <div class="header-brand">
+                <span class="badge-tag">MLOps Educational Engine</span>
+                <h1>Student Academic Risk Assessment System</h1>
+                <p>AI-powered decision support, risk analysis & intervention recommendations</p>
             </div>
-            <div class="header-stats">
-                <div class="stat-box">
-                    <span class="stat-label">Model Accuracy</span>
-                    <span class="stat-value">{{ "%.1f"|format(metrics.get('Accuracy', 0.734) * 100) }}%</span>
+            <div class="header-metrics">
+                <div class="metric-pill">
+                    <span class="pill-label">Model Accuracy</span>
+                    <span class="pill-val">{{ "%.1f"|format(metrics.get('Accuracy', 0.734) * 100) }}%</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-label">F1 Score</span>
-                    <span class="stat-value">{{ "%.4f"|format(metrics.get('F1-Score', 0.8125)) }}</span>
+                <div class="metric-pill">
+                    <span class="pill-label">F1 Score</span>
+                    <span class="pill-val">{{ "%.4f"|format(metrics.get('F1-Score', 0.8125)) }}</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-label">Active Model</span>
-                    <span class="stat-value highlight">Random Forest</span>
+                <div class="metric-pill highlight-pill">
+                    <span class="pill-label">Active Model</span>
+                    <span class="pill-val">Random Forest</span>
                 </div>
             </div>
         </header>
 
-        <!-- Role Navigation Tabs -->
-        <div class="role-nav">
-            <button class="role-tab active" id="tab-teacher" onclick="switchRole('teacher')">
-                👩‍🏫 Teacher View (Class Analytics & Student Roster)
+        <!-- Mode Switcher Tabs (Auto Calculate vs Manual Entry) -->
+        <div class="mode-switcher">
+            <button class="mode-btn active" id="btn-mode-auto" onclick="switchMode('auto')">
+                ⚡ Auto Calculate (Batch Roster Data)
             </button>
-            <button class="role-tab" id="tab-student" onclick="switchRole('student')">
-                🎓 Student View (Personal Profile & Manual Calculator)
+            <button class="mode-btn" id="btn-mode-manual" onclick="switchMode('manual')">
+                📝 Manual Entry Calculator
             </button>
         </div>
 
-        <!-- SECTION 1: TEACHER VIEW (DEFAULT) -->
-        <div id="view-teacher" class="role-view active-view">
-            <!-- Summary KPI Grid for Teachers -->
-            <div class="kpi-grid">
-                <div class="kpi-card">
-                    <div class="kpi-icon">👥</div>
-                    <div class="kpi-info">
-                        <span class="kpi-title">Total Class Roster</span>
-                        <span class="kpi-val">{{ total_students }} Students</span>
+        <!-- ============================================================ -->
+        <!-- MODE 1: AUTO CALCULATE (DATASET ROSTER) -->
+        <!-- ============================================================ -->
+        <div id="mode-auto" class="mode-content active-content">
+            <!-- Sub-Role Selector for Auto Mode (Teacher vs Student) -->
+            <div class="sub-role-bar">
+                <button class="sub-tab active" id="sub-tab-teacher" onclick="switchSubRole('teacher')">
+                    👩‍🏫 Teacher View (Class Analytics & Roster)
+                </button>
+                <button class="sub-tab" id="sub-tab-student" onclick="switchSubRole('student')">
+                    🎓 Student Profile View (Individual Lookup)
+                </button>
+            </div>
+
+            <!-- TEACHER VIEW inside Auto Mode -->
+            <div id="auto-teacher-view" class="sub-view active-sub-view">
+                <!-- Class Summary Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon-box blue-bg">👥</div>
+                        <div>
+                            <div class="kpi-label">Total Class Size</div>
+                            <div class="kpi-number">{{ total_students }} Students</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon-box green-bg">🟢</div>
+                        <div>
+                            <div class="kpi-label">Passing Rate</div>
+                            <div class="kpi-number" id="kpi-pass-rate">--%</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon-box red-bg">⚠️</div>
+                        <div>
+                            <div class="kpi-label">High Risk Students</div>
+                            <div class="kpi-number text-red" id="kpi-high-risk">0</div>
+                        </div>
                     </div>
                 </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon">🟢</div>
-                    <div class="kpi-info">
-                        <span class="kpi-title">Passing Rate</span>
-                        <span class="kpi-val" id="kpi-pass-rate">Calculated Live</span>
+
+                <!-- Roster Table Card -->
+                <div class="content-card">
+                    <div class="card-header-bar">
+                        <h2>📋 Student Performance Roster (Click any student for report)</h2>
+                        <div class="filter-controls">
+                            <input type="text" id="roster-search" placeholder="🔍 Search by student name..." onkeyup="filterRoster()">
+                            <select id="roster-filter-risk" onchange="filterRoster()">
+                                <option value="ALL">All Risk Levels</option>
+                                <option value="High">High Risk Only</option>
+                                <option value="Medium">Medium Risk Only</option>
+                                <option value="Low">Low Risk Only</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon">⚠️</div>
-                    <div class="kpi-info">
-                        <span class="kpi-title">High Risk Interventions Needed</span>
-                        <span class="kpi-val text-danger" id="kpi-high-risk">0 Students</span>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Student Name</th>
+                                    <th>Gender</th>
+                                    <th>Attendance %</th>
+                                    <th>Past Exam</th>
+                                    <th>Quiz Avg</th>
+                                    <th>Failures</th>
+                                    <th>Predicted Outcome</th>
+                                    <th>Success Prob</th>
+                                    <th>Risk Level</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="roster-table-body">
+                                {% for s in roster %}
+                                <tr class="table-row" data-name="{{ s.name|lower }}" data-risk="{{ s.risk_level }}" data-prediction="{{ s.prediction }}">
+                                    <td>#{{ s.id }}</td>
+                                    <td class="font-bold">{{ s.name }}</td>
+                                    <td>{{ s.gender }}</td>
+                                    <td>{{ s.attendance_rate }}%</td>
+                                    <td>{{ s.past_exam_scores }}</td>
+                                    <td>{{ s.quiz_average }}</td>
+                                    <td>{{ s.previous_failures }}</td>
+                                    <td>
+                                        <span class="status-chip {{ 'chip-pass' if s.prediction == 'PASS' else 'chip-fail' }}">
+                                            {{ s.prediction }}
+                                        </span>
+                                    </td>
+                                    <td>{{ s.success_probability }}%</td>
+                                    <td>
+                                        <span class="risk-chip risk-chip-{{ s.risk_level|lower }}">
+                                            {{ s.risk_level }} ({{ s.risk_score }})
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-inspect" onclick="inspectStudent({{ loop.index0 }})">Inspect Report</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Student Roster Table Card -->
-            <div class="card roster-card">
-                <div class="roster-header">
-                    <h2>📋 Student Academic Performance Roster</h2>
-                    <div class="roster-controls">
-                        <input type="text" id="roster-search" placeholder="🔍 Search student name..." onkeyup="filterRoster()">
-                        <select id="roster-filter-risk" onchange="filterRoster()">
-                            <option value="ALL">All Risk Levels</option>
-                            <option value="High">High Risk</option>
-                            <option value="Medium">Medium Risk</option>
-                            <option value="Low">Low Risk</option>
+            <!-- STUDENT PROFILE LOOKUP inside Auto Mode -->
+            <div id="auto-student-view" class="sub-view">
+                <div class="content-card">
+                    <div class="student-select-bar">
+                        <label for="student-dropdown"><strong>Select Student Profile:</strong></label>
+                        <select id="student-dropdown" onchange="loadStudentProfile(this.value)">
+                            {% for s in roster %}
+                            <option value="{{ loop.index0 }}">{{ s.name }} ({{ s.prediction }} - {{ s.risk_level }} Risk)</option>
+                            {% endfor %}
                         </select>
                     </div>
-                </div>
 
-                <div class="table-container">
-                    <table class="student-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Student Name</th>
-                                <th>Gender</th>
-                                <th>Attendance %</th>
-                                <th>Past Exam</th>
-                                <th>Quiz Avg</th>
-                                <th>Failures</th>
-                                <th>Predicted Outcome</th>
-                                <th>Success Prob</th>
-                                <th>Risk Level</th>
-                            </tr>
-                        </thead>
-                        <tbody id="roster-table-body">
-                            {% for s in roster %}
-                            <tr class="roster-row" data-name="{{ s.name|lower }}" data-risk="{{ s.risk_level }}" data-prediction="{{ s.prediction }}">
-                                <td>{{ s.id }}</td>
-                                <td class="font-bold">{{ s.name }}</td>
-                                <td>{{ s.gender }}</td>
-                                <td>{{ s.attendance_rate }}%</td>
-                                <td>{{ s.past_exam_scores }}</td>
-                                <td>{{ s.quiz_average }}</td>
-                                <td>{{ s.previous_failures }}</td>
-                                <td>
-                                    <span class="badge-outcome {{ 'badge-pass' if s.prediction == 'PASS' else 'badge-fail' }}">
-                                        {{ s.prediction }}
-                                    </span>
-                                </td>
-                                <td>{{ s.success_probability }}%</td>
-                                <td>
-                                    <span class="badge-risk badge-risk-{{ s.risk_level|lower }}">
-                                        {{ s.risk_level }} Risk ({{ s.risk_score }})
-                                    </span>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div id="student-profile-container" class="profile-container">
+                        <!-- Loaded dynamically via JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- SECTION 2: STUDENT VIEW (MANUAL ENTRY CALCULATOR) -->
-        <div id="view-student" class="role-view">
-            <div class="main-grid">
-                <!-- Manual Prediction Calculator Form -->
-                <div class="card form-card">
-                    <h2>🎓 Manual Academic Risk Calculator</h2>
-                    <form id="prediction-form">
-                        
-                        <div class="form-section-title">1. ACADEMIC PERFORMANCE HISTORY</div>
-                        <div class="form-grid">
-                            <div class="form-group">
+        <!-- ============================================================ -->
+        <!-- MODE 2: MANUAL CALCULATOR ENTRY -->
+        <!-- ============================================================ -->
+        <div id="mode-manual" class="mode-content">
+            <div class="split-grid">
+                <!-- Left Input Form -->
+                <div class="content-card">
+                    <h2>📝 Custom Student Input Attributes</h2>
+                    <form id="manual-form">
+                        <div class="section-divider">1. Academic Metrics</div>
+                        <div class="form-grid-3">
+                            <div class="input-field">
                                 <label>Past Exam Score (0-100)</label>
-                                <input type="number" id="Past_Exam_Scores" value="55" min="0" max="100" required>
+                                <input type="number" id="m_Past_Exam_Scores" value="55" min="0" max="100" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Attendance Rate (%)</label>
-                                <input type="number" id="Attendance_Rate" value="60" min="0" max="100" step="0.1" required>
+                                <input type="number" id="m_Attendance_Rate" value="60" min="0" max="100" step="0.1" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Assignment Submission (%)</label>
-                                <input type="number" id="Assignment_Submission_Rate" value="50" min="0" max="100" step="0.1" required>
+                                <input type="number" id="m_Assignment_Submission_Rate" value="50" min="0" max="100" step="0.1" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Quiz Average (0-100)</label>
-                                <input type="number" id="Quiz_Average" value="60" min="0" max="100" step="0.1" required>
+                                <input type="number" id="m_Quiz_Average" value="60" min="0" max="100" step="0.1" required>
                             </div>
                         </div>
 
-                        <div class="form-section-title">2. STUDY HABITS & LIFESTYLE</div>
-                        <div class="form-grid">
-                            <div class="form-group">
+                        <div class="section-divider">2. Study Habits & Lifestyle</div>
+                        <div class="form-grid-3">
+                            <div class="input-field">
                                 <label>Study Hours / Week</label>
-                                <input type="number" id="Study_Hours_per_Week" value="5" min="0" max="50" step="0.5" required>
+                                <input type="number" id="m_Study_Hours_per_Week" value="5" min="0" max="50" step="0.5" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Previous Failures</label>
-                                <input type="number" id="Previous_Failures" value="2" min="0" max="10" required>
+                                <input type="number" id="m_Previous_Failures" value="2" min="0" max="10" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Sleep Hours / Night</label>
-                                <input type="number" id="Sleep_Hours" value="5" min="0" max="24" step="0.5" required>
+                                <input type="number" id="m_Sleep_Hours" value="5" min="0" max="24" step="0.5" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Screen Time (Hrs/Day)</label>
-                                <input type="number" id="Screen_Time" value="6" min="0" max="24" step="0.5" required>
+                                <input type="number" id="m_Screen_Time" value="6" min="0" max="24" step="0.5" required>
                             </div>
                         </div>
 
-                        <div class="form-section-title">3. BACKGROUND & SUPPORT ENVIRONMENT</div>
-                        <div class="form-grid">
-                            <div class="form-group">
+                        <div class="section-divider">3. Background & Support</div>
+                        <div class="form-grid-3">
+                            <div class="input-field">
                                 <label>Gender</label>
-                                <select id="Gender">
+                                <select id="m_Gender">
                                     <option value="Female">Female</option>
                                     <option value="Male" selected>Male</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Age</label>
-                                <input type="number" id="Age" value="22" min="15" max="30" required>
+                                <input type="number" id="m_Age" value="22" min="15" max="30" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Internet Access</label>
-                                <select id="Internet_Access">
+                                <select id="m_Internet_Access">
                                     <option value="Yes" selected>Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Parent Support</label>
-                                <select id="Parents_Support">
+                                <select id="m_Parents_Support">
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Low" selected>Low</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Parental Education</label>
-                                <select id="Parental_Education">
+                                <select id="m_Parental_Education">
                                     <option value="PhD">PhD</option>
                                     <option value="Master's">Master's</option>
                                     <option value="Bachelor's">Bachelor's</option>
                                     <option value="High School" selected>High School</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Family Income</label>
-                                <select id="Family_Income">
+                                <select id="m_Family_Income">
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Low" selected>Low</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Stress Level</label>
-                                <select id="Stress_Level">
+                                <select id="m_Stress_Level">
                                     <option value="Low">Low</option>
                                     <option value="Medium">Medium</option>
                                     <option value="High" selected>High</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Motivation Level</label>
-                                <select id="Motivation_Level">
+                                <select id="m_Motivation_Level">
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Low" selected>Low</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Class Participation</label>
-                                <select id="Class_Participation">
+                                <select id="m_Class_Participation">
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Low" selected>Low</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Extracurricular Activities</label>
-                                <input type="number" id="Extracurricular_Activities" value="0" min="0" max="10" required>
+                            <div class="input-field">
+                                <label>Extracurriculars</label>
+                                <input type="number" id="m_Extracurricular_Activities" value="0" min="0" max="10" required>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>School Support</label>
-                                <select id="School_Support">
+                                <select id="m_School_Support">
                                     <option value="High">High</option>
                                     <option value="Medium" selected>Medium</option>
                                     <option value="Low">Low</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="input-field">
                                 <label>Travel Time (Mins)</label>
-                                <input type="number" id="Travel_Time" value="60" min="0" max="180" required>
+                                <input type="number" id="m_Travel_Time" value="60" min="0" max="180" required>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn-submit" id="btn-predict">
-                            <span>Assess Academic Risk & Generate Plan</span>
+                        <button type="submit" class="btn-primary" id="btn-manual-predict">
+                            <span>Calculate Risk & Decision Support</span>
                         </button>
                     </form>
                 </div>
 
-                <!-- Decision Support Report Display -->
-                <div class="card result-card" id="result-container">
-                    <div class="result-placeholder">
-                        <div class="placeholder-icon">📊</div>
-                        <h3>No Risk Assessment Generated Yet</h3>
-                        <p>Fill out the student profile attributes on the left and click "Assess Academic Risk" to view decision support insights.</p>
+                <!-- Right Advisory Output Display -->
+                <div class="content-card" id="manual-result-container">
+                    <div class="empty-state">
+                        <div class="empty-icon">📊</div>
+                        <h3>No Manual Risk Analysis Generated</h3>
+                        <p>Fill out the student attributes on the left and click "Calculate Risk & Decision Support".</p>
                     </div>
                 </div>
             </div>
@@ -285,28 +323,61 @@
 
     </div>
 
-    <script>
-        // Role Switcher Logic
-        function switchRole(role) {
-            document.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.role-view').forEach(v => v.classList.remove('active-view'));
+    <!-- Student Detail Inspection Modal -->
+    <div id="inspect-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-student-name">Student Report</h2>
+                <button class="modal-close" onclick="closeModalDirect()">&times;</button>
+            </div>
+            <div id="modal-body-content">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
 
-            if (role === 'teacher') {
-                document.getElementById('tab-teacher').classList.add('active');
-                document.getElementById('view-teacher').classList.add('active-view');
+    <script>
+        // Roster Data injected from Jinja template
+        const ROSTER_DATA = {{ roster | tojson }};
+
+        // 1. Mode Switcher (Auto vs Manual)
+        function switchMode(mode) {
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.mode-content').forEach(c => c.classList.remove('active-content'));
+
+            if (mode === 'auto') {
+                document.getElementById('btn-mode-auto').classList.add('active');
+                document.getElementById('mode-auto').classList.add('active-content');
             } else {
-                document.getElementById('tab-student').classList.add('active');
-                document.getElementById('view-student').classList.add('active-view');
+                document.getElementById('btn-mode-manual').classList.add('active');
+                document.getElementById('mode-manual').classList.add('active-content');
             }
         }
 
-        // Roster Search & Filter Logic
-        function filterRoster() {
-            const query = document.getElementById('roster-search').value.toLowerCase();
-            const riskFilter = document.getElementById('roster-filter-risk').value;
-            const rows = document.querySelectorAll('.roster-row');
+        // 2. Sub-Role Switcher inside Auto Mode
+        function switchSubRole(role) {
+            document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.sub-view').forEach(v => v.classList.remove('active-sub-view'));
 
-            let visibleCount = 0;
+            if (role === 'teacher') {
+                document.getElementById('sub-tab-teacher').classList.add('active');
+                document.getElementById('auto-teacher-view').classList.add('active-sub-view');
+            } else {
+                document.getElementById('sub-tab-student').classList.add('active');
+                document.getElementById('auto-student-view').classList.add('active-sub-view');
+                if (ROSTER_DATA.length > 0) {
+                    loadStudentProfile(0);
+                }
+            }
+        }
+
+        // 3. Roster Search & Filter
+        function filterRoster() {
+            const searchVal = document.getElementById('roster-search').value.toLowerCase();
+            const riskVal = document.getElementById('roster-filter-risk').value;
+            const rows = document.querySelectorAll('.table-row');
+
+            let totalVisible = 0;
             let passCount = 0;
             let highRiskCount = 0;
 
@@ -315,12 +386,12 @@
                 const risk = row.getAttribute('data-risk');
                 const pred = row.getAttribute('data-prediction');
 
-                const matchesSearch = name.includes(query);
-                const matchesRisk = (riskFilter === 'ALL' || risk === riskFilter);
+                const matchSearch = name.includes(searchVal);
+                const matchRisk = (riskVal === 'ALL' || risk === riskVal);
 
-                if (matchesSearch && matchesRisk) {
+                if (matchSearch && matchRisk) {
                     row.style.display = '';
-                    visibleCount++;
+                    totalVisible++;
                     if (pred === 'PASS') passCount++;
                     if (risk === 'High') highRiskCount++;
                 } else {
@@ -328,104 +399,156 @@
                 }
             });
 
-            // Update Teacher KPIs live
-            const passRate = visibleCount > 0 ? ((passCount / visibleCount) * 100).toFixed(1) : 0;
+            const passRate = totalVisible > 0 ? ((passCount / totalVisible) * 100).toFixed(1) : 0;
             document.getElementById('kpi-pass-rate').innerText = passRate + '%';
-            document.getElementById('kpi-high-risk').innerText = highRiskCount + ' Students';
+            document.getElementById('kpi-high-risk').innerText = highRiskCount;
         }
 
-        // Initial Calculation on Page Load
-        document.addEventListener('DOMContentLoaded', () => {
-            filterRoster();
-        });
+        // 4. Load Student Profile in Auto Mode
+        function loadStudentProfile(index) {
+            const s = ROSTER_DATA[index];
+            if (!s) return;
 
-        // Student Manual Prediction Submission
-        document.getElementById('prediction-form').addEventListener('submit', async function(e) {
+            const isPass = s.prediction === 'PASS';
+            const html = `
+                <div class="profile-card-header">
+                    <div>
+                        <h2>🎓 ${s.name} Profile</h2>
+                        <p>Gender: ${s.gender} | Age: ${s.age} | Previous Failures: ${s.previous_failures}</p>
+                    </div>
+                    <div class="badge-large ${isPass ? 'badge-pass-large' : 'badge-fail-large'}">
+                        ${s.prediction}
+                    </div>
+                </div>
+
+                <div class="profile-stats-grid">
+                    <div class="p-stat">
+                        <span>Attendance</span>
+                        <strong>${s.attendance_rate}%</strong>
+                    </div>
+                    <div class="p-stat">
+                        <span>Past Exam</span>
+                        <strong>${s.past_exam_scores}/100</strong>
+                    </div>
+                    <div class="p-stat">
+                        <span>Quiz Average</span>
+                        <strong>${s.quiz_average}/100</strong>
+                    </div>
+                    <div class="p-stat">
+                        <span>Study Hours</span>
+                        <strong>${s.study_hours} hrs/wk</strong>
+                    </div>
+                </div>
+
+                <div class="report-box">
+                    <h3>📊 Decision Support & Risk Analysis</h3>
+                    <div class="risk-meter-bar">
+                        <div class="risk-meter-fill" style="width:${s.success_probability}%; background:${s.risk_color}"></div>
+                    </div>
+                    <p style="margin-top:0.5rem"><strong>Success Probability:</strong> ${s.success_probability}% | <strong>Risk Score:</strong> ${s.risk_score}/100 (${s.risk_level} Risk)</p>
+                </div>
+            `;
+            document.getElementById('student-profile-container').innerHTML = html;
+        }
+
+        // 5. Inspect Student Modal
+        function inspectStudent(index) {
+            const s = ROSTER_DATA[index];
+            if (!s) return;
+
+            document.getElementById('modal-student-name').innerText = `📊 Academic Report — ${s.name}`;
+            const isPass = s.prediction === 'PASS';
+
+            const html = `
+                <div class="outcome-banner ${isPass ? 'outcome-pass' : 'outcome-fail'}">
+                    <div class="outcome-title">${s.prediction}</div>
+                    <div class="risk-badge-header" style="background:${s.risk_color}">
+                        ${s.risk_level} Risk (${s.risk_score}/100)
+                    </div>
+                </div>
+                <div class="profile-stats-grid" style="margin-top:1rem">
+                    <div class="p-stat"><span>Attendance</span><strong>${s.attendance_rate}%</strong></div>
+                    <div class="p-stat"><span>Past Exam</span><strong>${s.past_exam_scores}</strong></div>
+                    <div class="p-stat"><span>Quiz Avg</span><strong>${s.quiz_average}</strong></div>
+                    <div class="p-stat"><span>Study Hours</span><strong>${s.study_hours} hrs/wk</strong></div>
+                </div>
+            `;
+            document.getElementById('modal-body-content').innerHTML = html;
+            document.getElementById('inspect-modal').style.display = 'flex';
+        }
+
+        function closeModalDirect() {
+            document.getElementById('inspect-modal').style.display = 'none';
+        }
+        function closeModal(e) {
+            if (e.target.id === 'inspect-modal') closeModalDirect();
+        }
+
+        // 6. Manual Entry Calculator Submit Handler
+        document.getElementById('manual-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const btn = document.getElementById('btn-predict');
+            const btn = document.getElementById('btn-manual-predict');
             btn.disabled = true;
-            btn.innerHTML = '<span>Calculating Risk Metrics...</span>';
+            btn.innerHTML = '<span>Evaluating Risk...</span>';
 
             const payload = {
-                Gender: document.getElementById('Gender').value,
-                Age: parseInt(document.getElementById('Age').value),
-                Study_Hours_per_Week: parseFloat(document.getElementById('Study_Hours_per_Week').value),
-                Attendance_Rate: parseFloat(document.getElementById('Attendance_Rate').value),
-                Past_Exam_Scores: parseFloat(document.getElementById('Past_Exam_Scores').value),
-                Assignment_Submission_Rate: parseFloat(document.getElementById('Assignment_Submission_Rate').value),
-                Quiz_Average: parseFloat(document.getElementById('Quiz_Average').value),
-                Previous_Failures: parseInt(document.getElementById('Previous_Failures').value),
-                Internet_Access: document.getElementById('Internet_Access').value,
-                Parents_Support: document.getElementById('Parents_Support').value,
-                Parental_Education: document.getElementById('Parental_Education').value,
-                Family_Income: document.getElementById('Family_Income').value,
-                Sleep_Hours: parseFloat(document.getElementById('Sleep_Hours').value),
-                Screen_Time: parseFloat(document.getElementById('Screen_Time').value),
-                Stress_Level: document.getElementById('Stress_Level').value,
-                Motivation_Level: document.getElementById('Motivation_Level').value,
-                Class_Participation: document.getElementById('Class_Participation').value,
-                Extracurricular_Activities: parseInt(document.getElementById('Extracurricular_Activities').value),
-                School_Support: document.getElementById('School_Support').value,
-                Travel_Time: parseFloat(document.getElementById('Travel_Time').value)
+                Gender: document.getElementById('m_Gender').value,
+                Age: parseInt(document.getElementById('m_Age').value),
+                Study_Hours_per_Week: parseFloat(document.getElementById('m_Study_Hours_per_Week').value),
+                Attendance_Rate: parseFloat(document.getElementById('m_Attendance_Rate').value),
+                Past_Exam_Scores: parseFloat(document.getElementById('m_Past_Exam_Scores').value),
+                Assignment_Submission_Rate: parseFloat(document.getElementById('m_Assignment_Submission_Rate').value),
+                Quiz_Average: parseFloat(document.getElementById('m_Quiz_Average').value),
+                Previous_Failures: parseInt(document.getElementById('m_Previous_Failures').value),
+                Internet_Access: document.getElementById('m_Internet_Access').value,
+                Parents_Support: document.getElementById('m_Parents_Support').value,
+                Parental_Education: document.getElementById('m_Parental_Education').value,
+                Family_Income: document.getElementById('m_Family_Income').value,
+                Sleep_Hours: parseFloat(document.getElementById('m_Sleep_Hours').value),
+                Screen_Time: parseFloat(document.getElementById('m_Screen_Time').value),
+                Stress_Level: document.getElementById('m_Stress_Level').value,
+                Motivation_Level: document.getElementById('m_Motivation_Level').value,
+                Class_Participation: document.getElementById('m_Class_Participation').value,
+                Extracurricular_Activities: parseInt(document.getElementById('m_Extracurricular_Activities').value),
+                School_Support: document.getElementById('m_School_Support').value,
+                Travel_Time: parseFloat(document.getElementById('m_Travel_Time').value)
             };
 
             try {
-                const response = await fetch('/predict', {
+                const res = await fetch('/predict', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                const data = await response.json();
+                const data = await res.json();
                 btn.disabled = false;
-                btn.innerHTML = '<span>Assess Academic Risk & Generate Plan</span>';
+                btn.innerHTML = '<span>Calculate Risk & Decision Support</span>';
 
-                if (response.ok) {
-                    renderResults(data);
+                if (res.ok) {
+                    renderManualResult(data);
                 } else {
                     alert('Error: ' + (data.detail || 'Prediction failed'));
                 }
             } catch (err) {
                 btn.disabled = false;
-                btn.innerHTML = '<span>Assess Academic Risk & Generate Plan</span>';
-                alert('Connection error while contacting prediction API server.');
+                btn.innerHTML = '<span>Calculate Risk & Decision Support</span>';
+                alert('Server connection error');
             }
         });
 
-        function renderResults(data) {
+        function renderManualResult(data) {
             const isPass = data.prediction === 'PASS';
-            const outcomeClass = isPass ? 'outcome-pass' : 'outcome-fail';
-            
             const html = `
-                <div class="result-header">
-                    <h2>📊 Decision Support Advisory Report</h2>
-                </div>
-
-                <div class="outcome-banner ${outcomeClass}">
+                <div class="outcome-banner ${isPass ? 'outcome-pass' : 'outcome-fail'}">
                     <div class="outcome-title">${data.prediction}</div>
                     <div class="risk-badge-header" style="background:${data.risk_color}">
-                        Academic Risk: ${data.academic_risk_level}
+                        ${data.academic_risk_level} Risk (${data.risk_score}/100)
                     </div>
                 </div>
 
-                <div class="metrics-row">
-                    <div class="metric-card">
-                        <span class="m-label">SUCCESS PROBABILITY</span>
-                        <span class="m-value" style="color: ${isPass ? '#10b981' : '#ef4444'}">${data.success_probability}%</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="m-label">RISK SCORE</span>
-                        <span class="m-value" style="color: ${data.risk_color}">${data.risk_score} / 100</span>
-                    </div>
-                </div>
-
-                <div class="gauge-container">
-                    <div class="gauge-label">
-                        <span>Success Probability Gauge</span>
-                        <span>${data.success_probability}%</span>
-                    </div>
-                    <div class="gauge-bar">
-                        <div class="gauge-fill" style="width: ${data.success_probability}%; background: ${data.risk_color}"></div>
-                    </div>
+                <div class="profile-stats-grid" style="margin: 1rem 0">
+                    <div class="p-stat"><span>Success Probability</span><strong>${data.success_probability}%</strong></div>
+                    <div class="p-stat"><span>Risk Score</span><strong>${data.risk_score} / 100</strong></div>
                 </div>
 
                 <div class="section-box">
@@ -442,9 +565,13 @@
                     </ul>
                 </div>
             `;
-
-            document.getElementById('result-container').innerHTML = html;
+            document.getElementById('manual-result-container').innerHTML = html;
         }
+
+        // Initialize Roster Stats on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            filterRoster();
+        });
     </script>
 </body>
 </html>

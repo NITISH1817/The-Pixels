@@ -10,6 +10,7 @@ services:
     environment:
       - PORT=8000
     volumes:
+      - ./api:/app/api
       - ./monitoring/logs:/app/monitoring/logs
     restart: always
 
