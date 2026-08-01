@@ -7,12 +7,18 @@ Run with:
     streamlit run monitoring/dashboard.py
 """
 
+import sys
 import json
 from pathlib import Path
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+
+# Ensure project root directory is in sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from monitoring.drift_detection import run_drift_detection
 from monitoring.retrain import check_and_retrain
