@@ -119,7 +119,7 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("ℹ️ System Status")
 st.sidebar.write("**Pipeline**: DVC Tracked")
 st.sidebar.write("**Experiment Store**: MLflow Registry")
-st.sidebar.write("**Active Model**: Random Forest (v2.0.0)")
+st.sidebar.write("**Active Model**: XGBoost (v2.0.0)")
 
 
 # ------------------------------------------------------------------

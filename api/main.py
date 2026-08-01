@@ -255,11 +255,12 @@ def serve_ui(request: Request):
     """Serve the Dual-Role Web Dashboard Frontend UI."""
     init_artifacts()
     metrics = prep_info.get("test_metrics", {}) if prep_info else {}
+    model_name = prep_info.get("best_model_name", "XGBoost") if prep_info else "XGBoost"
     roster = get_teacher_student_roster()
     return templates.TemplateResponse(
         request=request,
         name="index.html",
-        context={"metrics": metrics, "roster": roster, "total_students": len(roster)}
+        context={"metrics": metrics, "model_name": model_name, "roster": roster, "total_students": len(roster)}
     )
 
 
