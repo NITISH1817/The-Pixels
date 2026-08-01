@@ -6,6 +6,14 @@ The Student Performance Prediction and MLOps Decision Support System is an end-t
 
 ---
 
+## Documentation & Project Artifacts
+
+- **Live Application Deployment**: [https://student-performance-prediction-with-mlops.onrender.com/](https://student-performance-prediction-with-mlops.onrender.com/)
+- **Software Requirements Specification (SRS) & Technical Report**: [Google Drive Folder](https://drive.google.com/drive/folders/1fpKmCC49v9iGz3c8f8x4KvDeHdSiM3Qx?usp=drive_link)
+- **Team Information**: [TEAM.md](file:///r:/AI-hack/student-mlops/TEAM.md)
+
+---
+
 ## Key Performance Indicators
 
 - **Active Model Architecture**: XGBoost Classifier (Gradient Boosting Trees)
