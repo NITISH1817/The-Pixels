@@ -33,3 +33,4 @@ timestamp,model_version,prediction,success_probability,risk_score,risk_level,Gen
 2026-08-01T10:46:15.017224,v2.0.0,PASS,99.9,0.1,Low,Female,20,25.0,98.0,90.0,95.0,92.0,0,Yes,High,Master's,High,8.0,2.0,Low,High,High,3,High,15.0
 2026-08-01T10:46:15.083967,v2.0.0,PASS,99.9,0.1,Low,Female,20,15,95.0,85,98.0,88,0,Yes,High,Bachelor's,Medium,7,3,Medium,High,High,2,High,30
 2026-08-01T10:46:15.085427,v2.0.0,FAIL,0.1,99.9,High,Male,22,5,60.0,55,50.0,60,2,Yes,Low,High School,Low,5,6,High,Low,Low,0,Medium,60
+2026-08-01T05:27:59.624323,v2.0.0,FAIL,11.2,88.8,High,Male,22,5.0,60.0,55.0,50.0,60.0,2,Yes,Low,High School,Low,5.0,6.0,High,Low,Low,0,Medium,60.0
