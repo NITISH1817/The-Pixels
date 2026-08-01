@@ -28,6 +28,7 @@ from monitoring.logger import log_prediction
 
 MODEL_PATH = "models/best_model.pkl"
 PREP_PATH  = "models/preprocessor_info.pkl"
+CSV_PATH   = "data/raw/Student Performance Prediction with MLOps - Sheet1.csv"
 
 START_TIME = datetime.now()
 PREDICTION_COUNT = 0
@@ -35,7 +36,7 @@ PREDICTION_COUNT = 0
 app = FastAPI(
     title="Student Performance Prediction & Decision Support System",
     description="MLOps Prediction Service + Educational Decision Support Engine",
-    version="2.1.0"
+    version="2.2.0"
 )
 
 # Enable CORS
@@ -105,8 +106,8 @@ def generate_reasons_and_recommendations(data_dict: dict) -> Dict[str, List[str]
     reasons = []
     recommendations = []
 
-    att = float(data_dict.get("Attendance_Rate", 100))
-    sub = float(data_dict.get("Assignment_Submission_Rate", 100))
+    att = float(str(data_dict.get("Attendance_Rate", 100)).rstrip("%"))
+    sub = float(str(data_dict.get("Assignment_Submission_Rate", 100)).rstrip("%"))
     past = float(data_dict.get("Past_Exam_Scores", 100))
     study = float(data_dict.get("Study_Hours_per_Week", 20))
     screen = float(data_dict.get("Screen_Time", 0))
@@ -190,14 +191,82 @@ def calculate_risk_metrics(pass_probability: float):
 
 
 # ------------------------------------------------------------------
+# HELPER: Load Teacher Roster Students
+# ------------------------------------------------------------------
+def get_teacher_student_roster():
+    init_artifacts()
+    if not os.path.exists(CSV_PATH) or model is None or prep_info is None:
+        return []
+
+    try:
+        df = pd.read_csv(CSV_PATH)
+        # Parse percentage strings
+        for col in ["Attendance_Rate", "Assignment_Submission_Rate"]:
+            if col in df.columns and df[col].dtype == object:
+                df[col] = df[col].astype(str).str.rstrip("%").astype(float)
+
+        cat_cols = prep_info["categorical_cols"]
+        df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True, dtype=int)
+
+        trained_cols = prep_info["feature_columns"]
+        for col in trained_cols:
+            if col not in df_encoded.columns:
+                df_encoded[col] = 0
+
+        df_encoded = df_encoded[trained_cols]
+
+        predictions = model.predict(df_encoded)
+        probabilities = model.predict_proba(df_encoded)
+
+        roster = []
+        for idx, row in df.iterrows():
+            pred_class = int(predictions[idx])
+            pass_prob = float(probabilities[idx][1])
+            risk = calculate_risk_metrics(pass_prob)
+            student_name = str(row.get("Name", f"Student {idx + 1}"))
+
+            roster.append({
+                "id": idx + 1,
+                "name": student_name,
+                "gender": str(row.get("Gender", "N/A")),
+                "age": int(row.get("Age", 0)),
+                "attendance_rate": float(row.get("Attendance_Rate", 0)),
+                "past_exam_scores": float(row.get("Past_Exam_Scores", 0)),
+                "quiz_average": float(row.get("Quiz_Average", 0)),
+                "study_hours": float(row.get("Study_Hours_per_Week", 0)),
+                "previous_failures": int(row.get("Previous_Failures", 0)),
+                "prediction": "PASS" if pred_class == 1 else "FAIL",
+                "success_probability": round(pass_prob * 100, 1),
+                "risk_score": risk["risk_score"],
+                "risk_level": risk["risk_level"],
+                "risk_color": risk["risk_color"]
+            })
+        return roster
+    except Exception as err:
+        print(f"Error loading student roster: {err}")
+        return []
+
+
+# ------------------------------------------------------------------
 # Endpoints
 # ------------------------------------------------------------------
 @app.get("/")
 def serve_ui(request: Request):
-    """Serve the Web Dashboard Frontend UI."""
+    """Serve the Dual-Role Web Dashboard Frontend UI."""
     init_artifacts()
     metrics = prep_info.get("test_metrics", {}) if prep_info else {}
-    return templates.TemplateResponse(request=request, name="index.html", context={"metrics": metrics})
+    roster = get_teacher_student_roster()
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={"metrics": metrics, "roster": roster, "total_students": len(roster)}
+    )
+
+
+@app.get("/api/students")
+def get_students_api():
+    """Return all student records for Teacher Roster view."""
+    return get_teacher_student_roster()
 
 
 @app.get("/health")

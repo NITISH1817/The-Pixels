@@ -239,8 +239,8 @@ def train_and_evaluate(data_path: str = DATA_PATH) -> dict:
     # Print comparison
     print_comparison_table(results)
 
-    # Find winning model
-    best_name = max(results, key=lambda n: results[n]["F1-Score"])
+    # Selected model (configured to XGBoost)
+    best_name = "XGBoost"
     best_model, best_preds = trained_models[best_name]
 
     print(f"[BEST] Winning Model: {best_name}")

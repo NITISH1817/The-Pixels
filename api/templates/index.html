@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Performance & Decision Support System | MLOps</title>
+    <title>Student Performance Risk & Advisory Portal | MLOps</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -13,9 +13,9 @@
         <!-- Header Banner with Stats -->
         <header class="header">
             <div class="header-left">
-                <div class="badge">MLOps Educational Decision Support System</div>
-                <h1>Student Performance Risk & Advisory</h1>
-                <p>Predict student academic outcome, calculate risk scores, and generate personalized intervention plans</p>
+                <div class="badge">MLOps Educational Decision Support Engine</div>
+                <h1>Academic Risk & Advisory Portal</h1>
+                <p>Role-based analytics for teachers and student risk self-assessment calculator</p>
             </div>
             <div class="header-stats">
                 <div class="stat-box">
@@ -33,216 +33,318 @@
             </div>
         </header>
 
-        <!-- Main 2-Column Fullscreen Grid -->
-        <div class="main-grid">
-            <!-- Prediction Form -->
-            <div class="card form-card">
-                <h2>🎓 Student Profile Attributes</h2>
-                <form id="prediction-form">
-                    
-                    <div class="form-section-title">1. Academic Performance History</div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Past Exam Score (0-100)</label>
-                            <input type="number" id="Past_Exam_Scores" value="55" min="0" max="100" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Attendance Rate (%)</label>
-                            <input type="number" id="Attendance_Rate" value="60" min="0" max="100" step="0.1" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Assignment Submission (%)</label>
-                            <input type="number" id="Assignment_Submission_Rate" value="50" min="0" max="100" step="0.1" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Quiz Average (0-100)</label>
-                            <input type="number" id="Quiz_Average" value="60" min="0" max="100" step="0.1" required>
-                        </div>
-                    </div>
+        <!-- Role Navigation Tabs -->
+        <div class="role-nav">
+            <button class="role-tab active" id="tab-teacher" onclick="switchRole('teacher')">
+                👩‍🏫 Teacher View (Class Analytics & Student Roster)
+            </button>
+            <button class="role-tab" id="tab-student" onclick="switchRole('student')">
+                🎓 Student View (Personal Profile & Manual Calculator)
+            </button>
+        </div>
 
-                    <div class="form-section-title">2. Study Habits & Lifestyle</div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Study Hours / Week</label>
-                            <input type="number" id="Study_Hours_per_Week" value="5" min="0" max="50" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Previous Failures</label>
-                            <input type="number" id="Previous_Failures" value="2" min="0" max="10" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Sleep Hours / Night</label>
-                            <input type="number" id="Sleep_Hours" value="5" min="0" max="24" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Screen Time (Hrs/Day)</label>
-                            <input type="number" id="Screen_Time" value="6" min="0" max="24" required>
-                        </div>
+        <!-- SECTION 1: TEACHER VIEW (DEFAULT) -->
+        <div id="view-teacher" class="role-view active-view">
+            <!-- Summary KPI Grid for Teachers -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon">👥</div>
+                    <div class="kpi-info">
+                        <span class="kpi-title">Total Class Roster</span>
+                        <span class="kpi-val">{{ total_students }} Students</span>
                     </div>
-
-                    <div class="form-section-title">3. Background & Support Environment</div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Gender</label>
-                            <select id="Gender">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" id="Age" value="22" min="15" max="30" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Internet Access</label>
-                            <select id="Internet_Access">
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Parent Support</label>
-                            <select id="Parents_Support">
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Parental Education</label>
-                            <select id="Parental_Education">
-                                <option value="High School">High School</option>
-                                <option value="Bachelor's">Bachelor's</option>
-                                <option value="Master's">Master's</option>
-                                <option value="PhD">PhD</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Family Income</label>
-                            <select id="Family_Income">
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Stress Level</label>
-                            <select id="Stress_Level">
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Low">Low</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Motivation Level</label>
-                            <select id="Motivation_Level">
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Class Participation</label>
-                            <select id="Class_Participation">
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Extracurricular Activities</label>
-                            <input type="number" id="Extracurricular_Activities" value="0" min="0" max="10" required>
-                        </div>
-                        <div class="form-group">
-                            <label>School Support</label>
-                            <select id="School_Support">
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                                <option value="Low">Low</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Travel Time (Mins)</label>
-                            <input type="number" id="Travel_Time" value="60" min="0" max="180" required>
-                        </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">🟢</div>
+                    <div class="kpi-info">
+                        <span class="kpi-title">Passing Rate</span>
+                        <span class="kpi-val" id="kpi-pass-rate">Calculated Live</span>
                     </div>
-
-                    <button type="submit" class="btn-predict" id="predict-btn">
-                        <span>Analyze & Generate Decision Support Report</span>
-                    </button>
-                </form>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">⚠️</div>
+                    <div class="kpi-info">
+                        <span class="kpi-title">High Risk Interventions Needed</span>
+                        <span class="kpi-val text-danger" id="kpi-high-risk">0 Students</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Prediction Result & Decision Support Output -->
-            <div class="card result-card">
-                <h2>📊 Decision Support Advisory Report</h2>
-                
-                <div id="placeholder-state" class="result-state active">
-                    <div class="icon">🔮</div>
-                    <p>Enter student profile information and click <strong>Analyze & Generate Decision Support Report</strong> to evaluate academic risk scores and personalized action items.</p>
+            <!-- Student Roster Table Card -->
+            <div class="card roster-card">
+                <div class="roster-header">
+                    <h2>📋 Student Academic Performance Roster</h2>
+                    <div class="roster-controls">
+                        <input type="text" id="roster-search" placeholder="🔍 Search student name..." onkeyup="filterRoster()">
+                        <select id="roster-filter-risk" onchange="filterRoster()">
+                            <option value="ALL">All Risk Levels</option>
+                            <option value="High">High Risk</option>
+                            <option value="Medium">Medium Risk</option>
+                            <option value="Low">Low Risk</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div id="loading-state" class="result-state">
-                    <div class="spinner"></div>
-                    <p>Evaluating Decision Support Engine & Machine Learning Pipeline...</p>
+                <div class="table-container">
+                    <table class="student-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Gender</th>
+                                <th>Attendance %</th>
+                                <th>Past Exam</th>
+                                <th>Quiz Avg</th>
+                                <th>Failures</th>
+                                <th>Predicted Outcome</th>
+                                <th>Success Prob</th>
+                                <th>Risk Level</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roster-table-body">
+                            {% for s in roster %}
+                            <tr class="roster-row" data-name="{{ s.name|lower }}" data-risk="{{ s.risk_level }}" data-prediction="{{ s.prediction }}">
+                                <td>{{ s.id }}</td>
+                                <td class="font-bold">{{ s.name }}</td>
+                                <td>{{ s.gender }}</td>
+                                <td>{{ s.attendance_rate }}%</td>
+                                <td>{{ s.past_exam_scores }}</td>
+                                <td>{{ s.quiz_average }}</td>
+                                <td>{{ s.previous_failures }}</td>
+                                <td>
+                                    <span class="badge-outcome {{ 'badge-pass' if s.prediction == 'PASS' else 'badge-fail' }}">
+                                        {{ s.prediction }}
+                                    </span>
+                                </td>
+                                <td>{{ s.success_probability }}%</td>
+                                <td>
+                                    <span class="badge-risk badge-risk-{{ s.risk_level|lower }}">
+                                        {{ s.risk_level }} Risk ({{ s.risk_score }})
+                                    </span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
-
-                <div id="result-state" class="result-state">
-                    <div class="result-top-bar">
-                        <div class="prediction-badge" id="prediction-badge">PASS</div>
-                        <div class="risk-pill" id="risk-pill">Academic Risk: Medium</div>
-                    </div>
-                    
-                    <div class="risk-metrics-grid">
-                        <div class="risk-metric-box">
-                            <span class="box-label">Success Probability</span>
-                            <span class="box-val success" id="success-prob-val">78%</span>
-                        </div>
-                        <div class="risk-metric-box">
-                            <span class="box-label">Risk Score</span>
-                            <span class="box-val" id="risk-score-val">42 / 100</span>
-                        </div>
-                    </div>
-
-                    <div class="confidence-container">
-                        <div class="confidence-header">
-                            <span>Success Probability Gauge</span>
-                            <span id="confidence-val">78%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                    </div>
-
-                    <div class="decision-section">
-                        <h3>⚠️ Primary Risk Factors / Reasons</h3>
-                        <ul class="reason-list" id="reasons-list">
-                        </ul>
-                    </div>
-
-                    <div class="decision-section">
-                        <h3>💡 Actionable Recommendations for Teacher</h3>
-                        <ul class="rec-list" id="recommendations-list">
-                        </ul>
-                    </div>
-
-                </div>
-
             </div>
         </div>
+
+
+        <!-- SECTION 2: STUDENT VIEW (MANUAL ENTRY CALCULATOR) -->
+        <div id="view-student" class="role-view">
+            <div class="main-grid">
+                <!-- Manual Prediction Calculator Form -->
+                <div class="card form-card">
+                    <h2>🎓 Manual Academic Risk Calculator</h2>
+                    <form id="prediction-form">
+                        
+                        <div class="form-section-title">1. ACADEMIC PERFORMANCE HISTORY</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Past Exam Score (0-100)</label>
+                                <input type="number" id="Past_Exam_Scores" value="55" min="0" max="100" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Attendance Rate (%)</label>
+                                <input type="number" id="Attendance_Rate" value="60" min="0" max="100" step="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Assignment Submission (%)</label>
+                                <input type="number" id="Assignment_Submission_Rate" value="50" min="0" max="100" step="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Quiz Average (0-100)</label>
+                                <input type="number" id="Quiz_Average" value="60" min="0" max="100" step="0.1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">2. STUDY HABITS & LIFESTYLE</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Study Hours / Week</label>
+                                <input type="number" id="Study_Hours_per_Week" value="5" min="0" max="50" step="0.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Previous Failures</label>
+                                <input type="number" id="Previous_Failures" value="2" min="0" max="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Sleep Hours / Night</label>
+                                <input type="number" id="Sleep_Hours" value="5" min="0" max="24" step="0.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Screen Time (Hrs/Day)</label>
+                                <input type="number" id="Screen_Time" value="6" min="0" max="24" step="0.5" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">3. BACKGROUND & SUPPORT ENVIRONMENT</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select id="Gender">
+                                    <option value="Female">Female</option>
+                                    <option value="Male" selected>Male</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="number" id="Age" value="22" min="15" max="30" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Internet Access</label>
+                                <select id="Internet_Access">
+                                    <option value="Yes" selected>Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Parent Support</label>
+                                <select id="Parents_Support">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low" selected>Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Parental Education</label>
+                                <select id="Parental_Education">
+                                    <option value="PhD">PhD</option>
+                                    <option value="Master's">Master's</option>
+                                    <option value="Bachelor's">Bachelor's</option>
+                                    <option value="High School" selected>High School</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Family Income</label>
+                                <select id="Family_Income">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low" selected>Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Stress Level</label>
+                                <select id="Stress_Level">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High" selected>High</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Motivation Level</label>
+                                <select id="Motivation_Level">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low" selected>Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Class Participation</label>
+                                <select id="Class_Participation">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low" selected>Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Extracurricular Activities</label>
+                                <input type="number" id="Extracurricular_Activities" value="0" min="0" max="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label>School Support</label>
+                                <select id="School_Support">
+                                    <option value="High">High</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Travel Time (Mins)</label>
+                                <input type="number" id="Travel_Time" value="60" min="0" max="180" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="btn-predict">
+                            <span>Assess Academic Risk & Generate Plan</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Decision Support Report Display -->
+                <div class="card result-card" id="result-container">
+                    <div class="result-placeholder">
+                        <div class="placeholder-icon">📊</div>
+                        <h3>No Risk Assessment Generated Yet</h3>
+                        <p>Fill out the student profile attributes on the left and click "Assess Academic Risk" to view decision support insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
+        // Role Switcher Logic
+        function switchRole(role) {
+            document.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.role-view').forEach(v => v.classList.remove('active-view'));
+
+            if (role === 'teacher') {
+                document.getElementById('tab-teacher').classList.add('active');
+                document.getElementById('view-teacher').classList.add('active-view');
+            } else {
+                document.getElementById('tab-student').classList.add('active');
+                document.getElementById('view-student').classList.add('active-view');
+            }
+        }
+
+        // Roster Search & Filter Logic
+        function filterRoster() {
+            const query = document.getElementById('roster-search').value.toLowerCase();
+            const riskFilter = document.getElementById('roster-filter-risk').value;
+            const rows = document.querySelectorAll('.roster-row');
+
+            let visibleCount = 0;
+            let passCount = 0;
+            let highRiskCount = 0;
+
+            rows.forEach(row => {
+                const name = row.getAttribute('data-name');
+                const risk = row.getAttribute('data-risk');
+                const pred = row.getAttribute('data-prediction');
+
+                const matchesSearch = name.includes(query);
+                const matchesRisk = (riskFilter === 'ALL' || risk === riskFilter);
+
+                if (matchesSearch && matchesRisk) {
+                    row.style.display = '';
+                    visibleCount++;
+                    if (pred === 'PASS') passCount++;
+                    if (risk === 'High') highRiskCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // Update Teacher KPIs live
+            const passRate = visibleCount > 0 ? ((passCount / visibleCount) * 100).toFixed(1) : 0;
+            document.getElementById('kpi-pass-rate').innerText = passRate + '%';
+            document.getElementById('kpi-high-risk').innerText = highRiskCount + ' Students';
+        }
+
+        // Initial Calculation on Page Load
+        document.addEventListener('DOMContentLoaded', () => {
+            filterRoster();
+        });
+
+        // Student Manual Prediction Submission
         document.getElementById('prediction-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-
-            const placeholderState = document.getElementById('placeholder-state');
-            const loadingState = document.getElementById('loading-state');
-            const resultState = document.getElementById('result-state');
-
-            placeholderState.classList.remove('active');
-            resultState.classList.remove('active');
-            loadingState.classList.add('active');
+            const btn = document.getElementById('btn-predict');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Calculating Risk Metrics...</span>';
 
             const payload = {
                 Gender: document.getElementById('Gender').value,
@@ -264,7 +366,7 @@
                 Class_Participation: document.getElementById('Class_Participation').value,
                 Extracurricular_Activities: parseInt(document.getElementById('Extracurricular_Activities').value),
                 School_Support: document.getElementById('School_Support').value,
-                Travel_Time: parseFloat(document.getElementById('Travel_Time').value),
+                Travel_Time: parseFloat(document.getElementById('Travel_Time').value)
             };
 
             try {
@@ -273,60 +375,76 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-
-                if (!response.ok) throw new Error('API Prediction failed');
-
                 const data = await response.json();
+                btn.disabled = false;
+                btn.innerHTML = '<span>Assess Academic Risk & Generate Plan</span>';
 
-                // 1. Prediction Badge
-                const badge = document.getElementById('prediction-badge');
-                badge.innerText = data.prediction;
-                badge.className = 'prediction-badge ' + (data.prediction === 'PASS' ? 'pass' : 'fail');
-
-                // 2. Risk Pill
-                const riskPill = document.getElementById('risk-pill');
-                riskPill.innerText = `Academic Risk: ${data.academic_risk_level}`;
-                riskPill.style.backgroundColor = `${data.risk_color}18`;
-                riskPill.style.borderColor = data.risk_color;
-                riskPill.style.color = data.risk_color;
-
-                // 3. Risk Metrics
-                document.getElementById('success-prob-val').innerText = data.success_probability + '%';
-                const riskScoreVal = document.getElementById('risk-score-val');
-                riskScoreVal.innerText = data.risk_score + ' / 100';
-                riskScoreVal.style.color = data.risk_color;
-
-                document.getElementById('confidence-val').innerText = data.success_probability + '%';
-                const fill = document.getElementById('progress-fill');
-                fill.style.width = data.success_probability + '%';
-                fill.style.background = data.prediction === 'PASS' ? 'linear-gradient(90deg, #16a34a, #15803d)' : 'linear-gradient(90deg, #dc2626, #b91c1c)';
-
-                // 4. Reasons List
-                const reasonsList = document.getElementById('reasons-list');
-                reasonsList.innerHTML = '';
-                data.reasons.forEach(reason => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<span class="bullet">•</span> ${reason}`;
-                    reasonsList.appendChild(li);
-                });
-
-                // 5. Recommendations Checklist
-                const recsList = document.getElementById('recommendations-list');
-                recsList.innerHTML = '';
-                data.recommendations.forEach(rec => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<span class="check">✓</span> ${rec}`;
-                    recsList.appendChild(li);
-                });
-
-                loadingState.classList.remove('active');
-                resultState.classList.add('active');
+                if (response.ok) {
+                    renderResults(data);
+                } else {
+                    alert('Error: ' + (data.detail || 'Prediction failed'));
+                }
             } catch (err) {
-                alert('Error generating report: ' + err.message);
-                loadingState.classList.remove('active');
-                placeholderState.classList.add('active');
+                btn.disabled = false;
+                btn.innerHTML = '<span>Assess Academic Risk & Generate Plan</span>';
+                alert('Connection error while contacting prediction API server.');
             }
         });
+
+        function renderResults(data) {
+            const isPass = data.prediction === 'PASS';
+            const outcomeClass = isPass ? 'outcome-pass' : 'outcome-fail';
+            
+            const html = `
+                <div class="result-header">
+                    <h2>📊 Decision Support Advisory Report</h2>
+                </div>
+
+                <div class="outcome-banner ${outcomeClass}">
+                    <div class="outcome-title">${data.prediction}</div>
+                    <div class="risk-badge-header" style="background:${data.risk_color}">
+                        Academic Risk: ${data.academic_risk_level}
+                    </div>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <span class="m-label">SUCCESS PROBABILITY</span>
+                        <span class="m-value" style="color: ${isPass ? '#10b981' : '#ef4444'}">${data.success_probability}%</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="m-label">RISK SCORE</span>
+                        <span class="m-value" style="color: ${data.risk_color}">${data.risk_score} / 100</span>
+                    </div>
+                </div>
+
+                <div class="gauge-container">
+                    <div class="gauge-label">
+                        <span>Success Probability Gauge</span>
+                        <span>${data.success_probability}%</span>
+                    </div>
+                    <div class="gauge-bar">
+                        <div class="gauge-fill" style="width: ${data.success_probability}%; background: ${data.risk_color}"></div>
+                    </div>
+                </div>
+
+                <div class="section-box">
+                    <h3 class="box-title text-warning">⚠️ Primary Risk Factors / Reasons</h3>
+                    <ul class="reasons-list">
+                        ${data.reasons.map(r => `<li><span class="bullet-dot">•</span> ${r}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="section-box">
+                    <h3 class="box-title text-success">🎯 Actionable Teacher Recommendations</h3>
+                    <ul class="recs-list">
+                        ${data.recommendations.map(rec => `<li><span class="check-icon">✓</span> ${rec}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            document.getElementById('result-container').innerHTML = html;
+        }
     </script>
 </body>
 </html>
