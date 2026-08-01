@@ -136,32 +136,30 @@ def train_and_evaluate(data_path: str = DATA_PATH) -> dict:
     pipelines = {
         "Logistic Regression": Pipeline([
             ("scaler", StandardScaler()),
-            ("model",  LogisticRegression(random_state=42, max_iter=2000, class_weight="balanced")),
+            ("model",  LogisticRegression(random_state=42, max_iter=2000)),
         ]),
         "Random Forest": Pipeline([
             ("scaler", StandardScaler()),
-            ("model",  RandomForestClassifier(random_state=42, n_jobs=-1, class_weight="balanced")),
+            ("model",  RandomForestClassifier(random_state=42, n_jobs=-1)),
         ]),
         "XGBoost": Pipeline([
             ("scaler", StandardScaler()),
-            ("model",  XGBClassifier(random_state=42, eval_metric="logloss", verbosity=0, scale_pos_weight=xgb_scale)),
+            ("model",  XGBClassifier(random_state=42, eval_metric="logloss", verbosity=0)),
         ]),
     }
 
     param_grids = {
         "Logistic Regression": {
-            "model__C": [0.01, 0.1, 1.0, 10.0],
-            "model__solver": ["lbfgs", "liblinear"],
+            "model__C": [0.1, 1.0, 10.0],
         },
         "Random Forest": {
-            "model__n_estimators": [100, 200],
-            "model__max_depth":    [None, 5, 10],
-            "model__min_samples_split": [2, 5],
+            "model__n_estimators": [150, 250],
+            "model__max_depth":    [10, 15, None],
         },
         "XGBoost": {
-            "model__n_estimators":  [100, 200],
+            "model__n_estimators":  [150, 250],
             "model__learning_rate": [0.05, 0.1],
-            "model__max_depth":     [3, 5],
+            "model__max_depth":     [4, 6],
         },
     }
 
@@ -239,8 +237,8 @@ def train_and_evaluate(data_path: str = DATA_PATH) -> dict:
     # Print comparison
     print_comparison_table(results)
 
-    # Selected model (configured to XGBoost)
-    best_name = "XGBoost"
+    # Selected model (dynamically pick highest accuracy & F1 score)
+    best_name = max(results.keys(), key=lambda k: (results[k]["Accuracy"], results[k]["F1-Score"]))
     best_model, best_preds = trained_models[best_name]
 
     print(f"[BEST] Winning Model: {best_name}")
